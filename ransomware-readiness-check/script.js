@@ -35,19 +35,34 @@ const translations = {
         label: "Low risk",
         title: "Low ransomware readiness risk",
         message:
-          "Your business appears to have some important protections in place. The next step is to make sure your recovery process is tested and documented."
+          "Your business appears to have some important protections in place. The next step is to make sure your recovery process is tested and documented.",
+        steps: [
+          "Test a restore from your most important backup.",
+          "Document who is responsible if systems are locked.",
+          "Review access controls and MFA on key accounts."
+        ]
       },
       medium: {
         label: "Medium risk",
         title: "Medium ransomware readiness risk",
         message:
-          "Your business may have several ransomware readiness gaps. The most important next step is to review backups, account access, and recovery procedures."
+          "Your business may have several ransomware readiness gaps. The most important next step is to review backups, account access, and recovery procedures.",
+        steps: [
+          "Confirm backups are separated and can be restored.",
+          "Turn on MFA for email, finance, and cloud accounts.",
+          "Create a simple first-hour response checklist."
+        ]
       },
       high: {
         label: "High risk",
         title: "High ransomware readiness risk",
         message:
-          "Your business may be vulnerable to serious disruption if ransomware blocks access to files or systems. A basic readiness review would be strongly recommended."
+          "Your business may be vulnerable to serious disruption if ransomware blocks access to files or systems. A basic readiness review would be strongly recommended.",
+        steps: [
+          "Prioritize a backup and recovery review.",
+          "Secure important accounts with strong passwords and MFA.",
+          "Define who to contact and what to do first during an incident."
+        ]
       }
     },
     leadThanks: "Your report will be available once the form integration is connected.",
@@ -89,19 +104,34 @@ const translations = {
         label: "Riesgo bajo",
         title: "Riesgo bajo de preparación contra ransomware",
         message:
-          "Tu negocio parece tener algunas protecciones importantes. El siguiente paso es asegurarte de que el proceso de recuperación esté probado y documentado."
+          "Tu negocio parece tener algunas protecciones importantes. El siguiente paso es asegurarte de que el proceso de recuperación esté probado y documentado.",
+        steps: [
+          "Prueba una restauración desde tu copia de seguridad más importante.",
+          "Documenta quién es responsable si los sistemas quedan bloqueados.",
+          "Revisa controles de acceso y MFA en cuentas clave."
+        ]
       },
       medium: {
         label: "Riesgo medio",
         title: "Riesgo medio de preparación contra ransomware",
         message:
-          "Tu negocio puede tener varias brechas de preparación frente a ransomware. El siguiente paso más importante es revisar copias de seguridad, accesos y procedimientos de recuperación."
+          "Tu negocio puede tener varias brechas de preparación frente a ransomware. El siguiente paso más importante es revisar copias de seguridad, accesos y procedimientos de recuperación.",
+        steps: [
+          "Confirma que las copias de seguridad están separadas y se pueden restaurar.",
+          "Activa MFA en correo electrónico, finanzas y cuentas cloud.",
+          "Crea una checklist sencilla para la primera hora de respuesta."
+        ]
       },
       high: {
         label: "Riesgo alto",
         title: "Riesgo alto de preparación contra ransomware",
         message:
-          "Tu negocio podría sufrir una interrupción importante si un ransomware bloquea archivos o sistemas. Se recomienda una revisión básica de preparación."
+          "Tu negocio podría sufrir una interrupción importante si un ransomware bloquea archivos o sistemas. Se recomienda una revisión básica de preparación.",
+        steps: [
+          "Prioriza una revisión de copias de seguridad y recuperación.",
+          "Protege cuentas importantes con contraseñas fuertes y MFA.",
+          "Define a quién contactar y qué hacer primero durante un incidente."
+        ]
       }
     },
     leadThanks: "Tu informe estará disponible cuando la integración del formulario esté conectada.",
@@ -114,6 +144,8 @@ const copy = translations[pageLanguage];
 const questions = copy.questions;
 const options = copy.options;
 
+const checklistSection = document.querySelector("#checklist");
+const checklistHeading = document.querySelector("#checklist .section-heading");
 const riskForm = document.querySelector("#risk-form");
 const questionText = document.querySelector("#question-text");
 const quizCount = document.querySelector("#quiz-count");
@@ -127,6 +159,8 @@ const result = document.querySelector("#result");
 const resultLabel = document.querySelector("#result-label");
 const resultTitle = document.querySelector("#result-title");
 const resultMessage = document.querySelector("#result-message");
+const resultScore = document.querySelector("#result-score");
+const resultSteps = document.querySelector("#result-steps");
 const leadSection = document.querySelector("#lead-section");
 const reportForms = document.querySelectorAll("[data-report-form]");
 const reviewForms = document.querySelectorAll("[data-review-form]");
@@ -191,9 +225,8 @@ function getReportSubmission(form) {
   return {
     firstName: form.elements.first_name?.value.trim() || "",
     email: form.elements.email?.value.trim() || "",
-    companyName: form.elements.company_name?.value.trim() || "",
     industry: form.elements.industry?.value || "",
-    country: form.elements.country?.value.trim() || "",
+    companySize: form.elements.company_size?.value || "",
     language: pageLanguage,
     riskLevel: form.elements.risk_level?.value || latestRiskLevel || "not_completed",
     score: latestScore,
@@ -253,9 +286,18 @@ function showResult() {
   latestRiskLevel = getRiskLevel(latestScore);
   const content = copy.results[latestRiskLevel];
 
-  resultLabel.textContent = `${content.label} score: ${latestScore}/20`;
+  resultLabel.textContent = content.label;
+  if (resultScore) {
+    resultScore.textContent = `${latestScore}/20`;
+  }
   resultTitle.textContent = content.title;
   resultMessage.textContent = content.message;
+  if (resultSteps) {
+    resultSteps.innerHTML = content.steps.map((step) => `<li>${step}</li>`).join("");
+  }
+  riskForm.hidden = true;
+  checklistHeading?.setAttribute("hidden", "");
+  checklistSection?.classList.add("is-result-mode");
   result.hidden = false;
 
   if (leadSection) {
@@ -271,6 +313,9 @@ function restartQuiz() {
   latestScore = null;
   latestRiskLevel = null;
   result.hidden = true;
+  riskForm.hidden = false;
+  checklistHeading?.removeAttribute("hidden");
+  checklistSection?.classList.remove("is-result-mode");
 
   if (leadSection && leadSection.dataset.alwaysVisible !== "true") {
     leadSection.hidden = true;
@@ -286,6 +331,7 @@ function restartQuiz() {
 
 function initQuiz() {
   if (
+    !checklistSection ||
     !riskForm ||
     !questionText ||
     !quizCount ||
@@ -297,7 +343,9 @@ function initQuiz() {
     !result ||
     !resultLabel ||
     !resultTitle ||
-    !resultMessage
+    !resultMessage ||
+    !resultScore ||
+    !resultSteps
   ) {
     return;
   }
@@ -341,7 +389,7 @@ reportForms.forEach((form) => {
     // Formspree integration placeholder:
     // The form posts to https://formspree.io/f/FORM_ID_HERE.
     // Replace FORM_ID_HERE in the HTML action attribute with the real Formspree form ID.
-    // Once replaced, the browser will submit first name, email, company name, industry, country, language, risk_score, risk_level, and service_interest.
+    // Once replaced, the browser will submit first name, email, industry or company size, language, risk_score, risk_level, and service_interest.
     handlePlaceholderSubmit(event, form, copy.leadThanks);
   });
 });
@@ -351,7 +399,6 @@ reviewForms.forEach((form) => {
     prepareFormMetadata(form);
     storeSubmission("ransomwareReadinessReviewRequests", {
       email: form.elements.email?.value.trim() || "",
-      companyName: form.elements.company_name?.value.trim() || "",
       language: pageLanguage,
       riskLevel: form.elements.risk_level?.value || latestRiskLevel || "not_completed",
       score: latestScore,

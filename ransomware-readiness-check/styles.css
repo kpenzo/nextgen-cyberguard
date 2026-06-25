@@ -8990,6 +8990,158 @@ select:focus {
   background: linear-gradient(135deg, #008d85, #00aa98);
 }
 
+
+/* Dedicated checklist result screen */
+.homepage-reference .section--checklist.is-result-mode {
+  padding-top: 52px;
+}
+
+.homepage-reference .section--checklist.is-result-mode > .shell {
+  display: block;
+  width: min(100% - 40px, 980px);
+}
+
+.homepage-reference .result-screen {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 56px);
+  border: 1px solid rgba(0, 133, 127, .18);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(24, 195, 176, .15), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, .98), rgba(244, 252, 251, .92));
+  box-shadow: 0 24px 70px rgba(18, 58, 68, .12);
+  text-align: center;
+}
+
+.homepage-reference .result-screen__badge {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #008d85, #18c7b8);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 900;
+  box-shadow: 0 16px 32px rgba(0, 143, 135, .24);
+}
+
+.homepage-reference .result-screen h2 {
+  max-width: 680px;
+  margin: 8px auto 14px;
+  color: #071431;
+  font-size: clamp(2rem, 4vw, 3.45rem);
+  font-weight: 850;
+  line-height: 1.04;
+}
+
+.homepage-reference .result-screen__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.homepage-reference .result-screen__meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid rgba(0, 133, 127, .18);
+  border-radius: 999px;
+  background: #f0faf8;
+  color: #007b74;
+  font-size: .78rem;
+  font-weight: 850;
+}
+
+.homepage-reference .result-screen__message {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #3e5067;
+  font-size: clamp(.95rem, 1.5vw, 1.08rem);
+  line-height: 1.65;
+}
+
+.homepage-reference .result-screen__next {
+  max-width: 650px;
+  margin: 28px auto 0;
+  padding: 20px 22px;
+  border: 1px solid rgba(9, 58, 70, .1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .78);
+  text-align: left;
+}
+
+.homepage-reference .result-screen__next h3 {
+  margin: 0 0 12px;
+  color: #071431;
+  font-size: 1rem;
+}
+
+.homepage-reference .result-screen__next ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.homepage-reference .result-screen__next li {
+  position: relative;
+  padding-left: 28px;
+  color: #31455b;
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.homepage-reference .result-screen__next li::before {
+  position: absolute;
+  left: 0;
+  top: .12rem;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: #dff6f1;
+  color: #00877f;
+  content: "✓";
+  font-size: .7rem;
+  font-weight: 900;
+}
+
+.homepage-reference .result-screen__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.homepage-reference .result-screen__actions .button {
+  min-height: 46px;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+@media (max-width: 620px) {
+  .homepage-reference .section--checklist.is-result-mode > .shell {
+    width: min(100% - 28px, 980px);
+  }
+
+  .homepage-reference .result-screen {
+    padding: 28px 18px;
+  }
+
+  .homepage-reference .result-screen__actions .button {
+    width: 100%;
+  }
+}
+
 /* Ransomware Readiness Check: spacing and alignment refinement, June 22 */
 .rr-service-page--reference .rr-hero {
   padding-bottom: 38px;

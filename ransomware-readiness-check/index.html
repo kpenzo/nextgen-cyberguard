@@ -228,11 +228,23 @@
             </div>
           </form>
 
-          <div class="result card" id="result" hidden aria-live="polite">
-            <p class="eyebrow" id="result-label"></p>
+          <div class="result card result-screen" id="result" hidden aria-live="polite">
+            <div class="result-screen__badge" aria-hidden="true">✓</div>
+            <p class="eyebrow">Your readiness result</p>
             <h2 id="result-title"></h2>
-            <p id="result-message"></p>
-            <button class="button button--secondary result-restart" id="quiz-restart" type="button">Start over</button>
+            <div class="result-screen__meta">
+              <span id="result-label"></span>
+              <span id="result-score"></span>
+            </div>
+            <p class="result-screen__message" id="result-message"></p>
+            <div class="result-screen__next">
+              <h3>Recommended next steps</h3>
+              <ul id="result-steps"></ul>
+            </div>
+            <div class="result-screen__actions">
+              <a class="button button--primary" href="#lead-form">Download Report</a>
+              <button class="button button--secondary result-restart" id="quiz-restart" type="button">Start Over</button>
+            </div>
           </div>
 
           <div class="lead-wrap report-layout" id="lead-section" data-always-visible="true">
@@ -280,10 +292,6 @@
                 <input type="email" name="email" autocomplete="email" required />
               </label>
               <label>
-                Company Name
-                <input name="company_name" autocomplete="organization" required />
-              </label>
-              <label>
                 Industry
                 <select name="industry" required>
                   <option value="">Select an industry</option>
@@ -295,10 +303,6 @@
                   <option>Trades business</option>
                   <option>Other</option>
                 </select>
-              </label>
-              <label>
-                Country
-                <input name="country" autocomplete="country-name" required />
               </label>
               <input type="hidden" name="language" id="lead-language" />
               <input type="hidden" name="risk_level" id="lead-risk-level" />
@@ -325,10 +329,6 @@
                 <label>
                   Business Email
                   <input type="email" name="email" autocomplete="email" required />
-                </label>
-                <label>
-                  Company Name
-                  <input name="company_name" autocomplete="organization" required />
                 </label>
                 <input type="hidden" name="language" />
                 <input type="hidden" name="risk_score" />

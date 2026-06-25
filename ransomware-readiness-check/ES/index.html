@@ -220,11 +220,23 @@
             </div>
           </form>
 
-          <div class="result card" id="result" hidden aria-live="polite">
-            <p class="eyebrow" id="result-label"></p>
+          <div class="result card result-screen" id="result" hidden aria-live="polite">
+            <div class="result-screen__badge" aria-hidden="true">✓</div>
+            <p class="eyebrow">Tu resultado de preparación</p>
             <h2 id="result-title"></h2>
-            <p id="result-message"></p>
-            <button class="button button--secondary result-restart" id="quiz-restart" type="button">Empezar de nuevo</button>
+            <div class="result-screen__meta">
+              <span id="result-label"></span>
+              <span id="result-score"></span>
+            </div>
+            <p class="result-screen__message" id="result-message"></p>
+            <div class="result-screen__next">
+              <h3>Próximos pasos recomendados</h3>
+              <ul id="result-steps"></ul>
+            </div>
+            <div class="result-screen__actions">
+              <a class="button button--primary" href="#lead-form">Descargar informe</a>
+              <button class="button button--secondary result-restart" id="quiz-restart" type="button">Empezar de nuevo</button>
+            </div>
           </div>
 
           <div class="lead-wrap report-layout" id="lead-section" hidden>
@@ -268,12 +280,8 @@
                 <input name="first_name" autocomplete="given-name" required />
               </label>
               <label>
-                Correo electrónico profesional
+                Correo profesional
                 <input type="email" name="email" autocomplete="email" required />
-              </label>
-              <label>
-                Nombre del negocio
-                <input name="company_name" autocomplete="organization" required />
               </label>
               <label>
                 Sector
@@ -284,13 +292,9 @@
                   <option>Clínica médica</option>
                   <option>Despacho legal</option>
                   <option>Clínica estética</option>
-                  <option>Empresa de servicios técnicos</option>
+                  <option>Servicios técnicos</option>
                   <option>Otro</option>
                 </select>
-              </label>
-              <label>
-                País
-                <input name="country" autocomplete="country-name" required />
               </label>
               <input type="hidden" name="language" id="lead-language" />
               <input type="hidden" name="risk_level" id="lead-risk-level" />
@@ -318,10 +322,6 @@
                 <label>
                   Correo electrónico profesional
                   <input type="email" name="email" autocomplete="email" required />
-                </label>
-                <label>
-                  Nombre del negocio
-                  <input name="company_name" autocomplete="organization" required />
                 </label>
                 <input type="hidden" name="language" />
                 <input type="hidden" name="risk_score" />
