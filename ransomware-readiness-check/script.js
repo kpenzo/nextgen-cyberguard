@@ -66,7 +66,7 @@ const translations = {
       { text: "¿Tus copias de seguridad están separadas de los ordenadores o red principal?", category: "backups" },
       { text: "¿Has probado a restaurar archivos desde una copia de seguridad en los últimos 6 meses?", category: "backups" },
       { text: "¿Todos los miembros del equipo usan contraseñas fuertes y únicas?", category: "access" },
-      { text: "¿Usas autenticación multifactor para el email y las cuentas importantes?", category: "access" },
+      { text: "¿Usas autenticación multifactor para el correo electrónico y las cuentas importantes?", category: "access" },
       { text: "¿Saben los empleados reconocer correos o adjuntos sospechosos?", category: "awareness" },
       { text: "¿Tienes antivirus o protección endpoint instalada en los dispositivos del negocio?", category: "awareness" },
       { text: "¿Tienes un plan de recuperación por escrito si tus sistemas quedan bloqueados?", category: "recovery" },
@@ -76,7 +76,7 @@ const translations = {
     options: [
       { label: "Sí", score: 0 },
       { label: "No", score: 2 },
-      { label: "No estoy segura/o", score: 1 }
+      { label: "No estoy seguro/a", score: 1 }
     ],
     buttons: {
       next: "Siguiente",

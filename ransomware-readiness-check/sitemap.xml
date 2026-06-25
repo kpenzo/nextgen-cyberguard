@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/services/ransomware-readiness-check/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/ransomware-readiness-check/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/chequeo-ransomware/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/servicios/chequeo-ransomware/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/chequeo-ransomware/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/ransomware-readiness-check/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/services/backup-recovery-review/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/backup-recovery-review/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/revision-copias-recuperacion/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/servicios/revision-copias-recuperacion/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/revision-copias-recuperacion/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/backup-recovery-review/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/services/account-security-mfa/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/account-security-mfa/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/seguridad-cuentas-mfa/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/servicios/seguridad-cuentas-mfa/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/seguridad-cuentas-mfa/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/account-security-mfa/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/services/email-phishing-risk-review/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/email-phishing-risk-review/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/revision-email-phishing/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/servicios/revision-email-phishing/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/revision-email-phishing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/email-phishing-risk-review/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/services/incident-response-mini-plan/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/incident-response-mini-plan/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/mini-plan-respuesta-incidentes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/servicios/mini-plan-respuesta-incidentes/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/mini-plan-respuesta-incidentes/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/incident-response-mini-plan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/services/basic-technical-security-review/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/basic-technical-security-review/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/revision-tecnica-seguridad/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/servicios/revision-tecnica-seguridad/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/revision-tecnica-seguridad/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/basic-technical-security-review/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/services/monthly-cyber-readiness-support/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/monthly-cyber-readiness-support/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/soporte-mensual-preparacion-digital/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/servicios/soporte-mensual-preparacion-digital/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/servicios/soporte-mensual-preparacion-digital/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/monthly-cyber-readiness-support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
+  </url>
+</urlset>

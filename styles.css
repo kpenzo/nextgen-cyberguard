@@ -8989,3 +8989,1633 @@ select:focus {
 .homepage-reference .quiz-actions .button--primary {
   background: linear-gradient(135deg, #008d85, #00aa98);
 }
+
+/* Ransomware Readiness Check: spacing and alignment refinement, June 22 */
+.rr-service-page--reference .rr-hero {
+  padding-bottom: 38px;
+}
+
+.rr-service-page--reference .rr-hero-grid {
+  padding-bottom: 30px;
+}
+
+.rr-service-page--reference .rr-stat-row {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  width: min(100%, 900px);
+  margin: 12px auto 0;
+  transform: none;
+}
+
+.rr-review-band {
+  padding: 72px 0 54px;
+}
+
+.rr-review-layout {
+  grid-template-columns: minmax(300px, .82fr) minmax(500px, 1.25fr) minmax(280px, .72fr);
+  gap: clamp(34px, 3.4vw, 52px);
+  align-items: start;
+}
+
+.rr-review-copy {
+  padding-top: 12px;
+}
+
+.rr-review-copy h2 {
+  max-width: 390px;
+}
+
+.rr-review-context {
+  max-width: 390px;
+  margin: 18px 0 28px;
+  line-height: 1.58;
+}
+
+.rr-service-page--reference .rr-value-grid {
+  gap: 14px;
+}
+
+.rr-service-page--reference .rr-value-grid article {
+  min-height: 118px;
+  padding: 18px 16px;
+  gap: 14px;
+}
+
+.rr-service-page--reference .rr-value-grid h3 {
+  margin-top: 2px;
+  margin-bottom: 7px;
+}
+
+.rr-service-page--reference .rr-value-grid p {
+  line-height: 1.5;
+}
+
+.rr-assessment {
+  min-height: 500px;
+  align-self: center;
+  margin-inline: auto;
+  width: min(100%, 540px);
+}
+
+.rr-assessment-ring {
+  top: 92px;
+  width: 238px;
+  height: 238px;
+}
+
+.rr-orbit {
+  width: 148px;
+  gap: 10px;
+}
+
+.rr-orbit::after {
+  width: 58px;
+}
+
+.rr-orbit > span {
+  width: 50px;
+  height: 50px;
+}
+
+.rr-orbit h3 {
+  font-size: .67rem;
+  line-height: 1.24;
+}
+
+.rr-orbit p {
+  font-size: .6rem;
+  line-height: 1.38;
+}
+
+.rr-orbit--one { left: 0; top: 18px; }
+.rr-orbit--one::after { right: -34px; top: 48px; transform: rotate(27deg); }
+.rr-orbit--two { right: 0; top: 18px; }
+.rr-orbit--two::after { left: -38px; top: 48px; transform: rotate(-27deg); }
+.rr-orbit--three { right: 0; top: 338px; }
+.rr-orbit--three::after { left: -38px; top: -3px; transform: rotate(27deg); }
+.rr-orbit--four { left: 0; top: 338px; }
+.rr-orbit--four::after { right: -34px; top: -3px; transform: rotate(-27deg); }
+
+.rr-assessment-note {
+  bottom: 18px;
+  font-size: .98rem;
+}
+
+.rr-service-page--reference .rr-report-card {
+  width: 100%;
+  max-width: 310px;
+  justify-self: end;
+  align-self: start;
+  margin-top: 18px;
+  padding: 24px 22px 22px !important;
+}
+
+.rr-service-page--reference .rr-report-card h2 {
+  font-size: clamp(1.75rem, 2.15vw, 2.2rem);
+  line-height: 1.08;
+}
+
+.rr-report-subtitle {
+  margin: 10px 0 20px;
+  line-height: 1.55;
+}
+
+.rr-service-page--reference .rr-report-form {
+  gap: 11px !important;
+}
+
+.rr-service-page--reference .rr-report-form input,
+.rr-service-page--reference .rr-report-form select {
+  min-height: 44px;
+}
+
+@media (max-width: 1220px) {
+  .rr-review-layout {
+    grid-template-columns: minmax(280px, .86fr) minmax(460px, 1.2fr);
+  }
+
+  .rr-service-page--reference .rr-report-card {
+    grid-column: 1 / -1;
+    width: min(100%, 760px);
+    max-width: none;
+    justify-self: center;
+    margin-top: 8px;
+  }
+
+  .rr-service-page--reference .rr-report-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .rr-service-page--reference .rr-report-form .button,
+  .rr-service-page--reference .rr-report-form .privacy-note,
+  .rr-service-page--reference .rr-report-form .form-note {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  .rr-review-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .rr-review-copy {
+    width: min(100%, 680px);
+    justify-self: center;
+    padding-top: 0;
+  }
+
+  .rr-review-copy h2,
+  .rr-review-context {
+    max-width: 620px;
+  }
+
+  .rr-assessment {
+    grid-column: 1;
+    width: min(100%, 560px);
+  }
+
+  .rr-service-page--reference .rr-report-card {
+    grid-column: 1;
+    width: min(100%, 680px);
+  }
+}
+
+@media (max-width: 640px) {
+  .rr-service-page--reference .rr-stat-row {
+    width: min(100%, 520px);
+    margin-top: 18px;
+  }
+
+  .rr-review-band {
+    padding: 48px 0 40px;
+  }
+
+  .rr-service-page--reference .rr-value-grid {
+    gap: 12px;
+  }
+
+  .rr-assessment {
+    min-height: 650px;
+  }
+
+  .rr-assessment-ring {
+    top: 208px;
+    width: 210px;
+    height: 210px;
+  }
+
+  .rr-orbit {
+    position: relative;
+    width: 100%;
+    margin: 11px 0;
+  }
+
+  .rr-assessment-note {
+    bottom: 4px;
+  }
+
+  .rr-service-page--reference .rr-report-card {
+    margin-top: 0;
+    padding: 24px 20px 22px !important;
+  }
+
+  .rr-service-page--reference .rr-report-form {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Ransomware Readiness Check: structural layout rebuild, June 22 */
+.rr-service-page--reference .rr-hero {
+  padding-bottom: 0;
+}
+
+.rr-service-page--reference .rr-hero-grid {
+  padding-bottom: 24px;
+}
+
+.rr-stats-section {
+  position: relative;
+  padding: 96px 0 98px;
+  background: #fbfdff;
+}
+
+.rr-service-page--reference .rr-stats-section .rr-stat-row {
+  position: static;
+  left: auto;
+  bottom: auto;
+  width: min(100% - 56px, 900px);
+  margin: 0 auto;
+  transform: none;
+}
+
+.rr-review-band {
+  padding: 90px 0 72px;
+}
+
+.rr-review-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 350px) minmax(470px, 520px) minmax(290px, 320px);
+  justify-content: space-between;
+  gap: clamp(34px, 3vw, 48px);
+  align-items: start;
+}
+
+.rr-review-copy {
+  width: 100%;
+  padding-top: 0;
+}
+
+.rr-review-copy h2 {
+  max-width: 350px;
+}
+
+.rr-review-context {
+  max-width: 350px;
+  margin: 18px 0 30px;
+}
+
+.rr-service-page--reference .rr-value-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.rr-service-page--reference .rr-value-grid article {
+  display: block;
+  min-height: 148px;
+  padding: 17px 16px;
+}
+
+.rr-service-page--reference .rr-value-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 10px;
+  place-items: center;
+}
+
+.rr-service-page--reference .rr-value-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.rr-service-page--reference .rr-value-grid h3 {
+  margin: 0 0 7px;
+}
+
+.rr-service-page--reference .rr-value-grid p {
+  font-size: .68rem;
+  line-height: 1.48;
+}
+
+.rr-assessment {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  min-height: 500px;
+  margin: 0 auto;
+  align-self: start;
+}
+
+.rr-assessment-ring {
+  top: 142px;
+  width: 208px;
+  height: 208px;
+}
+
+.rr-assessment-ring::before {
+  inset: 27px;
+}
+
+.rr-assessment-core {
+  inset: 43px;
+}
+
+.rr-core-icon {
+  font-size: 1.75rem;
+}
+
+.rr-assessment-core strong {
+  font-size: .76rem;
+}
+
+.rr-assessment-core small {
+  font-size: .58rem;
+}
+
+.rr-orbit {
+  width: 136px;
+  gap: 8px;
+}
+
+.rr-orbit > span {
+  width: 44px;
+  height: 44px;
+}
+
+.rr-orbit h3 {
+  font-size: .64rem;
+  line-height: 1.25;
+}
+
+.rr-orbit p {
+  font-size: .57rem;
+  line-height: 1.4;
+}
+
+.rr-orbit::after {
+  width: 66px;
+}
+
+.rr-orbit--one { left: 0; top: 34px; }
+.rr-orbit--one::after { right: -48px; top: 46px; transform: rotate(28deg); }
+.rr-orbit--two { right: 0; top: 34px; }
+.rr-orbit--two::after { left: -50px; top: 46px; transform: rotate(-28deg); }
+.rr-orbit--three { right: 0; top: 365px; }
+.rr-orbit--three::after { left: -50px; top: -10px; transform: rotate(28deg); }
+.rr-orbit--four { left: 0; top: 365px; }
+.rr-orbit--four::after { right: -48px; top: -10px; transform: rotate(-28deg); }
+
+.rr-assessment-note {
+  bottom: 5px;
+  font-size: .94rem;
+}
+
+.rr-service-page--reference .rr-report-card {
+  width: 100%;
+  max-width: 320px;
+  min-height: 500px;
+  margin: 0;
+  padding: 28px 24px 24px !important;
+  justify-self: end;
+  align-self: start;
+}
+
+.rr-service-page--reference .rr-report-card h2 {
+  font-size: clamp(1.8rem, 2.1vw, 2.2rem);
+}
+
+.rr-report-subtitle {
+  margin: 11px 0 22px;
+}
+
+.rr-service-page--reference .rr-report-form {
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+}
+
+.rr-service-page--reference .rr-report-form .button,
+.rr-service-page--reference .rr-report-form .privacy-note,
+.rr-service-page--reference .rr-report-form .form-note {
+  grid-column: 1;
+}
+
+@media (max-width: 1180px) {
+  .rr-review-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 50px;
+  }
+
+  .rr-review-copy {
+    width: min(100%, 720px);
+  }
+
+  .rr-review-copy h2,
+  .rr-review-context {
+    max-width: 620px;
+  }
+
+  .rr-service-page--reference .rr-value-grid article {
+    min-height: 126px;
+  }
+
+  .rr-assessment {
+    grid-column: 1;
+    width: min(100%, 540px);
+  }
+
+  .rr-service-page--reference .rr-report-card {
+    grid-column: 1;
+    width: min(100%, 680px);
+    max-width: 680px;
+    min-height: 0;
+    justify-self: center;
+  }
+
+  .rr-service-page--reference .rr-report-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .rr-service-page--reference .rr-report-form .button,
+  .rr-service-page--reference .rr-report-form .privacy-note,
+  .rr-service-page--reference .rr-report-form .form-note {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 850px) {
+  .rr-stats-section {
+    padding: 76px 0 78px;
+  }
+
+  .rr-service-page--reference .rr-stats-section .rr-stat-row {
+    width: min(100% - 40px, 680px);
+    margin: 0 auto;
+  }
+
+  .rr-review-band {
+    padding: 68px 0 58px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rr-stats-section {
+    padding: 64px 0 68px;
+  }
+
+  .rr-service-page--reference .rr-stats-section .rr-stat-row {
+    width: min(100% - 28px, 520px);
+  }
+
+  .rr-review-band {
+    padding: 54px 0 46px;
+  }
+
+  .rr-service-page--reference .rr-value-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rr-service-page--reference .rr-value-grid article {
+    min-height: 0;
+  }
+
+  .rr-assessment {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    min-height: 0;
+  }
+
+  .rr-assessment-ring {
+    position: relative;
+    left: auto;
+    top: auto;
+    order: 1;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 18px;
+    transform: none;
+  }
+
+  .rr-orbit {
+    position: static;
+    width: min(100%, 360px);
+    margin: 0 auto;
+  }
+
+  .rr-orbit--one { order: 2; }
+  .rr-orbit--two { order: 3; }
+  .rr-orbit--three { order: 4; }
+  .rr-orbit--four { order: 5; }
+
+  .rr-orbit::after {
+    display: none;
+  }
+
+  .rr-assessment-note {
+    position: static;
+    order: 6;
+    width: 100%;
+    margin-top: 12px;
+    transform: none;
+  }
+
+  .rr-service-page--reference .rr-report-card {
+    width: 100%;
+    padding: 25px 20px 22px !important;
+  }
+
+  .rr-service-page--reference .rr-report-form {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Remove inherited generic lead-form padding inside the compact service report card. */
+.rr-service-page--reference .rr-report-card .rr-report-form {
+  padding: 0 !important;
+}
+
+/* Ransomware Readiness Check: final desktop grid rebuild, June 23 */
+.rr-service-page--reference .rr-hero {
+  position: relative;
+  overflow: visible;
+  padding: 16px 0 76px !important;
+  background:
+    radial-gradient(circle at 80% 22%, rgba(54, 182, 186, 0.2), transparent 29%),
+    radial-gradient(circle at 8% 72%, rgba(119, 199, 214, 0.16), transparent 22%),
+    linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+}
+
+.rr-service-page--reference .rr-hero-grid {
+  display: grid !important;
+  grid-template-columns: minmax(470px, 0.92fr) minmax(500px, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(52px, 6vw, 96px) !important;
+  padding: 28px 0 0 !important;
+}
+
+.rr-service-page--reference .rr-hero-copy {
+  max-width: 690px;
+}
+
+.rr-service-page--reference .rr-hero-art {
+  position: relative;
+  width: min(100%, 620px) !important;
+  justify-self: end !important;
+}
+
+.rr-stats-section {
+  position: relative !important;
+  z-index: 1;
+  padding: 96px 0 104px !important;
+  background: #fbfdff !important;
+}
+
+.rr-service-page--reference .rr-stats-section .rr-stat-row {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  bottom: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: min(100% - 56px, 940px) !important;
+  margin: 0 auto !important;
+  transform: none !important;
+}
+
+.rr-service-page--reference .rr-stats-section .rr-stat-card {
+  min-height: 106px;
+  padding: 18px 28px;
+}
+
+.rr-review-band {
+  position: relative;
+  padding: 104px 0 82px !important;
+  background:
+    radial-gradient(circle at 32% 48%, rgba(107, 198, 211, 0.12), transparent 26%),
+    linear-gradient(180deg, #eef8fd 0%, #f7fcff 100%) !important;
+}
+
+.rr-review-layout {
+  display: grid !important;
+  grid-template-columns: 360px minmax(500px, 540px) 320px !important;
+  align-items: start !important;
+  justify-content: center !important;
+  gap: clamp(34px, 3.3vw, 50px) !important;
+}
+
+.rr-review-copy {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: 360px !important;
+  padding-top: 0 !important;
+  align-self: start !important;
+}
+
+.rr-review-copy h2,
+.rr-review-context {
+  max-width: 360px !important;
+}
+
+.rr-review-context {
+  margin: 18px 0 28px !important;
+  line-height: 1.58 !important;
+}
+
+.rr-service-page--reference .rr-value-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.rr-service-page--reference .rr-value-grid article {
+  display: block !important;
+  min-height: 138px !important;
+  padding: 18px 16px !important;
+  border-radius: 10px !important;
+}
+
+.rr-service-page--reference .rr-value-icon {
+  width: 38px !important;
+  height: 38px !important;
+  margin: 0 0 10px !important;
+}
+
+.rr-service-page--reference .rr-value-grid h3 {
+  margin: 0 0 7px !important;
+}
+
+.rr-service-page--reference .rr-value-grid p {
+  font-size: 0.68rem !important;
+  line-height: 1.5 !important;
+}
+
+.rr-assessment {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(128px, 1fr) 216px minmax(128px, 1fr) !important;
+  grid-template-rows: auto 236px auto auto !important;
+  gap: 26px 30px !important;
+  width: 100% !important;
+  max-width: 540px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  align-self: start !important;
+}
+
+.rr-assessment-ring {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  width: 216px !important;
+  height: 216px !important;
+  margin: auto !important;
+  transform: none !important;
+}
+
+.rr-assessment-ring::before {
+  inset: 28px !important;
+}
+
+.rr-assessment-core {
+  inset: 44px !important;
+}
+
+.rr-orbit {
+  position: static !important;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  gap: 9px !important;
+}
+
+.rr-orbit::after {
+  display: none !important;
+}
+
+.rr-orbit > span {
+  width: 46px !important;
+  height: 46px !important;
+}
+
+.rr-orbit h3 {
+  margin: 0 0 4px !important;
+  font-size: 0.62rem !important;
+  line-height: 1.2 !important;
+}
+
+.rr-orbit p {
+  font-size: 0.56rem !important;
+  line-height: 1.36 !important;
+}
+
+.rr-orbit--one {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+.rr-orbit--two {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+}
+
+.rr-orbit--four {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+}
+
+.rr-orbit--three {
+  grid-column: 3 !important;
+  grid-row: 3 !important;
+}
+
+.rr-assessment-note {
+  position: static !important;
+  grid-column: 1 / -1 !important;
+  grid-row: 4 !important;
+  width: 100% !important;
+  margin: 2px 0 0 !important;
+  transform: none !important;
+  font-size: 0.98rem !important;
+}
+
+.rr-service-page--reference .rr-report-card {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  justify-self: end !important;
+  align-self: start !important;
+  padding: 26px 22px 22px !important;
+}
+
+.rr-service-page--reference .rr-report-card h2 {
+  font-size: clamp(1.7rem, 2vw, 2.1rem) !important;
+}
+
+.rr-service-page--reference .rr-report-form {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 11px !important;
+  padding: 0 !important;
+}
+
+.rr-service-page--reference .rr-report-form input,
+.rr-service-page--reference .rr-report-form select {
+  min-height: 43px !important;
+}
+
+.rr-service-page--reference .rr-report-form .button,
+.rr-service-page--reference .rr-report-form .privacy-note,
+.rr-service-page--reference .rr-report-form .form-note {
+  grid-column: 1 !important;
+}
+
+@media (max-width: 1260px) {
+  .rr-review-layout {
+    grid-template-columns: minmax(320px, 360px) minmax(480px, 540px) !important;
+  }
+
+  .rr-service-page--reference .rr-report-card {
+    grid-column: 1 / -1 !important;
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    justify-self: center !important;
+    margin-top: 10px !important;
+  }
+
+  .rr-service-page--reference .rr-report-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .rr-service-page--reference .rr-report-form .button,
+  .rr-service-page--reference .rr-report-form .privacy-note,
+  .rr-service-page--reference .rr-report-form .form-note {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .rr-service-page--reference .rr-hero-grid,
+  .rr-review-layout {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+  }
+
+  .rr-service-page--reference .rr-hero-copy,
+  .rr-review-copy {
+    max-width: 720px !important;
+    justify-self: center !important;
+  }
+
+  .rr-service-page--reference .rr-hero-art {
+    justify-self: center !important;
+  }
+
+  .rr-review-copy h2,
+  .rr-review-context {
+    max-width: 660px !important;
+  }
+
+  .rr-assessment {
+    width: min(100%, 560px) !important;
+  }
+
+  .rr-service-page--reference .rr-report-card {
+    grid-column: 1 !important;
+    width: min(100%, 720px) !important;
+    max-width: 720px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .rr-service-page--reference .rr-hero {
+    padding-bottom: 54px !important;
+  }
+
+  .rr-stats-section {
+    padding: 68px 0 72px !important;
+  }
+
+  .rr-service-page--reference .rr-stats-section .rr-stat-row {
+    grid-template-columns: 1fr !important;
+    width: min(100% - 28px, 520px) !important;
+  }
+
+  .rr-service-page--reference .rr-stat-card + .rr-stat-card::before {
+    top: 0 !important;
+    right: 24px !important;
+    bottom: auto !important;
+    left: 24px !important;
+    border-top: 1px solid rgba(111, 139, 165, 0.22) !important;
+    border-left: 0 !important;
+  }
+
+  .rr-review-band {
+    padding: 72px 0 54px !important;
+  }
+
+  .rr-review-layout {
+    gap: 44px !important;
+  }
+
+  .rr-service-page--reference .rr-value-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .rr-service-page--reference .rr-value-grid article {
+    min-height: 0 !important;
+  }
+
+  .rr-assessment {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 12px !important;
+    max-width: 420px !important;
+  }
+
+  .rr-assessment-ring,
+  .rr-orbit,
+  .rr-assessment-note {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  .rr-assessment-ring {
+    width: 204px !important;
+    height: 204px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .rr-orbit {
+    width: min(100%, 360px) !important;
+    margin: 0 auto !important;
+  }
+
+  .rr-service-page--reference .rr-report-form {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Shared service pages 2-7: structural flow/grid repair, June 23 */
+:is(.br-service-page--reference, .as-service-page--editorial, .ep-service-page--editorial, .ir-service-page--editorial, .ts-service-page--editorial, .ms-service-page--editorial) {
+  overflow-x: hidden;
+}
+
+:is(.br-service-page--reference, .as-service-page--editorial, .ep-service-page--editorial, .ir-service-page--editorial, .ts-service-page--editorial, .ms-service-page--editorial) .shell {
+  width: min(100% - 56px, 1320px);
+}
+
+:is(.br-service-page--reference .br-hero, .as-service-page--editorial .as-hero, .ep-service-page--editorial .ep-hero, .ir-service-page--editorial .ir-hero, .ts-service-page--editorial .ts-hero, .ms-service-page--editorial .ms-hero) {
+  position: relative !important;
+  overflow: visible !important;
+  padding: 16px 0 86px !important;
+}
+
+:is(.br-service-page--reference .br-hero-grid, .as-service-page--editorial .as-hero-grid, .ep-service-page--editorial .ep-hero-grid, .ir-service-page--editorial .ir-hero-grid, .ts-service-page--editorial .ts-hero-grid, .ms-service-page--editorial .ms-hero-grid) {
+  display: grid !important;
+  grid-template-columns: minmax(460px, 0.94fr) minmax(500px, 1fr) !important;
+  align-items: center !important;
+  gap: clamp(48px, 5.6vw, 92px) !important;
+  padding: 28px 0 0 !important;
+}
+
+:is(.br-service-page--reference .br-hero-art, .as-service-page--editorial .as-hero-art, .ep-service-page--editorial .ep-hero-art, .ir-service-page--editorial .ir-hero-art, .ts-service-page--editorial .ts-hero-art, .ms-service-page--editorial .ms-hero-art) {
+  position: relative !important;
+  justify-self: end !important;
+  width: min(100%, 610px) !important;
+}
+
+:is(.br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row) {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  top: auto !important;
+  z-index: 1 !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: min(100% - 56px, 980px) !important;
+  margin: 72px auto 0 !important;
+  transform: none !important;
+}
+
+:is(.br-stat-card, .as-stat-card, .ep-stat-card, .ir-stat-card, .ts-stat-card, .ms-stat-card) {
+  min-height: 106px !important;
+  padding: 18px 26px !important;
+}
+
+:is(.br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band) {
+  padding: 96px 0 82px !important;
+}
+
+:is(.br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+  display: grid !important;
+  grid-template-columns: 360px minmax(500px, 540px) 320px !important;
+  justify-content: center !important;
+  align-items: start !important;
+  gap: clamp(34px, 3.3vw, 50px) !important;
+}
+
+:is(.br-review-copy, .as-review-copy, .ep-review-copy, .ir-review-copy, .ts-review-copy, .ms-review-copy) {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: 360px !important;
+  align-self: start !important;
+  padding-top: 0 !important;
+}
+
+:is(.br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+:is(.br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) article {
+  min-height: 132px !important;
+  padding: 17px 15px !important;
+  border-radius: 10px !important;
+}
+
+:is(.br-assessment, .as-assessment, .ep-assessment, .ir-assessment, .ts-assessment, .ms-assessment) {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(130px, 1fr) 216px minmax(130px, 1fr) !important;
+  grid-template-rows: auto 236px auto auto !important;
+  gap: 26px 30px !important;
+  width: 100% !important;
+  max-width: 540px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  align-self: start !important;
+}
+
+:is(.br-assessment-ring, .as-assessment-ring, .ep-assessment-ring, .ir-assessment-ring, .ts-assessment-ring, .ms-assessment-ring) {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  width: 216px !important;
+  height: 216px !important;
+  margin: auto !important;
+  transform: none !important;
+}
+
+:is(.br-assessment-ring, .as-assessment-ring, .ep-assessment-ring, .ir-assessment-ring, .ts-assessment-ring, .ms-assessment-ring)::before {
+  inset: 28px !important;
+}
+
+:is(.br-assessment-core, .as-assessment-core, .ep-assessment-core, .ir-assessment-core, .ts-assessment-core, .ms-assessment-core) {
+  inset: 44px !important;
+}
+
+:is(.br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) {
+  position: static !important;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 9px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+:is(.br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit)::after {
+  display: none !important;
+}
+
+:is(.br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) > span {
+  width: 46px !important;
+  height: 46px !important;
+}
+
+:is(.br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) h3 {
+  margin: 0 0 4px !important;
+  font-size: 0.62rem !important;
+  line-height: 1.2 !important;
+}
+
+:is(.br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) p {
+  font-size: 0.56rem !important;
+  line-height: 1.36 !important;
+}
+
+:is(.br-orbit--one, .as-orbit--one, .ep-orbit--one, .ir-orbit--one, .ts-orbit--one, .ms-orbit--one) {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+:is(.br-orbit--two, .as-orbit--two, .ep-orbit--two, .ir-orbit--two, .ts-orbit--two, .ms-orbit--two) {
+  grid-column: 3 !important;
+  grid-row: 1 !important;
+}
+
+:is(.br-orbit--four, .as-orbit--four, .ep-orbit--four, .ir-orbit--four, .ts-orbit--four, .ms-orbit--four) {
+  grid-column: 1 !important;
+  grid-row: 3 !important;
+}
+
+:is(.br-orbit--three, .as-orbit--three, .ep-orbit--three, .ir-orbit--three, .ts-orbit--three, .ms-orbit--three) {
+  grid-column: 3 !important;
+  grid-row: 3 !important;
+}
+
+:is(.br-assessment-note, .as-assessment-note, .ep-assessment-note, .ir-assessment-note, .ts-assessment-note, .ms-assessment-note) {
+  position: static !important;
+  grid-column: 1 / -1 !important;
+  grid-row: 4 !important;
+  width: 100% !important;
+  margin: 2px 0 0 !important;
+  transform: none !important;
+}
+
+:is(.br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  justify-self: end !important;
+  align-self: start !important;
+  padding: 26px 22px 22px !important;
+}
+
+:is(.br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 11px !important;
+  padding: 0 !important;
+}
+
+:is(.br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) :is(input, select) {
+  min-height: 43px !important;
+}
+
+:is(.br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) :is(.button, .privacy-note, .form-note) {
+  grid-column: 1 !important;
+}
+
+@media (max-width: 1260px) {
+  :is(.br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+    grid-template-columns: minmax(320px, 360px) minmax(480px, 540px) !important;
+  }
+
+  :is(.br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+    grid-column: 1 / -1 !important;
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    justify-self: center !important;
+    margin-top: 10px !important;
+  }
+
+  :is(.br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  :is(.br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) :is(.button, .privacy-note, .form-note) {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+@media (max-width: 980px) {
+  :is(.br-service-page--reference .br-hero-grid, .as-service-page--editorial .as-hero-grid, .ep-service-page--editorial .ep-hero-grid, .ir-service-page--editorial .ir-hero-grid, .ts-service-page--editorial .ts-hero-grid, .ms-service-page--editorial .ms-hero-grid),
+  :is(.br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+  }
+
+  :is(.br-service-page--reference .br-hero-art, .as-service-page--editorial .as-hero-art, .ep-service-page--editorial .ep-hero-art, .ir-service-page--editorial .ir-hero-art, .ts-service-page--editorial .ts-hero-art, .ms-service-page--editorial .ms-hero-art) {
+    justify-self: center !important;
+  }
+
+  :is(.br-review-copy, .as-review-copy, .ep-review-copy, .ir-review-copy, .ts-review-copy, .ms-review-copy) {
+    max-width: 720px !important;
+    justify-self: center !important;
+  }
+
+  :is(.br-assessment, .as-assessment, .ep-assessment, .ir-assessment, .ts-assessment, .ms-assessment) {
+    width: min(100%, 560px) !important;
+  }
+
+  :is(.br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+    grid-column: 1 !important;
+    width: min(100%, 720px) !important;
+    max-width: 720px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  :is(.br-service-page--reference, .as-service-page--editorial, .ep-service-page--editorial, .ir-service-page--editorial, .ts-service-page--editorial, .ms-service-page--editorial) .shell {
+    width: min(100% - 28px, 1320px) !important;
+  }
+
+  :is(.br-service-page--reference .br-hero, .as-service-page--editorial .as-hero, .ep-service-page--editorial .ep-hero, .ir-service-page--editorial .ir-hero, .ts-service-page--editorial .ts-hero, .ms-service-page--editorial .ms-hero) {
+    padding-bottom: 64px !important;
+  }
+
+  :is(.br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row) {
+    grid-template-columns: 1fr !important;
+    width: min(100% - 28px, 520px) !important;
+    margin-top: 56px !important;
+  }
+
+  :is(.br-stat-card, .as-stat-card, .ep-stat-card, .ir-stat-card, .ts-stat-card, .ms-stat-card) + :is(.br-stat-card, .as-stat-card, .ep-stat-card, .ir-stat-card, .ts-stat-card, .ms-stat-card)::before {
+    top: 0 !important;
+    right: 24px !important;
+    bottom: auto !important;
+    left: 24px !important;
+    border-top: 1px solid rgba(111, 139, 165, 0.22) !important;
+    border-left: 0 !important;
+  }
+
+  :is(.br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band) {
+    padding: 72px 0 54px !important;
+  }
+
+  :is(.br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) {
+    grid-template-columns: 1fr !important;
+  }
+
+  :is(.br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) article {
+    min-height: 0 !important;
+  }
+
+  :is(.br-assessment, .as-assessment, .ep-assessment, .ir-assessment, .ts-assessment, .ms-assessment) {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 12px !important;
+    max-width: 420px !important;
+  }
+
+  :is(.br-assessment-ring, .as-assessment-ring, .ep-assessment-ring, .ir-assessment-ring, .ts-assessment-ring, .ms-assessment-ring),
+  :is(.br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit),
+  :is(.br-assessment-note, .as-assessment-note, .ep-assessment-note, .ir-assessment-note, .ts-assessment-note, .ms-assessment-note) {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  :is(.br-assessment-ring, .as-assessment-ring, .ep-assessment-ring, .ir-assessment-ring, .ts-assessment-ring, .ms-assessment-ring) {
+    width: 204px !important;
+    height: 204px !important;
+    margin-bottom: 12px !important;
+  }
+
+  :is(.br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) {
+    width: min(100%, 360px) !important;
+    margin: 0 auto !important;
+  }
+
+  :is(.br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Shared service pages 1-7: spacious structural correction, June 23 */
+:is(.rr-service-page--reference .rr-hero, .br-service-page--reference .br-hero, .as-service-page--editorial .as-hero, .ep-service-page--editorial .ep-hero, .ir-service-page--editorial .ir-hero, .ts-service-page--editorial .ts-hero, .ms-service-page--editorial .ms-hero) {
+  padding-bottom: 112px !important;
+}
+
+:is(.br-service-page--reference .br-hero-grid, .as-service-page--editorial .as-hero-grid, .ep-service-page--editorial .ep-hero-grid, .ir-service-page--editorial .ir-hero-grid, .ts-service-page--editorial .ts-hero-grid, .ms-service-page--editorial .ms-hero-grid) {
+  grid-template-columns: minmax(420px, 0.9fr) minmax(480px, 1fr) !important;
+  gap: clamp(64px, 6vw, 108px) !important;
+  padding-bottom: 0 !important;
+}
+
+:is(.br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row) {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: min(100% - 72px, 1000px) !important;
+  margin: 96px auto 0 !important;
+  transform: none !important;
+}
+
+.rr-stats-section {
+  padding: 112px 0 118px !important;
+}
+
+.rr-service-page--reference .rr-stats-section .rr-stat-row {
+  width: min(100% - 72px, 1000px) !important;
+}
+
+:is(.br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band) {
+  padding: 118px 0 94px !important;
+}
+
+.rr-review-band {
+  padding: 118px 0 94px !important;
+}
+
+:is(.rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+  display: grid !important;
+  grid-template-columns: minmax(390px, 420px) minmax(430px, 480px) minmax(280px, 300px) !important;
+  justify-content: center !important;
+  align-items: start !important;
+  column-gap: clamp(42px, 3.6vw, 58px) !important;
+  row-gap: 62px !important;
+}
+
+:is(.rr-review-copy, .br-review-copy, .as-review-copy, .ep-review-copy, .ir-review-copy, .ts-review-copy, .ms-review-copy) {
+  width: 100% !important;
+  max-width: 420px !important;
+  align-self: start !important;
+}
+
+:is(.rr-review-copy h2, .br-review-copy h2, .as-review-copy h2, .ep-review-copy h2, .ir-review-copy h2, .ts-review-copy h2, .ms-review-copy h2),
+:is(.rr-review-context, .br-review-context, .as-review-context, .ep-review-context, .ir-review-context, .ts-review-context, .ms-review-context) {
+  max-width: 420px !important;
+}
+
+:is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+}
+
+:is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) article {
+  min-height: 124px !important;
+  padding: 18px 17px !important;
+}
+
+:is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) p {
+  font-size: 0.7rem !important;
+  line-height: 1.52 !important;
+}
+
+:is(.rr-assessment, .br-assessment, .as-assessment, .ep-assessment, .ir-assessment, .ts-assessment, .ms-assessment) {
+  grid-template-columns: minmax(120px, 1fr) 198px minmax(120px, 1fr) !important;
+  grid-template-rows: auto 220px auto auto !important;
+  gap: 30px 34px !important;
+  max-width: 480px !important;
+  justify-self: center !important;
+}
+
+:is(.rr-assessment-ring, .br-assessment-ring, .as-assessment-ring, .ep-assessment-ring, .ir-assessment-ring, .ts-assessment-ring, .ms-assessment-ring) {
+  width: 198px !important;
+  height: 198px !important;
+}
+
+:is(.rr-assessment-ring, .br-assessment-ring, .as-assessment-ring, .ep-assessment-ring, .ir-assessment-ring, .ts-assessment-ring, .ms-assessment-ring)::before {
+  inset: 26px !important;
+}
+
+:is(.rr-assessment-core, .br-assessment-core, .as-assessment-core, .ep-assessment-core, .ir-assessment-core, .ts-assessment-core, .ms-assessment-core) {
+  inset: 42px !important;
+}
+
+:is(.rr-orbit, .br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) {
+  grid-template-columns: 42px minmax(0, 1fr) !important;
+  gap: 10px !important;
+}
+
+:is(.rr-orbit, .br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) > span {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+:is(.rr-orbit, .br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) h3 {
+  font-size: 0.61rem !important;
+  line-height: 1.22 !important;
+}
+
+:is(.rr-orbit, .br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) p {
+  font-size: 0.55rem !important;
+  line-height: 1.35 !important;
+}
+
+:is(.rr-service-page--reference .rr-report-card, .br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+  width: 100% !important;
+  max-width: 300px !important;
+  padding: 24px 21px 21px !important;
+  justify-self: end !important;
+  align-self: start !important;
+}
+
+:is(.rr-service-page--reference .rr-report-card h2, .br-service-page--reference .br-report-card h2, .as-service-page--editorial .as-report-card h2, .ep-service-page--editorial .ep-report-card h2, .ir-service-page--editorial .ir-report-card h2, .ts-service-page--editorial .ts-report-card h2, .ms-service-page--editorial .ms-report-card h2) {
+  font-size: clamp(1.62rem, 1.9vw, 2rem) !important;
+}
+
+:is(.rr-report-subtitle, .br-report-subtitle, .as-report-subtitle, .ep-report-subtitle, .ir-report-subtitle, .ts-report-subtitle, .ms-report-subtitle) {
+  line-height: 1.54 !important;
+}
+
+@media (max-width: 1280px) {
+  :is(.rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+    grid-template-columns: minmax(360px, 420px) minmax(430px, 500px) !important;
+  }
+
+  :is(.rr-service-page--reference .rr-report-card, .br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+    grid-column: 1 / -1 !important;
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    justify-self: center !important;
+  }
+}
+
+@media (max-width: 980px) {
+  :is(.rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+  }
+
+  :is(.rr-review-copy, .br-review-copy, .as-review-copy, .ep-review-copy, .ir-review-copy, .ts-review-copy, .ms-review-copy),
+  :is(.rr-review-copy h2, .br-review-copy h2, .as-review-copy h2, .ep-review-copy h2, .ir-review-copy h2, .ts-review-copy h2, .ms-review-copy h2),
+  :is(.rr-review-context, .br-review-context, .as-review-context, .ep-review-context, .ir-review-context, .ts-review-context, .ms-review-context) {
+    max-width: 720px !important;
+  }
+
+  :is(.rr-assessment, .br-assessment, .as-assessment, .ep-assessment, .ir-assessment, .ts-assessment, .ms-assessment) {
+    max-width: 540px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  :is(.rr-stats-section) {
+    padding: 74px 0 76px !important;
+  }
+
+  :is(.br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row),
+  .rr-service-page--reference .rr-stats-section .rr-stat-row {
+    width: min(100% - 28px, 520px) !important;
+    margin-top: 60px !important;
+  }
+
+  :is(.rr-review-band, .br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band) {
+    padding: 72px 0 54px !important;
+  }
+
+  :is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) {
+    grid-template-columns: 1fr !important;
+  }
+
+  :is(.rr-assessment, .br-assessment, .as-assessment, .ep-assessment, .ir-assessment, .ts-assessment, .ms-assessment) {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    max-width: 420px !important;
+  }
+
+  :is(.rr-assessment-ring, .br-assessment-ring, .as-assessment-ring, .ep-assessment-ring, .ir-assessment-ring, .ts-assessment-ring, .ms-assessment-ring),
+  :is(.rr-orbit, .br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit),
+  :is(.rr-assessment-note, .br-assessment-note, .as-assessment-note, .ep-assessment-note, .ir-assessment-note, .ts-assessment-note, .ms-assessment-note) {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  :is(.rr-orbit, .br-orbit, .as-orbit, .ep-orbit, .ir-orbit, .ts-orbit, .ms-orbit) {
+    width: min(100%, 360px) !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Shared service pages: simplified stable layout reset, June 24 */
+:is(.rr-service-page--reference, .br-service-page--reference, .as-service-page--editorial, .ep-service-page--editorial, .ir-service-page--editorial, .ts-service-page--editorial, .ms-service-page--editorial) {
+  overflow-x: clip !important;
+}
+
+:is(.rr-service-page--reference, .br-service-page--reference, .as-service-page--editorial, .ep-service-page--editorial, .ir-service-page--editorial, .ts-service-page--editorial, .ms-service-page--editorial) .shell {
+  width: min(100% - 56px, 1180px) !important;
+}
+
+:is(.rr-service-page--reference .rr-hero, .br-service-page--reference .br-hero, .as-service-page--editorial .as-hero, .ep-service-page--editorial .ep-hero, .ir-service-page--editorial .ir-hero, .ts-service-page--editorial .ts-hero, .ms-service-page--editorial .ms-hero) {
+  position: relative !important;
+  overflow: visible !important;
+  padding: 18px 0 0 !important;
+}
+
+:is(.rr-service-page--reference .rr-hero-grid, .br-service-page--reference .br-hero-grid, .as-service-page--editorial .as-hero-grid, .ep-service-page--editorial .ep-hero-grid, .ir-service-page--editorial .ir-hero-grid, .ts-service-page--editorial .ts-hero-grid, .ms-service-page--editorial .ms-hero-grid) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr) !important;
+  align-items: center !important;
+  gap: clamp(40px, 5vw, 80px) !important;
+  padding: 32px 0 0 !important;
+}
+
+:is(.rr-service-page--reference .rr-hero-copy, .br-service-page--reference .br-hero-copy, .as-service-page--editorial .as-hero-copy, .ep-service-page--editorial .ep-hero-copy, .ir-service-page--editorial .ir-hero-copy, .ts-service-page--editorial .ts-hero-copy, .ms-service-page--editorial .ms-hero-copy) {
+  max-width: 680px !important;
+}
+
+:is(.rr-service-page--reference .rr-hero-art, .br-service-page--reference .br-hero-art, .as-service-page--editorial .as-hero-art, .ep-service-page--editorial .ep-hero-art, .ir-service-page--editorial .ir-hero-art, .ts-service-page--editorial .ts-hero-art, .ms-service-page--editorial .ms-hero-art) {
+  position: relative !important;
+  justify-self: end !important;
+  width: min(100%, 560px) !important;
+  transform: none !important;
+}
+
+:is(.br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row),
+.rr-service-page--reference .rr-stats-section .rr-stat-row {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  width: min(100% - 56px, 980px) !important;
+  max-width: 980px !important;
+  margin: 64px auto 96px !important;
+  transform: none !important;
+  z-index: 1 !important;
+}
+
+.rr-stats-section {
+  padding: 0 !important;
+  background: #fbfdff !important;
+}
+
+:is(.br-stat-card, .as-stat-card, .ep-stat-card, .ir-stat-card, .ts-stat-card, .ms-stat-card, .rr-stat-card) {
+  min-height: 104px !important;
+  padding: 18px 24px !important;
+}
+
+:is(.rr-review-band, .br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band) {
+  padding: 0 0 92px !important;
+  background:
+    radial-gradient(circle at 32% 36%, rgba(120, 201, 212, 0.1), transparent 26%),
+    linear-gradient(180deg, #eef8fd 0%, #f7fcff 100%) !important;
+}
+
+:is(.rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 400px) !important;
+  gap: clamp(42px, 5vw, 74px) !important;
+  align-items: start !important;
+  justify-content: center !important;
+}
+
+:is(.rr-review-copy, .br-review-copy, .as-review-copy, .ep-review-copy, .ir-review-copy, .ts-review-copy, .ms-review-copy) {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: 680px !important;
+  padding: 0 !important;
+  align-self: start !important;
+}
+
+:is(.rr-review-copy h2, .br-review-copy h2, .as-review-copy h2, .ep-review-copy h2, .ir-review-copy h2, .ts-review-copy h2, .ms-review-copy h2) {
+  max-width: 620px !important;
+}
+
+:is(.rr-review-context, .br-review-context, .as-review-context, .ep-review-context, .ir-review-context, .ts-review-context, .ms-review-context) {
+  max-width: 620px !important;
+  margin: 16px 0 28px !important;
+}
+
+:is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  margin-top: 26px !important;
+}
+
+:is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) article {
+  min-height: 118px !important;
+  padding: 20px !important;
+  border-radius: 12px !important;
+}
+
+:is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) h3 {
+  margin-bottom: 8px !important;
+}
+
+:is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) p {
+  font-size: 0.78rem !important;
+  line-height: 1.52 !important;
+}
+
+:is(.rr-assessment, .br-assessment, .as-assessment, .ep-assessment, .ir-assessment, .ts-assessment, .ms-assessment) {
+  display: none !important;
+}
+
+:is(.rr-service-page--reference .rr-report-card, .br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+  grid-column: auto !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 30px 28px 26px !important;
+  justify-self: end !important;
+  align-self: start !important;
+}
+
+:is(.rr-service-page--reference .rr-report-card h2, .br-service-page--reference .br-report-card h2, .as-service-page--editorial .as-report-card h2, .ep-service-page--editorial .ep-report-card h2, .ir-service-page--editorial .ir-report-card h2, .ts-service-page--editorial .ts-report-card h2, .ms-service-page--editorial .ms-report-card h2) {
+  font-size: clamp(1.8rem, 2.1vw, 2.25rem) !important;
+}
+
+:is(.rr-service-page--reference .rr-report-form, .br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  padding: 0 !important;
+}
+
+:is(.rr-service-page--reference .rr-report-form, .br-service-page--reference .br-report-form, .as-service-page--editorial .as-report-form, .ep-service-page--editorial .ep-report-form, .ir-service-page--editorial .ir-report-form, .ts-service-page--editorial .ts-report-form, .ms-service-page--editorial .ms-report-form) :is(.button, .privacy-note, .form-note) {
+  grid-column: 1 !important;
+}
+
+@media (max-width: 980px) {
+  :is(.rr-service-page--reference .rr-hero-grid, .br-service-page--reference .br-hero-grid, .as-service-page--editorial .as-hero-grid, .ep-service-page--editorial .ep-hero-grid, .ir-service-page--editorial .ir-hero-grid, .ts-service-page--editorial .ts-hero-grid, .ms-service-page--editorial .ms-hero-grid),
+  :is(.rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout) {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+  }
+
+  :is(.rr-service-page--reference .rr-hero-art, .br-service-page--reference .br-hero-art, .as-service-page--editorial .as-hero-art, .ep-service-page--editorial .ep-hero-art, .ir-service-page--editorial .ir-hero-art, .ts-service-page--editorial .ts-hero-art, .ms-service-page--editorial .ms-hero-art),
+  :is(.rr-service-page--reference .rr-report-card, .br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+    justify-self: center !important;
+  }
+
+  :is(.rr-service-page--reference .rr-report-card, .br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+    max-width: 680px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  :is(.rr-service-page--reference, .br-service-page--reference, .as-service-page--editorial, .ep-service-page--editorial, .ir-service-page--editorial, .ts-service-page--editorial, .ms-service-page--editorial) .shell {
+    width: min(100% - 28px, 1180px) !important;
+  }
+
+  :is(.br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row),
+  .rr-service-page--reference .rr-stats-section .rr-stat-row {
+    grid-template-columns: 1fr !important;
+    width: min(100% - 28px, 520px) !important;
+    margin: 48px auto 72px !important;
+  }
+
+  :is(.rr-review-band, .br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band) {
+    padding-bottom: 60px !important;
+  }
+
+  :is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) {
+    grid-template-columns: 1fr !important;
+  }
+
+  :is(.rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid) article {
+    min-height: 0 !important;
+  }
+
+  :is(.rr-service-page--reference .rr-report-card, .br-service-page--reference .br-report-card, .as-service-page--editorial .as-report-card, .ep-service-page--editorial .ep-report-card, .ir-service-page--editorial .ir-report-card, .ts-service-page--editorial .ts-report-card, .ms-service-page--editorial .ms-report-card) {
+    padding: 26px 20px 22px !important;
+  }
+}
