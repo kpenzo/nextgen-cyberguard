@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" role="img" aria-labelledby="title desc">
+  <title id="title">Backup and recovery service illustration</title>
+  <desc id="desc">Cloud backup, server storage, shield, and restore arrows in a soft glass style.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbff"/>
+      <stop offset="0.5" stop-color="#eef0ff"/>
+      <stop offset="1" stop-color="#dff3ff"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.86"/>
+      <stop offset="1" stop-color="#dbe6ff" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6eaedf"/>
+      <stop offset="0.55" stop-color="#7364c9"/>
+      <stop offset="1" stop-color="#4f4a8f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#445380" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="900" height="680" rx="52" fill="url(#bg)"/>
+  <circle cx="720" cy="118" r="150" fill="#fff7e8" opacity="0.58"/>
+  <circle cx="210" cy="548" r="165" fill="#dff3ff" opacity="0.72"/>
+  <path d="M210 530c120 42 310 48 482 3" fill="none" stroke="#9ab5f1" stroke-width="3" opacity="0.42"/>
+  <g filter="url(#shadow)">
+    <path d="M254 236c18-70 118-82 155-20 74-18 133 68 82 126H218c-77-42-48-141 36-106z" fill="url(#glass)" stroke="#fff" stroke-width="5"/>
+    <path d="M305 278c20-28 62-31 87-7 18 17 21 44 7 65" fill="none" stroke="url(#accent)" stroke-width="15" stroke-linecap="round"/>
+    <path d="M404 327l-18 20-18-20" fill="none" stroke="url(#accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="166" y="358" width="232" height="158" rx="28" fill="url(#glass)" stroke="#fff" stroke-width="4"/>
+    <rect x="201" y="395" width="162" height="18" rx="9" fill="#7364c9" opacity="0.32"/>
+    <rect x="201" y="435" width="162" height="18" rx="9" fill="#6eaedf" opacity="0.32"/>
+    <circle cx="337" cy="476" r="14" fill="#7364c9" opacity="0.55"/>
+    <circle cx="294" cy="476" r="14" fill="#6eaedf" opacity="0.55"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="468" y="292" width="236" height="222" rx="32" fill="url(#glass)" stroke="#fff" stroke-width="4"/>
+    <path d="M586 330c36 26 75 34 116 38v65c0 52-42 92-116 126-74-34-116-74-116-126v-65c41-4 80-12 116-38z" fill="none" stroke="url(#accent)" stroke-width="14" opacity="0.75"/>
+    <path d="M533 431l35 35 70-78" fill="none" stroke="url(#accent)" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g filter="url(#shadow)">
+    <circle cx="686" cy="228" r="76" fill="url(#glass)" stroke="#fff" stroke-width="4"/>
+    <path d="M716 202a43 43 0 1 0 8 50" fill="none" stroke="url(#accent)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M722 179v40h-40" fill="none" stroke="url(#accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
