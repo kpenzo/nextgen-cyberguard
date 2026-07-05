@@ -231,7 +231,7 @@
           <div class="result card result-screen" id="result" hidden aria-live="polite">
             <div class="result-screen__badge" aria-hidden="true">✓</div>
             <p class="eyebrow">Your readiness result</p>
-            <h2 id="result-title"></h2>
+            <h2 id="result-title">Your readiness summary</h2>
             <div class="result-screen__meta">
               <span id="result-label"></span>
               <span id="result-score"></span>
@@ -242,7 +242,7 @@
               <ul id="result-steps"></ul>
             </div>
             <div class="result-screen__actions">
-              <a class="button button--primary" href="#lead-form">Download Report</a>
+              <button class="button button--primary" id="download-result-report" type="button">Download Report</button>
               <button class="button button--secondary result-restart" id="quiz-restart" type="button">Start Over</button>
             </div>
           </div>

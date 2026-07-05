@@ -65,6 +65,36 @@ const translations = {
         ]
       }
     },
+    report: {
+      generatedOn: "Generated on",
+      brand: "NextGen CyberGuard",
+      title: "Ransomware Readiness Report",
+      score: "Readiness score",
+      riskLevel: "Risk level",
+      summary: "Summary",
+      answers: "Your answers",
+      gaps: "Detected gaps",
+      noGaps: "No major gaps were detected from this basic check.",
+      nextSteps: "Recommended next steps",
+      disclaimer: "This is a basic readiness check, not a full security audit.",
+      filename: "nextgen-cyberguard-ransomware-readiness-report.html",
+      answerLabel: "Answer",
+      gapAnswerPrefix: "Answered",
+      maintenanceSteps: [
+        "Schedule a restore test for important files at least twice a year.",
+        "Keep MFA enabled on email, finance, admin, and cloud accounts.",
+        "Review the recovery plan whenever staff, software, or providers change."
+      ],
+      rules: [
+        { ids: [0, 1, 2], gap: "Backups or restore testing need attention.", step: "Confirm backup coverage, keep backup copies separated, and test restoring important files." },
+        { ids: [3, 4], gap: "Account access controls may be weak.", step: "Enable MFA for email, finance, admin, and cloud accounts, and reduce shared or reused passwords." },
+        { ids: [5], gap: "Phishing and suspicious email readiness may need improvement.", step: "Create simple staff awareness guidance and a clear way to report suspicious emails or attachments." },
+        { ids: [6], gap: "Device protection is uncertain or missing.", step: "Confirm antivirus or endpoint protection is active on business devices and being monitored." },
+        { ids: [7], gap: "A written recovery plan may be missing.", step: "Create a first-hour response checklist that explains who to contact and what to do first." },
+        { ids: [8], gap: "Operating downtime tolerance is unclear.", step: "Decide how long the business can operate without files, bookings, invoices, email, or key systems." },
+        { ids: [9], gap: "Cybersecurity or IT ownership is unclear.", step: "Assign a responsible IT or cybersecurity contact for readiness reviews and incident coordination." }
+      ]
+    },
     leadThanks: "Your report will be available once the form integration is connected.",
     reviewThanks: "Thanks. Your review request has been noted for this MVP test."
   },
@@ -134,6 +164,36 @@ const translations = {
         ]
       }
     },
+    report: {
+      generatedOn: "Generado el",
+      brand: "NextGen CyberGuard",
+      title: "Informe de preparación contra ransomware",
+      score: "Puntuación de preparación",
+      riskLevel: "Nivel de riesgo",
+      summary: "Resumen",
+      answers: "Tus respuestas",
+      gaps: "Brechas detectadas",
+      noGaps: "No se detectaron brechas importantes en este chequeo básico.",
+      nextSteps: "Próximos pasos recomendados",
+      disclaimer: "This is a basic readiness check, not a full security audit.",
+      filename: "nextgen-cyberguard-informe-preparacion-ransomware.html",
+      answerLabel: "Respuesta",
+      gapAnswerPrefix: "Respuesta",
+      maintenanceSteps: [
+        "Programa una prueba de restauración de archivos importantes al menos dos veces al año.",
+        "Mantén MFA activo en correo electrónico, finanzas, administración y cuentas cloud.",
+        "Revisa el plan de recuperación cuando cambien empleados, software o proveedores."
+      ],
+      rules: [
+        { ids: [0, 1, 2], gap: "Las copias de seguridad o las pruebas de restauración necesitan atención.", step: "Confirma la cobertura de copias de seguridad, mantén copias separadas y prueba restaurar archivos importantes." },
+        { ids: [3, 4], gap: "Los controles de acceso pueden ser débiles.", step: "Activa MFA en correo electrónico, finanzas, administración y cuentas cloud, y reduce contraseñas compartidas o reutilizadas." },
+        { ids: [5], gap: "La preparación frente a phishing y correos sospechosos puede mejorar.", step: "Crea una guía sencilla para el equipo y una forma clara de reportar correos o adjuntos sospechosos." },
+        { ids: [6], gap: "La protección de dispositivos es incierta o falta.", step: "Confirma que antivirus o protección endpoint está activa en los dispositivos del negocio y se revisa." },
+        { ids: [7], gap: "Puede faltar un plan de recuperación por escrito.", step: "Crea una checklist para la primera hora que explique a quién contactar y qué hacer primero." },
+        { ids: [8], gap: "No está claro cuánto tiempo podría operar el negocio sin sistemas.", step: "Define cuánto tiempo puede operar el negocio sin archivos, reservas, facturas, correo electrónico o sistemas clave." },
+        { ids: [9], gap: "La responsabilidad de IT o ciberseguridad no está clara.", step: "Asigna una persona o contacto responsable de revisar la preparación y coordinar incidentes." }
+      ]
+    },
     leadThanks: "Tu informe estará disponible cuando la integración del formulario esté conectada.",
     reviewThanks: "Gracias. Tu solicitud de revisión ha quedado registrada para esta prueba MVP."
   }
@@ -161,6 +221,7 @@ const resultTitle = document.querySelector("#result-title");
 const resultMessage = document.querySelector("#result-message");
 const resultScore = document.querySelector("#result-score");
 const resultSteps = document.querySelector("#result-steps");
+const downloadResultReportButton = document.querySelector("#download-result-report");
 const leadSection = document.querySelector("#lead-section");
 const reportForms = document.querySelectorAll("[data-report-form]");
 const reviewForms = document.querySelectorAll("[data-review-form]");
@@ -281,6 +342,133 @@ function renderQuestion() {
   });
 }
 
+function getWeakAnswerIndexes() {
+  return answers
+    .map((answer, index) => (answer && answer.score > 0 ? index : null))
+    .filter((index) => index !== null);
+}
+
+function getDetectedGaps() {
+  const weakIndexes = getWeakAnswerIndexes();
+  const gaps = [];
+
+  copy.report.rules.forEach((rule) => {
+    const matchedIndexes = rule.ids.filter((index) => weakIndexes.includes(index));
+
+    if (matchedIndexes.length > 0) {
+      gaps.push({
+        text: rule.gap,
+        questions: matchedIndexes.map((index) => ({
+          question: questions[index].text,
+          answer: answers[index].label
+        }))
+      });
+    }
+  });
+
+  return gaps;
+}
+
+function getRecommendedSteps() {
+  const weakIndexes = getWeakAnswerIndexes();
+
+  if (weakIndexes.length === 0) {
+    return copy.report.maintenanceSteps;
+  }
+
+  const steps = [];
+  copy.report.rules.forEach((rule) => {
+    if (rule.ids.some((index) => weakIndexes.includes(index))) {
+      steps.push(rule.step);
+    }
+  });
+
+  if (latestRiskLevel === "low") {
+    copy.report.maintenanceSteps.forEach((step) => {
+      if (steps.length < 4 && !steps.includes(step)) {
+        steps.push(step);
+      }
+    });
+  }
+
+  return steps.slice(0, latestRiskLevel === "high" ? 5 : 4);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function buildReportHtml() {
+  if (latestScore === null || !latestRiskLevel) {
+    latestScore = getTotalScore();
+    latestRiskLevel = getRiskLevel(latestScore);
+  }
+
+  const content = copy.results[latestRiskLevel];
+  const report = copy.report;
+  const generatedDate = new Date().toLocaleDateString(pageLanguage === "es" ? "es-ES" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  const answerRows = questions.map((question, index) => {
+    const answer = answers[index];
+    return `<tr><td>${index + 1}. ${escapeHtml(question.text)}</td><td>${escapeHtml(answer?.label || "-")}</td></tr>`;
+  }).join("");
+  const gaps = getDetectedGaps();
+  const gapItems = gaps.length
+    ? gaps.map((gap) => `<li><strong>${escapeHtml(gap.text)}</strong><ul>${gap.questions.map((item) => `<li>${escapeHtml(item.question)} — ${escapeHtml(report.gapAnswerPrefix)}: ${escapeHtml(item.answer)}</li>`).join("")}</ul></li>`).join("")
+    : `<li>${escapeHtml(report.noGaps)}</li>`;
+  const stepItems = getRecommendedSteps().map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+
+  return `<!doctype html>
+<html lang="${pageLanguage}">
+<head>
+  <meta charset="utf-8">
+  <title>${escapeHtml(report.title)} | ${escapeHtml(report.brand)}</title>
+  <style>
+    body{margin:0;background:#f4fbfa;color:#071431;font-family:Inter,Arial,sans-serif;line-height:1.55}main{max-width:920px;margin:0 auto;padding:42px 22px}.card{background:#fff;border:1px solid #d8ece9;border-radius:18px;box-shadow:0 20px 60px rgba(10,58,68,.12);padding:34px}.brand{color:#00877f;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px}h1{font-size:42px;line-height:1.05;margin:10px 0 12px}.meta{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.pill{background:#e8f8f5;color:#00766f;border:1px solid #c8ebe6;border-radius:999px;padding:8px 12px;font-weight:800}.section{margin-top:28px}h2{font-size:22px;margin:0 0 12px}ul{padding-left:22px}li{margin:7px 0}table{width:100%;border-collapse:collapse;background:#fbfefe;border-radius:12px;overflow:hidden}td{border-bottom:1px solid #e2efed;padding:10px 12px;vertical-align:top}td:last-child{font-weight:800;color:#00766f;width:180px}.disclaimer{margin-top:28px;padding:14px 16px;border-radius:12px;background:#eef7f5;color:#354d5d;font-weight:700}@media print{body{background:#fff}.card{box-shadow:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <p class="brand">${escapeHtml(report.brand)}</p>
+      <h1>${escapeHtml(report.title)}</h1>
+      <p>${escapeHtml(report.generatedOn)} ${escapeHtml(generatedDate)}</p>
+      <div class="meta"><span class="pill">${escapeHtml(report.riskLevel)}: ${escapeHtml(content.label)}</span><span class="pill">${escapeHtml(report.score)}: ${latestScore}/20</span></div>
+      <div class="section"><h2>${escapeHtml(report.summary)}</h2><p>${escapeHtml(content.message)}</p></div>
+      <div class="section"><h2>${escapeHtml(report.nextSteps)}</h2><ul>${stepItems}</ul></div>
+      <div class="section"><h2>${escapeHtml(report.gaps)}</h2><ul>${gapItems}</ul></div>
+      <div class="section"><h2>${escapeHtml(report.answers)}</h2><table>${answerRows}</table></div>
+      <p class="disclaimer">${escapeHtml(report.disclaimer)}</p>
+    </section>
+  </main>
+</body>
+</html>`;
+}
+
+function downloadResultReport() {
+  if (!answers.every(Boolean)) {
+    return;
+  }
+
+  const blob = new Blob([buildReportHtml()], { type: "text/html;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = copy.report.filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
 function showResult() {
   latestScore = getTotalScore();
   latestRiskLevel = getRiskLevel(latestScore);
@@ -293,7 +481,7 @@ function showResult() {
   resultTitle.textContent = content.title;
   resultMessage.textContent = content.message;
   if (resultSteps) {
-    resultSteps.innerHTML = content.steps.map((step) => `<li>${step}</li>`).join("");
+    resultSteps.innerHTML = getRecommendedSteps().map((step) => `<li>${escapeHtml(step)}</li>`).join("");
   }
   riskForm.hidden = true;
   checklistHeading?.setAttribute("hidden", "");
@@ -345,7 +533,8 @@ function initQuiz() {
     !resultTitle ||
     !resultMessage ||
     !resultScore ||
-    !resultSteps
+    !resultSteps ||
+    !downloadResultReportButton
   ) {
     return;
   }
@@ -378,6 +567,7 @@ function initQuiz() {
   });
 
   restartButton?.addEventListener("click", restartQuiz);
+  downloadResultReportButton.addEventListener("click", downloadResultReport);
   renderQuestion();
 }
 
