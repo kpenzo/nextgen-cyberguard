@@ -205,7 +205,7 @@ const questions = copy.questions;
 const options = copy.options;
 
 const checklistSection = document.querySelector("#checklist");
-const checklistHeading = document.querySelector("#checklist .section-heading");
+const quizView = document.querySelector("#quiz-view");
 const riskForm = document.querySelector("#risk-form");
 const questionText = document.querySelector("#question-text");
 const quizCount = document.querySelector("#quiz-count");
@@ -483,13 +483,13 @@ function showResult() {
   if (resultSteps) {
     resultSteps.innerHTML = getRecommendedSteps().map((step) => `<li>${escapeHtml(step)}</li>`).join("");
   }
+  quizView.hidden = true;
   riskForm.hidden = true;
-  checklistHeading?.setAttribute("hidden", "");
   checklistSection?.classList.add("is-result-mode");
   result.hidden = false;
 
   if (leadSection) {
-    leadSection.hidden = false;
+    leadSection.hidden = true;
   }
 
   result.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -501,8 +501,8 @@ function restartQuiz() {
   latestScore = null;
   latestRiskLevel = null;
   result.hidden = true;
+  quizView.hidden = false;
   riskForm.hidden = false;
-  checklistHeading?.removeAttribute("hidden");
   checklistSection?.classList.remove("is-result-mode");
 
   if (leadSection && leadSection.dataset.alwaysVisible !== "true") {
@@ -520,6 +520,7 @@ function restartQuiz() {
 function initQuiz() {
   if (
     !checklistSection ||
+    !quizView ||
     !riskForm ||
     !questionText ||
     !quizCount ||

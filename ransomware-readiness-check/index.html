@@ -201,6 +201,7 @@
 
       <section class="section section--checklist" id="checklist">
         <div class="shell">
+          <div class="quiz-view" id="quiz-view">
           <div class="section-heading">
             <p class="eyebrow">Ransomware Risk Check</p>
             <h2>Complete the checklist in under 2 minutes.</h2>
@@ -227,6 +228,7 @@
               <button class="button button--primary" id="quiz-next" type="button" disabled>Next</button>
             </div>
           </form>
+          </div>
 
           <div class="result card result-screen" id="result" hidden aria-live="polite">
             <div class="result-screen__badge" aria-hidden="true">✓</div>
@@ -247,7 +249,7 @@
             </div>
           </div>
 
-          <div class="lead-wrap report-layout" id="lead-section" data-always-visible="true">
+          <div class="lead-wrap report-layout" id="lead-section" hidden>
             <section class="report-explainer">
               <p class="eyebrow">Ransomware Reality Check</p>
               <h2>Many businesses feel prepared, but recovery is often untested.</h2>

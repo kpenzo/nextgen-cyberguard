@@ -8991,6 +8991,17 @@ select:focus {
 }
 
 
+
+.homepage-reference .quiz-view {
+  display: contents;
+}
+
+.homepage-reference .quiz-view[hidden],
+.homepage-reference .lead-wrap[hidden],
+.homepage-reference .result-screen[hidden] {
+  display: none !important;
+}
+
 /* Dedicated checklist result screen */
 .homepage-reference .section--checklist.is-result-mode {
   padding-top: 52px;
