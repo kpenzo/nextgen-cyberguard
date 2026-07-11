@@ -71,28 +71,138 @@ const translations = {
       title: "Ransomware Readiness Report",
       score: "Readiness score",
       riskLevel: "Risk level",
-      summary: "Summary",
+      executiveSummary: "Executive summary",
+      topPriorities: "Top 3 priorities",
       answers: "Your answers",
       gaps: "Detected gaps",
       noGaps: "No major gaps were detected from this basic check.",
-      nextSteps: "Recommended next steps",
+      actionPlan: "Simple action plan",
+      today: "Today",
+      thisWeek: "This week",
+      thisMonth: "This month",
+      positives: "What already looks good",
+      noPositives: "No strong areas were confirmed yet. Start with the priorities above and retake the check after improvements are in place.",
+      recommendedNextStep: "Recommended next step",
+      cta: "Book a free 15-minute readiness review to go through these findings and decide what to fix first.",
+      disclaimerLabel: "Disclaimer",
       disclaimer: "This is a basic readiness check, not a full security audit.",
       filename: "nextgen-cyberguard-ransomware-readiness-report.html",
       answerLabel: "Answer",
       gapAnswerPrefix: "Answered",
+      riskSummaries: {
+        low: "Your answers suggest the business has several important readiness basics in place. The main focus should be maintenance: testing recovery, keeping access controls current, and making sure responsibilities remain clear.",
+        medium: "Your answers show a mix of strengths and gaps. The business may be able to recover from some disruptions, but a few practical improvements could reduce downtime and confusion during a ransomware incident.",
+        high: "Your answers point to several readiness gaps that could make recovery slower and more disruptive. Focus first on backups, account protection, and a simple response plan before adding more complex security work."
+      },
       maintenanceSteps: [
         "Schedule a restore test for important files at least twice a year.",
-        "Keep MFA enabled on email, finance, admin, and cloud accounts.",
-        "Review the recovery plan whenever staff, software, or providers change."
+        "Review MFA and account ownership for email, finance, admin, and cloud accounts.",
+        "Refresh the first-hour response checklist whenever staff, software, or providers change."
       ],
+      maintenanceActionPlan: {
+        today: ["Save this report and confirm who owns ransomware readiness follow-up."],
+        week: ["Schedule a backup restore test and review MFA on key accounts."],
+        month: ["Document the recovery process and repeat this check after any major business or IT change."]
+      },
       rules: [
-        { ids: [0, 1, 2], gap: "Backups or restore testing need attention.", step: "Confirm backup coverage, keep backup copies separated, and test restoring important files." },
-        { ids: [3, 4], gap: "Account access controls may be weak.", step: "Enable MFA for email, finance, admin, and cloud accounts, and reduce shared or reused passwords." },
-        { ids: [5], gap: "Phishing and suspicious email readiness may need improvement.", step: "Create simple staff awareness guidance and a clear way to report suspicious emails or attachments." },
-        { ids: [6], gap: "Device protection is uncertain or missing.", step: "Confirm antivirus or endpoint protection is active on business devices and being monitored." },
-        { ids: [7], gap: "A written recovery plan may be missing.", step: "Create a first-hour response checklist that explains who to contact and what to do first." },
-        { ids: [8], gap: "Operating downtime tolerance is unclear.", step: "Decide how long the business can operate without files, bookings, invoices, email, or key systems." },
-        { ids: [9], gap: "Cybersecurity or IT ownership is unclear.", step: "Assign a responsible IT or cybersecurity contact for readiness reviews and incident coordination." }
+        {
+          key: "backup",
+          category: "Backup & recovery",
+          ids: [0, 1, 2],
+          priority: 1,
+          detected: "Backup coverage, separation, or restore testing is missing or uncertain.",
+          why: "Backups only reduce ransomware disruption if the right files are included, copies are separated from affected systems, and restore has been tested before an incident.",
+          next: "Confirm what is backed up, keep at least one copy separated from the main network, and test restoring important files.",
+          priorityText: "Confirm backup coverage and run a restore test.",
+          today: "List the files, bookings, invoices, email, and cloud folders the business must recover first.",
+          week: "Confirm those items are backed up and that at least one backup copy is separated from normal computers or network access.",
+          month: "Run and document a restore test for several real files so recovery time is known before an incident.",
+          positive: "Backups and recovery basics appear stronger because backup coverage, separation, or restore testing was answered Yes."
+        },
+        {
+          key: "access",
+          category: "Account access",
+          ids: [3, 4],
+          priority: 2,
+          detected: "Password practices or MFA protection may be weak.",
+          why: "Ransomware incidents often begin with a compromised email, admin, finance, or cloud account. MFA and unique passwords make unauthorized access harder.",
+          next: "Enable MFA for email, finance, admin, and cloud accounts, and reduce shared or reused passwords.",
+          priorityText: "Strengthen important accounts with MFA and unique passwords.",
+          today: "Identify the accounts that control email, files, billing, banking, admin tools, and cloud storage.",
+          week: "Enable MFA on the most important accounts and remove shared passwords where possible.",
+          month: "Review old users, account ownership, password habits, and access to admin or finance tools.",
+          positive: "Account access has some good signs because strong passwords or MFA were answered Yes."
+        },
+        {
+          key: "email",
+          category: "Email & phishing",
+          ids: [5],
+          priority: 3,
+          detected: "Staff phishing and suspicious email readiness may be weak.",
+          why: "Small businesses are often targeted through fake invoices, urgent payment requests, attachments, and links. Staff need a simple way to pause and report concerns.",
+          next: "Create simple staff guidance for suspicious emails and define who reviews reported messages.",
+          priorityText: "Create a simple suspicious email reporting process.",
+          today: "Tell staff not to open suspicious links, attachments, or payment requests until they are checked.",
+          week: "Create a one-page suspicious email guide and decide who staff should forward concerns to.",
+          month: "Run a short phishing awareness refresher using examples relevant to the business.",
+          positive: "Staff awareness appears stronger because suspicious email recognition was answered Yes."
+        },
+        {
+          key: "devices",
+          category: "Business continuity",
+          ids: [6],
+          priority: 5,
+          detected: "Device protection is missing or uncertain.",
+          why: "Endpoint protection does not guarantee safety, but it can help detect or block common threats before they spread across business devices.",
+          next: "Confirm antivirus or endpoint protection is active, updated, and installed on business devices.",
+          priorityText: "Confirm business devices have active protection.",
+          today: "Check whether laptops and desktops used for business have active antivirus or endpoint protection.",
+          week: "Confirm updates, alerts, and ownership for device protection are being reviewed.",
+          month: "Create a simple device list so new or replacement devices do not get missed.",
+          positive: "Device protection appears stronger because antivirus or endpoint protection was answered Yes."
+        },
+        {
+          key: "response",
+          category: "Incident response",
+          ids: [7],
+          priority: 4,
+          detected: "A written first-hour recovery plan may be missing.",
+          why: "The first hour of a ransomware incident can be confusing. A short plan helps staff know who to call, what to disconnect, and what not to touch.",
+          next: "Create a first-hour response checklist with contacts, decision owners, and immediate do/don't steps.",
+          priorityText: "Create a first-hour ransomware response checklist.",
+          today: "Write down who should be contacted first if files or systems are locked.",
+          week: "Create a short first-hour checklist covering isolation, communication, backups, vendors, and customer-facing systems.",
+          month: "Walk through the checklist with the team and update it after lessons learned.",
+          positive: "Response planning appears stronger because a written recovery plan was answered Yes."
+        },
+        {
+          key: "continuity",
+          category: "Business continuity",
+          ids: [8],
+          priority: 6,
+          detected: "The business downtime limit is unclear.",
+          why: "Knowing how long the business can operate without files, bookings, invoices, email, or systems helps set realistic recovery priorities.",
+          next: "Decide which systems must be restored first and how long the business can operate without them.",
+          priorityText: "Define the business downtime limit and recovery order.",
+          today: "Name the systems that would stop work fastest if unavailable.",
+          week: "Estimate how long the business can operate without files, bookings, invoices, email, or key systems.",
+          month: "Use that recovery order to guide backup testing and response planning.",
+          positive: "Continuity planning appears stronger because downtime tolerance was answered Yes."
+        },
+        {
+          key: "ownership",
+          category: "Ownership & responsibility",
+          ids: [9],
+          priority: 7,
+          detected: "Cybersecurity or IT ownership is unclear.",
+          why: "Readiness work is easy to miss when no one owns it. A named contact helps keep backups, access, staff awareness, and response planning moving.",
+          next: "Assign a responsible person or IT contact for ransomware readiness and incident coordination.",
+          priorityText: "Assign a responsible cybersecurity or IT contact.",
+          today: "Choose who owns follow-up for this checklist and who can contact IT support if something goes wrong.",
+          week: "Confirm backup, account, device, and response responsibilities with that person or provider.",
+          month: "Schedule a recurring readiness review so gaps do not quietly return.",
+          positive: "Ownership appears clearer because an IT or cybersecurity responsible person was answered Yes."
+        }
       ]
     },
     leadThanks: "Your report will be available once the form integration is connected.",
@@ -170,28 +280,138 @@ const translations = {
       title: "Informe de preparación contra ransomware",
       score: "Puntuación de preparación",
       riskLevel: "Nivel de riesgo",
-      summary: "Resumen",
+      executiveSummary: "Resumen ejecutivo",
+      topPriorities: "3 prioridades principales",
       answers: "Tus respuestas",
       gaps: "Brechas detectadas",
       noGaps: "No se detectaron brechas importantes en este chequeo básico.",
-      nextSteps: "Próximos pasos recomendados",
+      actionPlan: "Plan de acción simple",
+      today: "Hoy",
+      thisWeek: "Esta semana",
+      thisMonth: "Este mes",
+      positives: "Lo que ya parece estar bien",
+      noPositives: "Todavía no se confirmaron áreas fuertes. Empieza por las prioridades anteriores y repite el chequeo después de mejorar.",
+      recommendedNextStep: "Siguiente paso recomendado",
+      cta: "Reserva una revisión gratuita de 15 minutos para repasar estos hallazgos y decidir qué corregir primero.",
+      disclaimerLabel: "Aviso",
       disclaimer: "This is a basic readiness check, not a full security audit.",
       filename: "nextgen-cyberguard-informe-preparacion-ransomware.html",
       answerLabel: "Respuesta",
       gapAnswerPrefix: "Respuesta",
+      riskSummaries: {
+        low: "Tus respuestas sugieren que el negocio tiene varias bases importantes de preparación. El foco principal debería ser mantenerlas: probar la recuperación, mantener controles de acceso actualizados y confirmar responsabilidades.",
+        medium: "Tus respuestas muestran una mezcla de fortalezas y brechas. El negocio podría recuperarse de algunas interrupciones, pero algunas mejoras prácticas pueden reducir tiempo de parada y confusión durante un incidente.",
+        high: "Tus respuestas indican varias brechas que podrían hacer que la recuperación sea más lenta y disruptiva. Empieza por copias de seguridad, protección de cuentas y un plan simple de respuesta antes de añadir trabajo más complejo."
+      },
       maintenanceSteps: [
         "Programa una prueba de restauración de archivos importantes al menos dos veces al año.",
-        "Mantén MFA activo en correo electrónico, finanzas, administración y cuentas cloud.",
-        "Revisa el plan de recuperación cuando cambien empleados, software o proveedores."
+        "Revisa MFA y propiedad de cuentas de correo electrónico, finanzas, administración y cloud.",
+        "Actualiza la checklist de primera hora cuando cambien empleados, software o proveedores."
       ],
+      maintenanceActionPlan: {
+        today: ["Guarda este informe y confirma quién se encargará del seguimiento de preparación contra ransomware."],
+        week: ["Programa una prueba de restauración y revisa MFA en cuentas clave."],
+        month: ["Documenta el proceso de recuperación y repite este chequeo después de cambios importantes de negocio o IT."]
+      },
       rules: [
-        { ids: [0, 1, 2], gap: "Las copias de seguridad o las pruebas de restauración necesitan atención.", step: "Confirma la cobertura de copias de seguridad, mantén copias separadas y prueba restaurar archivos importantes." },
-        { ids: [3, 4], gap: "Los controles de acceso pueden ser débiles.", step: "Activa MFA en correo electrónico, finanzas, administración y cuentas cloud, y reduce contraseñas compartidas o reutilizadas." },
-        { ids: [5], gap: "La preparación frente a phishing y correos sospechosos puede mejorar.", step: "Crea una guía sencilla para el equipo y una forma clara de reportar correos o adjuntos sospechosos." },
-        { ids: [6], gap: "La protección de dispositivos es incierta o falta.", step: "Confirma que antivirus o protección endpoint está activa en los dispositivos del negocio y se revisa." },
-        { ids: [7], gap: "Puede faltar un plan de recuperación por escrito.", step: "Crea una checklist para la primera hora que explique a quién contactar y qué hacer primero." },
-        { ids: [8], gap: "No está claro cuánto tiempo podría operar el negocio sin sistemas.", step: "Define cuánto tiempo puede operar el negocio sin archivos, reservas, facturas, correo electrónico o sistemas clave." },
-        { ids: [9], gap: "La responsabilidad de IT o ciberseguridad no está clara.", step: "Asigna una persona o contacto responsable de revisar la preparación y coordinar incidentes." }
+        {
+          key: "backup",
+          category: "Copias de seguridad y recuperación",
+          ids: [0, 1, 2],
+          priority: 1,
+          detected: "La cobertura, separación o prueba de restauración de copias de seguridad falta o no está clara.",
+          why: "Las copias de seguridad solo reducen la interrupción si incluyen los archivos correctos, están separadas de sistemas afectados y la restauración se ha probado antes de un incidente.",
+          next: "Confirma qué está incluido, mantén una copia separada de la red principal y prueba restaurar archivos importantes.",
+          priorityText: "Confirmar cobertura de copias de seguridad y probar restauración.",
+          today: "Haz una lista de archivos, reservas, facturas, correo electrónico y carpetas cloud que el negocio debe recuperar primero.",
+          week: "Confirma que esos elementos tienen copia y que al menos una copia está separada de ordenadores o acceso normal de red.",
+          month: "Ejecuta y documenta una prueba de restauración con archivos reales para conocer el tiempo de recuperación.",
+          positive: "Las bases de copias y recuperación parecen más fuertes porque alguna respuesta sobre cobertura, separación o restauración fue Sí."
+        },
+        {
+          key: "access",
+          category: "Acceso a cuentas",
+          ids: [3, 4],
+          priority: 2,
+          detected: "Las prácticas de contraseñas o MFA pueden ser débiles.",
+          why: "Muchos incidentes empiezan con una cuenta de correo, administración, finanzas o cloud comprometida. MFA y contraseñas únicas reducen el acceso no autorizado.",
+          next: "Activa MFA en correo electrónico, finanzas, administración y cuentas cloud, y reduce contraseñas compartidas o reutilizadas.",
+          priorityText: "Proteger cuentas importantes con MFA y contraseñas únicas.",
+          today: "Identifica cuentas que controlan correo electrónico, archivos, facturación, banca, herramientas admin y almacenamiento cloud.",
+          week: "Activa MFA en las cuentas más importantes y elimina contraseñas compartidas cuando sea posible.",
+          month: "Revisa usuarios antiguos, propiedad de cuentas, hábitos de contraseñas y accesos de administración o finanzas.",
+          positive: "El acceso a cuentas muestra señales positivas porque contraseñas fuertes o MFA tuvieron respuesta Sí."
+        },
+        {
+          key: "email",
+          category: "Correo electrónico y phishing",
+          ids: [5],
+          priority: 3,
+          detected: "La preparación del equipo frente a phishing y correos sospechosos puede mejorar.",
+          why: "Los pequeños negocios reciben facturas falsas, solicitudes urgentes de pago, adjuntos y enlaces. El equipo necesita una forma simple de parar y reportar dudas.",
+          next: "Crea una guía simple para correos sospechosos y define quién revisa los mensajes reportados.",
+          priorityText: "Crear un proceso simple para reportar correos sospechosos.",
+          today: "Indica al equipo que no abra enlaces, adjuntos o solicitudes de pago sospechosas hasta revisarlas.",
+          week: "Crea una guía de una página y decide a quién reenviar correos sospechosos.",
+          month: "Haz un breve repaso de concienciación con ejemplos relevantes para el negocio.",
+          positive: "La concienciación del equipo parece más fuerte porque reconocer correos sospechosos fue respondido Sí."
+        },
+        {
+          key: "devices",
+          category: "Continuidad del negocio",
+          ids: [6],
+          priority: 5,
+          detected: "La protección de dispositivos falta o no está clara.",
+          why: "La protección endpoint no garantiza seguridad, pero puede ayudar a detectar o bloquear amenazas comunes antes de que se propaguen por dispositivos del negocio.",
+          next: "Confirma que antivirus o protección endpoint está activa, actualizada e instalada en dispositivos del negocio.",
+          priorityText: "Confirmar protección activa en dispositivos del negocio.",
+          today: "Comprueba si portátiles y ordenadores usados para trabajar tienen antivirus o protección endpoint activa.",
+          week: "Confirma que actualizaciones, alertas y propiedad de esa protección se revisan.",
+          month: "Crea una lista simple de dispositivos para no olvidar equipos nuevos o reemplazados.",
+          positive: "La protección de dispositivos parece más fuerte porque antivirus o endpoint fue respondido Sí."
+        },
+        {
+          key: "response",
+          category: "Respuesta ante incidentes",
+          ids: [7],
+          priority: 4,
+          detected: "Puede faltar un plan escrito para la primera hora.",
+          why: "La primera hora de un incidente puede ser confusa. Un plan corto ayuda al equipo a saber a quién llamar, qué desconectar y qué no tocar.",
+          next: "Crea una checklist de primera hora con contactos, responsables de decisión y pasos inmediatos.",
+          priorityText: "Crear una checklist de primera hora ante ransomware.",
+          today: "Escribe a quién contactar primero si archivos o sistemas quedan bloqueados.",
+          week: "Crea una checklist breve sobre aislamiento, comunicación, copias, proveedores y sistemas visibles para clientes.",
+          month: "Repasa la checklist con el equipo y actualízala con aprendizajes.",
+          positive: "La respuesta ante incidentes parece más fuerte porque el plan de recuperación escrito fue respondido Sí."
+        },
+        {
+          key: "continuity",
+          category: "Continuidad del negocio",
+          ids: [8],
+          priority: 6,
+          detected: "No está claro el límite de tiempo de interrupción del negocio.",
+          why: "Saber cuánto tiempo puede operar el negocio sin archivos, reservas, facturas, correo electrónico o sistemas ayuda a definir prioridades de recuperación realistas.",
+          next: "Decide qué sistemas deben restaurarse primero y cuánto tiempo puede operar el negocio sin ellos.",
+          priorityText: "Definir límite de interrupción y orden de recuperación.",
+          today: "Nombra los sistemas que pararían el trabajo más rápido si no estuvieran disponibles.",
+          week: "Estima cuánto tiempo puede operar el negocio sin archivos, reservas, facturas, correo electrónico o sistemas clave.",
+          month: "Usa ese orden de recuperación para guiar pruebas de copias y planificación de respuesta.",
+          positive: "La continuidad parece más clara porque el tiempo de operación sin sistemas fue respondido Sí."
+        },
+        {
+          key: "ownership",
+          category: "Responsabilidad y seguimiento",
+          ids: [9],
+          priority: 7,
+          detected: "La responsabilidad de IT o ciberseguridad no está clara.",
+          why: "La preparación se olvida fácilmente cuando nadie es responsable. Un contacto definido ayuda a mantener copias, accesos, concienciación y respuesta en marcha.",
+          next: "Asigna una persona o contacto IT responsable de preparación contra ransomware y coordinación de incidentes.",
+          priorityText: "Asignar una persona responsable de IT o ciberseguridad.",
+          today: "Elige quién hará seguimiento de este checklist y quién contactará soporte IT si algo va mal.",
+          week: "Confirma responsabilidades sobre copias, cuentas, dispositivos y respuesta con esa persona o proveedor.",
+          month: "Agenda una revisión recurrente para que las brechas no vuelvan silenciosamente.",
+          positive: "La responsabilidad parece más clara porque tener una persona responsable de IT o ciberseguridad fue respondido Sí."
+        }
       ]
     },
     leadThanks: "Tu informe estará disponible cuando la integración del formulario esté conectada.",
@@ -343,56 +563,108 @@ function renderQuestion() {
   });
 }
 
+function getAnswerScore(index) {
+  return answers[index]?.score ?? 0;
+}
+
 function getWeakAnswerIndexes() {
   return answers
     .map((answer, index) => (answer && answer.score > 0 ? index : null))
     .filter((index) => index !== null);
 }
 
+function getRuleStrength(rule) {
+  const scores = rule.ids.map(getAnswerScore);
+  return Math.max(...scores);
+}
+
 function getDetectedGaps() {
-  const weakIndexes = getWeakAnswerIndexes();
-  const gaps = [];
-
-  copy.report.rules.forEach((rule) => {
-    const matchedIndexes = rule.ids.filter((index) => weakIndexes.includes(index));
-
-    if (matchedIndexes.length > 0) {
-      gaps.push({
-        text: rule.gap,
-        questions: matchedIndexes.map((index) => ({
+  return copy.report.rules
+    .map((rule) => {
+      const relatedAnswers = rule.ids
+        .filter((index) => getAnswerScore(index) > 0)
+        .map((index) => ({
           question: questions[index].text,
-          answer: answers[index].label
-        }))
-      });
-    }
-  });
+          answer: answers[index].label,
+          score: answers[index].score
+        }));
 
-  return gaps;
+      if (relatedAnswers.length === 0) {
+        return null;
+      }
+
+      return {
+        ...rule,
+        strength: Math.max(...relatedAnswers.map((item) => item.score)),
+        questions: relatedAnswers
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.strength - a.strength || a.priority - b.priority);
+}
+
+function getPositiveFindings() {
+  return copy.report.rules
+    .filter((rule) => rule.ids.some((index) => getAnswerScore(index) === 0))
+    .sort((a, b) => a.priority - b.priority)
+    .map((rule) => rule.positive)
+    .slice(0, 5);
+}
+
+function uniqueList(items) {
+  return [...new Set(items.filter(Boolean))];
+}
+
+function getTopPriorities() {
+  const gaps = getDetectedGaps();
+
+  if (gaps.length === 0) {
+    return copy.report.maintenanceSteps.slice(0, 3);
+  }
+
+  return uniqueList(gaps.map((gap) => gap.priorityText)).slice(0, 3);
 }
 
 function getRecommendedSteps() {
-  const weakIndexes = getWeakAnswerIndexes();
+  const gaps = getDetectedGaps();
 
-  if (weakIndexes.length === 0) {
+  if (gaps.length === 0) {
     return copy.report.maintenanceSteps;
   }
 
-  const steps = [];
-  copy.report.rules.forEach((rule) => {
-    if (rule.ids.some((index) => weakIndexes.includes(index))) {
-      steps.push(rule.step);
-    }
-  });
+  const steps = uniqueList(gaps.map((gap) => gap.next));
 
   if (latestRiskLevel === "low") {
     copy.report.maintenanceSteps.forEach((step) => {
-      if (steps.length < 4 && !steps.includes(step)) {
+      if (steps.length < 4) {
         steps.push(step);
       }
     });
   }
 
-  return steps.slice(0, latestRiskLevel === "high" ? 5 : 4);
+  return uniqueList(steps).slice(0, latestRiskLevel === "high" ? 5 : 4);
+}
+
+function getActionPlan() {
+  const gaps = getDetectedGaps();
+
+  if (gaps.length === 0) {
+    return copy.report.maintenanceActionPlan;
+  }
+
+  return {
+    today: uniqueList(gaps.map((gap) => gap.today)).slice(0, 3),
+    week: uniqueList(gaps.map((gap) => gap.week)).slice(0, 3),
+    month: uniqueList(gaps.map((gap) => gap.month)).slice(0, 3)
+  };
+}
+
+function groupGapsByCategory(gaps) {
+  return gaps.reduce((groups, gap) => {
+    groups[gap.category] = groups[gap.category] || [];
+    groups[gap.category].push(gap);
+    return groups;
+  }, {});
 }
 
 function escapeHtml(value) {
@@ -402,6 +674,10 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function renderList(items) {
+  return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 }
 
 function buildReportHtml() {
@@ -422,10 +698,26 @@ function buildReportHtml() {
     return `<tr><td>${index + 1}. ${escapeHtml(question.text)}</td><td>${escapeHtml(answer?.label || "-")}</td></tr>`;
   }).join("");
   const gaps = getDetectedGaps();
-  const gapItems = gaps.length
-    ? gaps.map((gap) => `<li><strong>${escapeHtml(gap.text)}</strong><ul>${gap.questions.map((item) => `<li>${escapeHtml(item.question)} — ${escapeHtml(report.gapAnswerPrefix)}: ${escapeHtml(item.answer)}</li>`).join("")}</ul></li>`).join("")
-    : `<li>${escapeHtml(report.noGaps)}</li>`;
-  const stepItems = getRecommendedSteps().map((step) => `<li>${escapeHtml(step)}</li>`).join("");
+  const groupedGaps = groupGapsByCategory(gaps);
+  const gapHtml = gaps.length
+    ? Object.entries(groupedGaps).map(([category, items]) => `
+      <div class="gap-group">
+        <h3>${escapeHtml(category)}</h3>
+        ${items.map((gap) => `
+          <article class="gap-card">
+            <h4>${escapeHtml(gap.detected)}</h4>
+            <p><strong>${pageLanguage === "es" ? "Por qué importa" : "Why it matters"}:</strong> ${escapeHtml(gap.why)}</p>
+            <p><strong>${pageLanguage === "es" ? "Siguiente paso" : "Practical next step"}:</strong> ${escapeHtml(gap.next)}</p>
+            <details>
+              <summary>${pageLanguage === "es" ? "Respuestas relacionadas" : "Related answers"}</summary>
+              <ul>${gap.questions.map((item) => `<li>${escapeHtml(item.question)} — ${escapeHtml(report.gapAnswerPrefix)}: ${escapeHtml(item.answer)}</li>`).join("")}</ul>
+            </details>
+          </article>`).join("")}
+      </div>`).join("")
+    : `<p>${escapeHtml(report.noGaps)}</p>`;
+  const priorities = getTopPriorities();
+  const actionPlan = getActionPlan();
+  const positives = getPositiveFindings();
 
   return `<!doctype html>
 <html lang="${pageLanguage}">
@@ -433,7 +725,7 @@ function buildReportHtml() {
   <meta charset="utf-8">
   <title>${escapeHtml(report.title)} | ${escapeHtml(report.brand)}</title>
   <style>
-    body{margin:0;background:#f4fbfa;color:#071431;font-family:Inter,Arial,sans-serif;line-height:1.55}main{max-width:920px;margin:0 auto;padding:42px 22px}.card{background:#fff;border:1px solid #d8ece9;border-radius:18px;box-shadow:0 20px 60px rgba(10,58,68,.12);padding:34px}.brand{color:#00877f;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px}h1{font-size:42px;line-height:1.05;margin:10px 0 12px}.meta{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.pill{background:#e8f8f5;color:#00766f;border:1px solid #c8ebe6;border-radius:999px;padding:8px 12px;font-weight:800}.section{margin-top:28px}h2{font-size:22px;margin:0 0 12px}ul{padding-left:22px}li{margin:7px 0}table{width:100%;border-collapse:collapse;background:#fbfefe;border-radius:12px;overflow:hidden}td{border-bottom:1px solid #e2efed;padding:10px 12px;vertical-align:top}td:last-child{font-weight:800;color:#00766f;width:180px}.disclaimer{margin-top:28px;padding:14px 16px;border-radius:12px;background:#eef7f5;color:#354d5d;font-weight:700}@media print{body{background:#fff}.card{box-shadow:none}}
+    body{margin:0;background:#f4fbfa;color:#071431;font-family:Inter,Arial,sans-serif;line-height:1.55}main{max-width:980px;margin:0 auto;padding:42px 22px}.card{background:#fff;border:1px solid #d8ece9;border-radius:18px;box-shadow:0 20px 60px rgba(10,58,68,.12);padding:34px}.brand{color:#00877f;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px}h1{font-size:42px;line-height:1.05;margin:10px 0 12px}h2{font-size:24px;margin:0 0 14px}h3{font-size:18px;margin:18px 0 10px}h4{font-size:16px;margin:0 0 8px}.muted{color:#56697a}.meta{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.pill{background:#e8f8f5;color:#00766f;border:1px solid #c8ebe6;border-radius:999px;padding:8px 12px;font-weight:800}.section{margin-top:30px;padding-top:26px;border-top:1px solid #e2efed}ul{padding-left:22px}li{margin:7px 0}.priority-list{counter-reset:item;display:grid;gap:12px;padding:0;list-style:none}.priority-list li{counter-increment:item;margin:0;padding:14px 16px 14px 48px;border:1px solid #d7ebe8;border-radius:12px;background:#f7fcfb;position:relative;font-weight:750}.priority-list li:before{content:counter(item);position:absolute;left:14px;top:13px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#00877f;color:#fff;font-size:12px}.gap-card{border:1px solid #dcecea;border-radius:14px;background:#fbfefe;padding:16px;margin:12px 0}.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.action-box{border:1px solid #dcecea;border-radius:14px;background:#fbfefe;padding:16px}.positive{background:#f0faf7;border:1px solid #cdece5;border-radius:14px;padding:16px}table{width:100%;border-collapse:collapse;background:#fbfefe;border-radius:12px;overflow:hidden}td{border-bottom:1px solid #e2efed;padding:10px 12px;vertical-align:top}td:last-child{font-weight:800;color:#00766f;width:180px}.cta,.disclaimer{margin-top:24px;padding:16px 18px;border-radius:12px;font-weight:750}.cta{background:#e8f8f5;color:#005d58}.disclaimer{background:#eef7f5;color:#354d5d}@media(max-width:760px){.action-grid{grid-template-columns:1fr}h1{font-size:34px}}@media print{body{background:#fff}.card{box-shadow:none}}
   </style>
 </head>
 <body>
@@ -441,13 +733,45 @@ function buildReportHtml() {
     <section class="card">
       <p class="brand">${escapeHtml(report.brand)}</p>
       <h1>${escapeHtml(report.title)}</h1>
-      <p>${escapeHtml(report.generatedOn)} ${escapeHtml(generatedDate)}</p>
-      <div class="meta"><span class="pill">${escapeHtml(report.riskLevel)}: ${escapeHtml(content.label)}</span><span class="pill">${escapeHtml(report.score)}: ${latestScore}/20</span></div>
-      <div class="section"><h2>${escapeHtml(report.summary)}</h2><p>${escapeHtml(content.message)}</p></div>
-      <div class="section"><h2>${escapeHtml(report.nextSteps)}</h2><ul>${stepItems}</ul></div>
-      <div class="section"><h2>${escapeHtml(report.gaps)}</h2><ul>${gapItems}</ul></div>
-      <div class="section"><h2>${escapeHtml(report.answers)}</h2><table>${answerRows}</table></div>
-      <p class="disclaimer">${escapeHtml(report.disclaimer)}</p>
+      <p class="muted">${escapeHtml(report.generatedOn)} ${escapeHtml(generatedDate)}</p>
+      <p class="disclaimer"><strong>${escapeHtml(report.disclaimerLabel)}:</strong> ${escapeHtml(report.disclaimer)}</p>
+
+      <section class="section">
+        <h2>${escapeHtml(report.executiveSummary)}</h2>
+        <div class="meta"><span class="pill">${escapeHtml(report.riskLevel)}: ${escapeHtml(content.label)}</span><span class="pill">${escapeHtml(report.score)}: ${latestScore}/20</span></div>
+        <p>${escapeHtml(report.riskSummaries[latestRiskLevel] || content.message)}</p>
+      </section>
+
+      <section class="section">
+        <h2>${escapeHtml(report.topPriorities)}</h2>
+        <ol class="priority-list">${priorities.map((priority) => `<li>${escapeHtml(priority)}</li>`).join("")}</ol>
+      </section>
+
+      <section class="section">
+        <h2>${escapeHtml(report.gaps)}</h2>
+        ${gapHtml}
+      </section>
+
+      <section class="section">
+        <h2>${escapeHtml(report.actionPlan)}</h2>
+        <div class="action-grid">
+          <div class="action-box"><h3>${escapeHtml(report.today)}</h3>${renderList(actionPlan.today)}</div>
+          <div class="action-box"><h3>${escapeHtml(report.thisWeek)}</h3>${renderList(actionPlan.week)}</div>
+          <div class="action-box"><h3>${escapeHtml(report.thisMonth)}</h3>${renderList(actionPlan.month)}</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>${escapeHtml(report.positives)}</h2>
+        <div class="positive">${positives.length ? renderList(positives) : `<p>${escapeHtml(report.noPositives)}</p>`}</div>
+      </section>
+
+      <section class="section">
+        <h2>${escapeHtml(report.answers)}</h2>
+        <table>${answerRows}</table>
+      </section>
+
+      <p class="cta"><strong>${escapeHtml(report.recommendedNextStep)}:</strong> ${escapeHtml(report.cta)}</p>
     </section>
   </main>
 </body>
