@@ -205,6 +205,7 @@ const questions = copy.questions;
 const options = copy.options;
 
 const checklistSection = document.querySelector("#checklist");
+const checklistFlow = document.querySelector("#checklist-flow");
 const quizView = document.querySelector("#quiz-view");
 const riskForm = document.querySelector("#risk-form");
 const questionText = document.querySelector("#question-text");
@@ -486,6 +487,7 @@ function showResult() {
   quizView.hidden = true;
   riskForm.hidden = true;
   checklistSection?.classList.add("is-result-mode");
+  checklistFlow?.classList.add("is-result-mode");
   result.hidden = false;
 
   if (leadSection) {
@@ -504,6 +506,7 @@ function restartQuiz() {
   quizView.hidden = false;
   riskForm.hidden = false;
   checklistSection?.classList.remove("is-result-mode");
+  checklistFlow?.classList.remove("is-result-mode");
 
   if (leadSection && leadSection.dataset.alwaysVisible !== "true") {
     leadSection.hidden = true;
@@ -520,6 +523,7 @@ function restartQuiz() {
 function initQuiz() {
   if (
     !checklistSection ||
+    !checklistFlow ||
     !quizView ||
     !riskForm ||
     !questionText ||

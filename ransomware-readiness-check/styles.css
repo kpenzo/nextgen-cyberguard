@@ -9153,6 +9153,64 @@ select:focus {
   }
 }
 
+
+/* Stable checklist flow container: quiz view and result view replace each other in place. */
+.homepage-reference .section--checklist > .shell {
+  display: block;
+  width: min(100% - 40px, 1150px);
+}
+
+.homepage-reference .checklist-flow {
+  display: grid;
+  grid-template-columns: minmax(270px, .75fr) minmax(500px, 1.35fr);
+  gap: 22px 48px;
+  align-items: center;
+}
+
+.homepage-reference .checklist-flow.is-result-mode {
+  display: block;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.homepage-reference .checklist-flow .section-heading {
+  align-self: center;
+  max-width: 390px;
+  margin: 0;
+  padding: 30px 8px 30px 14px;
+}
+
+.homepage-reference .checklist-flow .quiz-card {
+  width: 100%;
+}
+
+.homepage-reference .section--checklist.is-result-mode {
+  padding-top: 52px;
+  padding-bottom: 44px;
+}
+
+.homepage-reference .section--checklist.is-result-mode > .shell {
+  width: min(100% - 40px, 1150px);
+}
+
+@media (max-width: 920px) {
+  .homepage-reference .checklist-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-reference .checklist-flow .section-heading {
+    max-width: 620px;
+    padding-bottom: 8px;
+  }
+}
+
+@media (max-width: 620px) {
+  .homepage-reference .section--checklist > .shell,
+  .homepage-reference .section--checklist.is-result-mode > .shell {
+    width: min(100% - 28px, 1150px);
+  }
+}
+
 /* Ransomware Readiness Check: spacing and alignment refinement, June 22 */
 .rr-service-page--reference .rr-hero {
   padding-bottom: 38px;
