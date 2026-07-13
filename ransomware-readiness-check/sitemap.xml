@@ -96,4 +96,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/services/monthly-cyber-readiness-support/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
   </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/result/</loc>
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/resultado/</loc>
+  </url>
 </urlset>

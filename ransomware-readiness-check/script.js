@@ -421,6 +421,8 @@ const translations = {
 
 const pageLanguage = document.documentElement.lang?.startsWith("es") ? "es" : "en";
 const copy = translations[pageLanguage];
+const storedResultKey = "nextgenCyberGuardChecklistResult";
+const isResultPage = document.body?.dataset.page === "result";
 const questions = copy.questions;
 const options = copy.options;
 
@@ -442,6 +444,9 @@ const resultTitle = document.querySelector("#result-title");
 const resultMessage = document.querySelector("#result-message");
 const resultScore = document.querySelector("#result-score");
 const resultSteps = document.querySelector("#result-steps");
+const resultPriorities = document.querySelector("#result-priorities");
+const resultGaps = document.querySelector("#result-gaps");
+const missingResult = document.querySelector("#missing-result");
 const downloadResultReportButton = document.querySelector("#download-result-report");
 const leadSection = document.querySelector("#lead-section");
 const reportForms = document.querySelectorAll("[data-report-form]");
@@ -515,6 +520,56 @@ function getReportSubmission(form) {
     serviceInterest: form.elements.service_interest?.value || "ransomware_readiness_report",
     submittedAt: new Date().toISOString()
   };
+}
+
+function getResultRoute() {
+  return pageLanguage === "es" ? "./resultado/" : "./result/";
+}
+
+function getChecklistRoute() {
+  return pageLanguage === "es" ? "../#checklist" : "../#checklist";
+}
+
+function saveChecklistResult() {
+  const payload = {
+    language: pageLanguage,
+    createdAt: new Date().toISOString(),
+    answers: answers.map((answer) => ({
+      label: answer?.label || "",
+      score: answer?.score ?? null
+    }))
+  };
+
+  sessionStorage.setItem(storedResultKey, JSON.stringify(payload));
+}
+
+function loadChecklistResult() {
+  try {
+    const stored = JSON.parse(sessionStorage.getItem(storedResultKey) || "null");
+
+    if (!stored || !Array.isArray(stored.answers) || stored.answers.length !== questions.length) {
+      return false;
+    }
+
+    stored.answers.forEach((answer, index) => {
+      const option = options.find((item) => item.score === answer.score) || options.find((item) => item.label === answer.label);
+      answers[index] = option ? { label: option.label, score: option.score } : null;
+    });
+
+    if (!answers.every(Boolean)) {
+      return false;
+    }
+
+    latestScore = getTotalScore();
+    latestRiskLevel = getRiskLevel(latestScore);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+function clearChecklistResult() {
+  sessionStorage.removeItem(storedResultKey);
 }
 
 function renderQuestion() {
@@ -794,41 +849,74 @@ function downloadResultReport() {
   URL.revokeObjectURL(url);
 }
 
-function showResult() {
-  latestScore = getTotalScore();
-  latestRiskLevel = getRiskLevel(latestScore);
-  const content = copy.results[latestRiskLevel];
+function renderResultScreen() {
+  if (latestScore === null || !latestRiskLevel) {
+    latestScore = getTotalScore();
+    latestRiskLevel = getRiskLevel(latestScore);
+  }
 
+  const content = copy.results[latestRiskLevel];
   resultLabel.textContent = content.label;
+
   if (resultScore) {
     resultScore.textContent = `${latestScore}/20`;
   }
+
   resultTitle.textContent = content.title;
-  resultMessage.textContent = content.message;
+  resultMessage.textContent = copy.report.riskSummaries[latestRiskLevel] || content.message;
+
+  if (resultPriorities) {
+    resultPriorities.innerHTML = getTopPriorities().map((priority) => `<li>${escapeHtml(priority)}</li>`).join("");
+  }
+
+  if (resultGaps) {
+    const gaps = getDetectedGaps();
+    resultGaps.innerHTML = gaps.length
+      ? gaps.slice(0, 5).map((gap) => `<li><strong>${escapeHtml(gap.category)}:</strong> ${escapeHtml(gap.detected)}</li>`).join("")
+      : `<li>${escapeHtml(copy.report.noGaps)}</li>`;
+  }
+
   if (resultSteps) {
     resultSteps.innerHTML = getRecommendedSteps().map((step) => `<li>${escapeHtml(step)}</li>`).join("");
   }
-  quizView.hidden = true;
-  riskForm.hidden = true;
-  checklistSection?.classList.add("is-result-mode");
-  checklistFlow?.classList.add("is-result-mode");
+
   result.hidden = false;
-
-  if (leadSection) {
-    leadSection.hidden = true;
-  }
-
+  missingResult?.setAttribute("hidden", "");
   result.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function showResult() {
+  latestScore = getTotalScore();
+  latestRiskLevel = getRiskLevel(latestScore);
+  saveChecklistResult();
+  window.location.href = getResultRoute();
+}
+
 function restartQuiz() {
+  clearChecklistResult();
+
+  if (isResultPage) {
+    window.location.href = getChecklistRoute();
+    return;
+  }
+
   answers.fill(null);
   currentQuestion = 0;
   latestScore = null;
   latestRiskLevel = null;
-  result.hidden = true;
-  quizView.hidden = false;
-  riskForm.hidden = false;
+
+  if (result) {
+    result.hidden = true;
+  }
+
+  if (quizView) {
+    quizView.hidden = false;
+  }
+
+  if (riskForm) {
+    riskForm.hidden = false;
+  }
+
   checklistSection?.classList.remove("is-result-mode");
   checklistFlow?.classList.remove("is-result-mode");
 
@@ -856,14 +944,7 @@ function initQuiz() {
     !quizOptions ||
     !progressFill ||
     !backButton ||
-    !nextButton ||
-    !result ||
-    !resultLabel ||
-    !resultTitle ||
-    !resultMessage ||
-    !resultScore ||
-    !resultSteps ||
-    !downloadResultReportButton
+    !nextButton
   ) {
     return;
   }
@@ -896,8 +977,28 @@ function initQuiz() {
   });
 
   restartButton?.addEventListener("click", restartQuiz);
-  downloadResultReportButton.addEventListener("click", downloadResultReport);
+  downloadResultReportButton?.addEventListener("click", downloadResultReport);
   renderQuestion();
+}
+
+function initResultPage() {
+  if (!isResultPage) {
+    return;
+  }
+
+  if (!result || !resultLabel || !resultTitle || !resultMessage || !resultScore || !resultSteps || !downloadResultReportButton) {
+    return;
+  }
+
+  if (!loadChecklistResult()) {
+    result.hidden = true;
+    missingResult.hidden = false;
+    return;
+  }
+
+  renderResultScreen();
+  restartButton?.addEventListener("click", restartQuiz);
+  downloadResultReportButton.addEventListener("click", downloadResultReport);
 }
 
 reportForms.forEach((form) => {
@@ -930,3 +1031,4 @@ reviewForms.forEach((form) => {
 });
 
 initQuiz();
+initResultPage();

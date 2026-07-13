@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ransomware Readiness Result | NextGen CyberGuard</title>
+    <meta name="description" content="View your ransomware readiness result, score, detected gaps, and recommended next steps." />
+    <link rel="stylesheet" href="../styles.css?v=checklist-result-route-20260713" />
+    <link rel="canonical" href="https://nextgen-cyberguard.pages.dev/result/" />
+    <link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/result/" />
+    <link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/resultado/" />
+    <link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/result/" />
+  </head>
+  <body class="homepage-reference result-page" data-page="result">
+    <main>
+      <section class="section section--result-page" id="result-page">
+        <div class="shell result-page__shell">
+          <a class="result-page__back" href="../#checklist">← Back to checklist</a>
+          <div class="result card result-screen" id="result" hidden aria-live="polite">
+            <div class="result-screen__badge" aria-hidden="true">✓</div>
+            <p class="eyebrow">Your readiness result</p>
+            <h1 id="result-title">Your readiness summary</h1>
+            <div class="result-screen__meta">
+              <span id="result-label"></span>
+              <span id="result-score"></span>
+            </div>
+            <p class="result-screen__message" id="result-message"></p>
+            <div class="result-screen__next result-screen__panel">
+              <h2>Top 3 priorities</h2>
+              <ul id="result-priorities"></ul>
+            </div>
+            <div class="result-screen__next result-screen__panel">
+              <h2>Detected gaps</h2>
+              <ul id="result-gaps"></ul>
+            </div>
+            <div class="result-screen__next result-screen__panel">
+              <h2>Recommended next steps</h2>
+              <ul id="result-steps"></ul>
+            </div>
+            <div class="result-screen__actions">
+              <button class="button button--primary" id="download-result-report" type="button">Download Report</button>
+              <button class="button button--secondary result-restart" id="quiz-restart" type="button">Start Over</button>
+            </div>
+          </div>
+          <div class="result card result-screen result-screen--empty" id="missing-result" hidden>
+            <p class="eyebrow">No checklist result found</p>
+            <h1>Start with the free readiness check</h1>
+            <p class="result-screen__message">Complete the checklist first so your report can be built from your actual answers.</p>
+            <a class="button button--primary" href="../#checklist">Start the Free Check</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="../script.js?v=checklist-result-route-20260713"></script>
+  </body>
+</html>
