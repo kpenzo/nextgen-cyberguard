@@ -73,13 +73,17 @@ const translations = {
       riskLevel: "Risk level",
       executiveSummary: "Executive summary",
       topPriorities: "Top 3 priorities",
-      answers: "Your answers",
-      gaps: "Detected gaps",
+      readinessSnapshot: "Readiness snapshot",
+      scoreMeaning: "What the score means",
+      gaps: "Key gaps found",
       noGaps: "No major gaps were detected from this basic check.",
+      gapLabel: "Gap",
+      whyLabel: "Why it matters",
+      firstStepLabel: "First practical step",
       actionPlan: "Simple action plan",
-      today: "Today",
+      today: "Next 24 hours",
       thisWeek: "This week",
-      thisMonth: "This month",
+      thisMonth: "Next 30 days",
       positives: "What already looks good",
       noPositives: "No strong areas were confirmed yet. Start with the priorities above and retake the check after improvements are in place.",
       recommendedNextStep: "Recommended next step",
@@ -87,12 +91,24 @@ const translations = {
       disclaimerLabel: "Disclaimer",
       disclaimer: "This is a basic readiness check, not a full security audit.",
       filename: "nextgen-cyberguard-ransomware-readiness-report.html",
-      answerLabel: "Answer",
-      gapAnswerPrefix: "Answered",
       riskSummaries: {
-        low: "Your answers suggest the business has several important readiness basics in place. The main focus should be maintenance: testing recovery, keeping access controls current, and making sure responsibilities remain clear.",
-        medium: "Your answers show a mix of strengths and gaps. The business may be able to recover from some disruptions, but a few practical improvements could reduce downtime and confusion during a ransomware incident.",
-        high: "Your answers point to several readiness gaps that could make recovery slower and more disruptive. Focus first on backups, account protection, and a simple response plan before adding more complex security work."
+        low: [
+          "Your score suggests your business has several important ransomware readiness basics in place.",
+          "The next step is to keep those protections tested, documented, and assigned to someone responsible."
+        ],
+        medium: [
+          "Your score suggests your business has useful protections, but also a few gaps that could slow recovery.",
+          "Focus first on the priorities below so an incident would be less disruptive and easier to manage."
+        ],
+        high: [
+          "Your score suggests ransomware could cause serious disruption if key files or systems were blocked.",
+          "Start with the practical priorities below. The goal is not perfection; it is to make recovery clearer and faster."
+        ]
+      },
+      scoreMeanings: {
+        low: "This usually means basic protections are in place, but recovery should still be tested and kept current.",
+        medium: "This usually means some protections exist, but several readiness gaps need attention.",
+        high: "This usually means the business could face avoidable downtime without a few basic fixes."
       },
       maintenanceSteps: [
         "Schedule a restore test for important files at least twice a year.",
@@ -282,13 +298,17 @@ const translations = {
       riskLevel: "Nivel de riesgo",
       executiveSummary: "Resumen ejecutivo",
       topPriorities: "3 prioridades principales",
-      answers: "Tus respuestas",
-      gaps: "Brechas detectadas",
+      readinessSnapshot: "Resumen de preparación",
+      scoreMeaning: "Qué significa la puntuación",
+      gaps: "Brechas clave detectadas",
       noGaps: "No se detectaron brechas importantes en este chequeo básico.",
+      gapLabel: "Brecha",
+      whyLabel: "Por qué importa",
+      firstStepLabel: "Primer paso práctico",
       actionPlan: "Plan de acción simple",
-      today: "Hoy",
+      today: "Próximas 24 horas",
       thisWeek: "Esta semana",
-      thisMonth: "Este mes",
+      thisMonth: "Próximos 30 días",
       positives: "Lo que ya parece estar bien",
       noPositives: "Todavía no se confirmaron áreas fuertes. Empieza por las prioridades anteriores y repite el chequeo después de mejorar.",
       recommendedNextStep: "Siguiente paso recomendado",
@@ -296,12 +316,24 @@ const translations = {
       disclaimerLabel: "Aviso",
       disclaimer: "This is a basic readiness check, not a full security audit.",
       filename: "nextgen-cyberguard-informe-preparacion-ransomware.html",
-      answerLabel: "Respuesta",
-      gapAnswerPrefix: "Respuesta",
       riskSummaries: {
-        low: "Tus respuestas sugieren que el negocio tiene varias bases importantes de preparación. El foco principal debería ser mantenerlas: probar la recuperación, mantener controles de acceso actualizados y confirmar responsabilidades.",
-        medium: "Tus respuestas muestran una mezcla de fortalezas y brechas. El negocio podría recuperarse de algunas interrupciones, pero algunas mejoras prácticas pueden reducir tiempo de parada y confusión durante un incidente.",
-        high: "Tus respuestas indican varias brechas que podrían hacer que la recuperación sea más lenta y disruptiva. Empieza por copias de seguridad, protección de cuentas y un plan simple de respuesta antes de añadir trabajo más complejo."
+        low: [
+          "Tu puntuación sugiere que el negocio tiene varias bases importantes de preparación frente al ransomware.",
+          "El siguiente paso es mantener esas protecciones probadas, documentadas y asignadas a una persona responsable."
+        ],
+        medium: [
+          "Tu puntuación sugiere que el negocio tiene protecciones útiles, pero también algunas brechas que podrían retrasar la recuperación.",
+          "Empieza por las prioridades siguientes para que un incidente sea menos disruptivo y más fácil de gestionar."
+        ],
+        high: [
+          "Tu puntuación sugiere que un ransomware podría causar una interrupción importante si bloquea archivos o sistemas clave.",
+          "Empieza por las prioridades prácticas siguientes. El objetivo no es la perfección, sino recuperar con más claridad y rapidez."
+        ]
+      },
+      scoreMeanings: {
+        low: "Normalmente significa que existen protecciones básicas, pero la recuperación debe probarse y mantenerse al día.",
+        medium: "Normalmente significa que hay algunas protecciones, pero varias brechas de preparación necesitan atención.",
+        high: "Normalmente significa que el negocio podría sufrir tiempo de parada evitable sin algunas mejoras básicas."
       },
       maintenanceSteps: [
         "Programa una prueba de restauración de archivos importantes al menos dos veces al año.",
@@ -748,31 +780,31 @@ function buildReportHtml() {
     month: "long",
     day: "numeric"
   });
-  const answerRows = questions.map((question, index) => {
-    const answer = answers[index];
-    return `<tr><td>${index + 1}. ${escapeHtml(question.text)}</td><td>${escapeHtml(answer?.label || "-")}</td></tr>`;
-  }).join("");
-  const gaps = getDetectedGaps();
-  const groupedGaps = groupGapsByCategory(gaps);
-  const gapHtml = gaps.length
-    ? Object.entries(groupedGaps).map(([category, items]) => `
-      <div class="gap-group">
-        <h3>${escapeHtml(category)}</h3>
-        ${items.map((gap) => `
-          <article class="gap-card">
-            <h4>${escapeHtml(gap.detected)}</h4>
-            <p><strong>${pageLanguage === "es" ? "Por qué importa" : "Why it matters"}:</strong> ${escapeHtml(gap.why)}</p>
-            <p><strong>${pageLanguage === "es" ? "Siguiente paso" : "Practical next step"}:</strong> ${escapeHtml(gap.next)}</p>
-            <details>
-              <summary>${pageLanguage === "es" ? "Respuestas relacionadas" : "Related answers"}</summary>
-              <ul>${gap.questions.map((item) => `<li>${escapeHtml(item.question)} — ${escapeHtml(report.gapAnswerPrefix)}: ${escapeHtml(item.answer)}</li>`).join("")}</ul>
-            </details>
-          </article>`).join("")}
-      </div>`).join("")
-    : `<p>${escapeHtml(report.noGaps)}</p>`;
-  const priorities = getTopPriorities();
+  const gaps = getDetectedGaps().slice(0, 5);
+  const priorities = getTopPriorities().slice(0, 3);
   const actionPlan = getActionPlan();
-  const positives = getPositiveFindings();
+  const positives = getPositiveFindings().slice(0, 4);
+  const summaryParagraphs = Array.isArray(report.riskSummaries[latestRiskLevel])
+    ? report.riskSummaries[latestRiskLevel]
+    : [report.riskSummaries[latestRiskLevel] || content.message];
+  const scoreMeaning = report.scoreMeanings?.[latestRiskLevel] || content.message;
+  const gapHtml = gaps.length
+    ? gaps.map((gap) => `
+        <article class="gap-card">
+          <h3>${escapeHtml(gap.detected)}</h3>
+          <dl>
+            <div><dt>${escapeHtml(report.gapLabel)}</dt><dd>${escapeHtml(gap.category)}</dd></div>
+            <div><dt>${escapeHtml(report.whyLabel)}</dt><dd>${escapeHtml(gap.why)}</dd></div>
+            <div><dt>${escapeHtml(report.firstStepLabel)}</dt><dd>${escapeHtml(gap.next)}</dd></div>
+          </dl>
+        </article>`).join("")
+    : `<p class="soft-box">${escapeHtml(report.noGaps)}</p>`;
+  const positivesHtml = positives.length
+    ? `<section class="section">
+        <h2>${escapeHtml(report.positives)}</h2>
+        <div class="positive">${renderList(positives)}</div>
+      </section>`
+    : "";
 
   return `<!doctype html>
 <html lang="${pageLanguage}">
@@ -780,7 +812,7 @@ function buildReportHtml() {
   <meta charset="utf-8">
   <title>${escapeHtml(report.title)} | ${escapeHtml(report.brand)}</title>
   <style>
-    body{margin:0;background:#f4fbfa;color:#071431;font-family:Inter,Arial,sans-serif;line-height:1.55}main{max-width:980px;margin:0 auto;padding:42px 22px}.card{background:#fff;border:1px solid #d8ece9;border-radius:18px;box-shadow:0 20px 60px rgba(10,58,68,.12);padding:34px}.brand{color:#00877f;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px}h1{font-size:42px;line-height:1.05;margin:10px 0 12px}h2{font-size:24px;margin:0 0 14px}h3{font-size:18px;margin:18px 0 10px}h4{font-size:16px;margin:0 0 8px}.muted{color:#56697a}.meta{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}.pill{background:#e8f8f5;color:#00766f;border:1px solid #c8ebe6;border-radius:999px;padding:8px 12px;font-weight:800}.section{margin-top:30px;padding-top:26px;border-top:1px solid #e2efed}ul{padding-left:22px}li{margin:7px 0}.priority-list{counter-reset:item;display:grid;gap:12px;padding:0;list-style:none}.priority-list li{counter-increment:item;margin:0;padding:14px 16px 14px 48px;border:1px solid #d7ebe8;border-radius:12px;background:#f7fcfb;position:relative;font-weight:750}.priority-list li:before{content:counter(item);position:absolute;left:14px;top:13px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#00877f;color:#fff;font-size:12px}.gap-card{border:1px solid #dcecea;border-radius:14px;background:#fbfefe;padding:16px;margin:12px 0}.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.action-box{border:1px solid #dcecea;border-radius:14px;background:#fbfefe;padding:16px}.positive{background:#f0faf7;border:1px solid #cdece5;border-radius:14px;padding:16px}table{width:100%;border-collapse:collapse;background:#fbfefe;border-radius:12px;overflow:hidden}td{border-bottom:1px solid #e2efed;padding:10px 12px;vertical-align:top}td:last-child{font-weight:800;color:#00766f;width:180px}.cta,.disclaimer{margin-top:24px;padding:16px 18px;border-radius:12px;font-weight:750}.cta{background:#e8f8f5;color:#005d58}.disclaimer{background:#eef7f5;color:#354d5d}@media(max-width:760px){.action-grid{grid-template-columns:1fr}h1{font-size:34px}}@media print{body{background:#fff}.card{box-shadow:none}}
+    body{margin:0;background:#f4fbfa;color:#071431;font-family:Inter,Arial,sans-serif;line-height:1.55}main{max-width:920px;margin:0 auto;padding:42px 22px}.card{background:#fff;border:1px solid #d8ece9;border-radius:18px;box-shadow:0 20px 60px rgba(10,58,68,.12);padding:34px}.brand{color:#00877f;font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px}h1{font-size:42px;line-height:1.05;margin:10px 0 12px}h2{font-size:23px;margin:0 0 14px}h3{font-size:17px;margin:0 0 12px}.muted{color:#56697a}.disclaimer{margin:18px 0 0;padding:12px 14px;border-radius:12px;background:#eef7f5;color:#354d5d;font-size:14px}.section{margin-top:28px;padding-top:24px;border-top:1px solid #e2efed}.snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.snapshot-box,.action-box,.gap-card,.soft-box{border:1px solid #dcecea;border-radius:14px;background:#fbfefe;padding:16px}.snapshot-box span{display:block;color:#607482;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.snapshot-box strong{display:block;margin-top:5px;color:#00766f;font-size:20px}.summary p{margin:0 0 10px}.priority-list{counter-reset:item;display:grid;gap:12px;padding:0;list-style:none}.priority-list li{counter-increment:item;margin:0;padding:14px 16px 14px 48px;border:1px solid #d7ebe8;border-radius:12px;background:#f7fcfb;position:relative;font-weight:750}.priority-list li:before{content:counter(item);position:absolute;left:14px;top:13px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#00877f;color:#fff;font-size:12px}.gap-list{display:grid;gap:12px}.gap-card dl{margin:0;display:grid;gap:10px}.gap-card div{display:grid;gap:3px}.gap-card dt{color:#00766f;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.gap-card dd{margin:0;color:#23394a}.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.action-box h3{color:#00766f}.action-box ul,.positive ul{margin:0;padding-left:20px}.action-box li,.positive li{margin:6px 0}.positive{background:#f0faf7;border:1px solid #cdece5;border-radius:14px;padding:16px}.cta{margin-top:24px;padding:16px 18px;border-radius:12px;background:#e8f8f5;color:#005d58;font-weight:750}@media(max-width:760px){.snapshot,.action-grid{grid-template-columns:1fr}h1{font-size:34px}.card{padding:24px}}@media print{body{background:#fff}.card{box-shadow:none}}
   </style>
 </head>
 <body>
@@ -789,12 +821,20 @@ function buildReportHtml() {
       <p class="brand">${escapeHtml(report.brand)}</p>
       <h1>${escapeHtml(report.title)}</h1>
       <p class="muted">${escapeHtml(report.generatedOn)} ${escapeHtml(generatedDate)}</p>
-      <p class="disclaimer"><strong>${escapeHtml(report.disclaimerLabel)}:</strong> ${escapeHtml(report.disclaimer)}</p>
+      <p class="disclaimer">${escapeHtml(report.disclaimer)}</p>
 
       <section class="section">
+        <h2>${escapeHtml(report.readinessSnapshot)}</h2>
+        <div class="snapshot">
+          <div class="snapshot-box"><span>${escapeHtml(report.riskLevel)}</span><strong>${escapeHtml(content.label)}</strong></div>
+          <div class="snapshot-box"><span>${escapeHtml(report.score)}</span><strong>${latestScore}/20</strong></div>
+          <div class="snapshot-box"><span>${escapeHtml(report.scoreMeaning)}</span><p>${escapeHtml(scoreMeaning)}</p></div>
+        </div>
+      </section>
+
+      <section class="section summary">
         <h2>${escapeHtml(report.executiveSummary)}</h2>
-        <div class="meta"><span class="pill">${escapeHtml(report.riskLevel)}: ${escapeHtml(content.label)}</span><span class="pill">${escapeHtml(report.score)}: ${latestScore}/20</span></div>
-        <p>${escapeHtml(report.riskSummaries[latestRiskLevel] || content.message)}</p>
+        ${summaryParagraphs.slice(0, 3).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
       </section>
 
       <section class="section">
@@ -804,27 +844,19 @@ function buildReportHtml() {
 
       <section class="section">
         <h2>${escapeHtml(report.gaps)}</h2>
-        ${gapHtml}
+        <div class="gap-list">${gapHtml}</div>
       </section>
 
       <section class="section">
         <h2>${escapeHtml(report.actionPlan)}</h2>
         <div class="action-grid">
-          <div class="action-box"><h3>${escapeHtml(report.today)}</h3>${renderList(actionPlan.today)}</div>
-          <div class="action-box"><h3>${escapeHtml(report.thisWeek)}</h3>${renderList(actionPlan.week)}</div>
-          <div class="action-box"><h3>${escapeHtml(report.thisMonth)}</h3>${renderList(actionPlan.month)}</div>
+          <div class="action-box"><h3>${escapeHtml(report.today)}</h3>${renderList(actionPlan.today.slice(0, 3))}</div>
+          <div class="action-box"><h3>${escapeHtml(report.thisWeek)}</h3>${renderList(actionPlan.week.slice(0, 3))}</div>
+          <div class="action-box"><h3>${escapeHtml(report.thisMonth)}</h3>${renderList(actionPlan.month.slice(0, 3))}</div>
         </div>
       </section>
 
-      <section class="section">
-        <h2>${escapeHtml(report.positives)}</h2>
-        <div class="positive">${positives.length ? renderList(positives) : `<p>${escapeHtml(report.noPositives)}</p>`}</div>
-      </section>
-
-      <section class="section">
-        <h2>${escapeHtml(report.answers)}</h2>
-        <table>${answerRows}</table>
-      </section>
+      ${positivesHtml}
 
       <p class="cta"><strong>${escapeHtml(report.recommendedNextStep)}:</strong> ${escapeHtml(report.cta)}</p>
     </section>
@@ -863,7 +895,8 @@ function renderResultScreen() {
   }
 
   resultTitle.textContent = content.title;
-  resultMessage.textContent = copy.report.riskSummaries[latestRiskLevel] || content.message;
+  const summaryCopy = copy.report.riskSummaries[latestRiskLevel];
+  resultMessage.textContent = Array.isArray(summaryCopy) ? summaryCopy[0] : summaryCopy || content.message;
 
   if (resultPriorities) {
     resultPriorities.innerHTML = getTopPriorities().map((priority) => `<li>${escapeHtml(priority)}</li>`).join("");
