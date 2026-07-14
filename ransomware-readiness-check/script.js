@@ -1034,6 +1034,20 @@ function initResultPage() {
   downloadResultReportButton.addEventListener("click", downloadResultReport);
 }
 
+function initChecklistAnchorLinks() {
+  if (!checklistSection) {
+    return;
+  }
+
+  document.querySelectorAll('a[href="#checklist"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      checklistSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", "#checklist");
+    });
+  });
+}
+
 reportForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     prepareFormMetadata(form);
@@ -1063,5 +1077,6 @@ reviewForms.forEach((form) => {
   });
 });
 
+initChecklistAnchorLinks();
 initQuiz();
 initResultPage();
