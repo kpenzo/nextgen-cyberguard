@@ -10905,3 +10905,165 @@ textarea:focus {
 .result-page .result-screen__panel strong {
   color: #071431;
 }
+
+/* Paid package section */
+.homepage-reference .package-section {
+  padding-top: clamp(52px, 7vw, 88px);
+  padding-bottom: clamp(28px, 5vw, 56px);
+}
+
+.homepage-reference .package-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.25fr);
+  gap: clamp(20px, 3vw, 32px);
+  align-items: stretch;
+}
+
+.homepage-reference .package-problem,
+.homepage-reference .package-card {
+  border-color: rgba(0, 137, 132, .16);
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 18px 42px rgba(30, 72, 84, .08);
+}
+
+.homepage-reference .package-problem {
+  padding: clamp(28px, 4vw, 42px);
+}
+
+.homepage-reference .package-problem h2 {
+  max-width: 520px;
+  margin: 0 0 14px;
+  color: #071431;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.04;
+  letter-spacing: -.045em;
+}
+
+.homepage-reference .package-problem > p {
+  max-width: 620px;
+  margin: 0;
+  color: #4d5d78;
+  font-size: clamp(.95rem, 1.3vw, 1.05rem);
+}
+
+.homepage-reference .package-gap-list {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 137, 132, .14);
+}
+
+.homepage-reference .package-gap-list h3 {
+  margin: 0 0 14px;
+  color: #071431;
+  font-size: 1.05rem;
+}
+
+.homepage-reference .package-gap-list ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.homepage-reference .package-gap-list li {
+  position: relative;
+  padding-left: 26px;
+  color: #394963;
+  font-size: .94rem;
+}
+
+.homepage-reference .package-gap-list li::before {
+  position: absolute;
+  left: 0;
+  top: .18em;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  content: "✓";
+  display: grid;
+  place-items: center;
+  color: #00877f;
+  background: #e7f8f5;
+  font-size: .68rem;
+  font-weight: 950;
+}
+
+.homepage-reference .package-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.homepage-reference .package-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  min-height: 100%;
+  padding: 24px;
+  border-radius: 18px;
+}
+
+.homepage-reference .package-card--recommended {
+  border-color: rgba(0, 137, 132, .36);
+  background: linear-gradient(180deg, rgba(236, 252, 249, .96), rgba(255, 255, 255, .98));
+  box-shadow: 0 24px 50px rgba(0, 137, 132, .13);
+}
+
+.homepage-reference .package-badge {
+  align-self: flex-start;
+  display: inline-flex;
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 137, 132, .22);
+  border-radius: 999px;
+  color: #007f79;
+  background: #e9faf7;
+  font-size: .68rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.homepage-reference .package-card h3 {
+  margin: 0 0 12px;
+  color: #071431;
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  line-height: 1.15;
+}
+
+.homepage-reference .package-price {
+  margin: 0 0 12px;
+  color: #00877f;
+  font-size: 1.55rem;
+  font-weight: 950;
+  letter-spacing: -.03em;
+}
+
+.homepage-reference .package-card p:not(.package-price) {
+  margin: 0;
+  color: #4d5d78;
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.homepage-reference .package-card .button {
+  width: 100%;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 7px;
+  font-size: .78rem;
+}
+
+.homepage-reference .package-card .button--primary {
+  background: linear-gradient(135deg, #008d85, #00a799);
+  box-shadow: 0 12px 24px rgba(0, 137, 132, .16);
+}
+
+@media (max-width: 980px) {
+  .homepage-reference .package-layout,
+  .homepage-reference .package-cards {
+    grid-template-columns: 1fr;
+  }
+}

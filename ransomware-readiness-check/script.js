@@ -1048,6 +1048,27 @@ function initChecklistAnchorLinks() {
   });
 }
 
+function initPackageRequestLinks() {
+  const freeReview = document.querySelector("#free-review");
+
+  if (!freeReview) {
+    return;
+  }
+
+  document.querySelectorAll('a[href="#free-review"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (leadSection) {
+        leadSection.hidden = false;
+      }
+
+      freeReview.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", "#free-review");
+    });
+  });
+}
+
 reportForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     prepareFormMetadata(form);
@@ -1081,5 +1102,6 @@ reviewForms.forEach((form) => {
 });
 
 initChecklistAnchorLinks();
+initPackageRequestLinks();
 initQuiz();
 initResultPage();
