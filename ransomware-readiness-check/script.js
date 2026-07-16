@@ -1065,7 +1065,10 @@ reviewForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     prepareFormMetadata(form);
     storeSubmission("ransomwareReadinessReviewRequests", {
+      firstName: form.elements.first_name?.value.trim() || "",
       email: form.elements.email?.value.trim() || "",
+      message: form.elements.message?.value.trim() || "",
+      companySize: form.elements.company_size?.value || "",
       language: pageLanguage,
       riskLevel: form.elements.risk_level?.value || latestRiskLevel || "not_completed",
       score: latestScore,
