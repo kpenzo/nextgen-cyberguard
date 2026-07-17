@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solicitar un paquete de preparación | NextGen CyberGuard</title>
+    <meta name="description" content="Solicita un paquete de preparación de NextGen CyberGuard e indica qué opción te interesa." />
+    <link rel="stylesheet" href="../../styles.css?v=package-request-20260717" />
+    <link rel="canonical" href="https://nextgen-cyberguard.pages.dev/ES/solicitar-paquete/" />
+    <link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/solicitar-paquete/" />
+    <link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+    <link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+  </head>
+  <body class="homepage-reference package-request-page">
+    <main>
+      <section class="section package-request-hero">
+        <div class="shell package-request-shell">
+          <a class="result-page__back" href="../#paquetes">← Volver a paquetes</a>
+          <section class="package-request card" id="package-request">
+            <div class="section-heading section-heading--compact">
+              <p class="eyebrow">Solicitud de paquete</p>
+              <h1>Solicitar un paquete de preparación</h1>
+              <p>Cuéntanos qué paquete te interesa y te contactaremos con los siguientes pasos.</p>
+            </div>
+            <p class="package-request-reassurance">No se realiza ningún pago en esta página. Primero contactaremos contigo para confirmar el siguiente paso adecuado.</p>
+            <!-- Replace FORM_ID_HERE with the real Formspree endpoint before going live. -->
+            <form class="lead-form package-request-form" data-package-form method="POST" action="https://formspree.io/f/FORM_ID_HERE">
+              <label>
+                Nombre
+                <input name="first_name" autocomplete="given-name" required />
+              </label>
+              <label>
+                Correo profesional
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <label>
+                Paquete de interés
+                <select name="package_interest" id="package-interest" required>
+                  <option value="">Selecciona un paquete</option>
+                  <option>Revisión rápida</option>
+                  <option>Plan de mejora de preparación contra ransomware</option>
+                  <option>Soporte mensual de preparación digital</option>
+                </select>
+              </label>
+              <label>
+                Mensaje opcional
+                <textarea name="message" rows="3" placeholder="¿Algo que quieras que sepamos?"></textarea>
+              </label>
+              <input type="hidden" name="language" />
+              <input type="hidden" name="risk_score" />
+              <input type="hidden" name="risk_level" />
+              <input type="hidden" name="service_interest" value="solicitud_paquete_preparacion" />
+              <button class="button button--primary" type="submit">Solicitar paquete</button>
+              <p class="form-note" role="status"></p>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="../../script.js?v=package-request-20260717"></script>
+  </body>
+</html>

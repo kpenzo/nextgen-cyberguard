@@ -384,7 +384,7 @@
                     <li>Short written summary</li>
                   </ul>
                 </div>
-                <a class="button button--secondary" href="#package-request" data-package-choice="Quick Fix Review">Request Quick Review</a>
+                <a class="button button--secondary" href="./request-package/?package=quick-fix-review">Request Quick Review</a>
               </article>
 
               <article class="package-card package-card--recommended card">
@@ -402,7 +402,7 @@
                     <li>30-day action plan</li>
                   </ul>
                 </div>
-                <a class="button button--primary" href="#package-request" data-package-choice="Ransomware Readiness Fix Plan">Request Fix Plan</a>
+                <a class="button button--primary" href="./request-package/?package=fix-plan">Request Fix Plan</a>
               </article>
 
               <article class="package-card card">
@@ -417,47 +417,9 @@
                     <li>Updated next steps</li>
                   </ul>
                 </div>
-                <a class="button button--secondary" href="#package-request" data-package-choice="Monthly Cyber Readiness Support">Request Monthly Support</a>
+                <a class="button button--secondary" href="./request-package/?package=monthly-support">Request Monthly Support</a>
               </article>
             </div>
-
-            <section class="package-request card" id="package-request">
-              <div class="section-heading section-heading--compact">
-                <p class="eyebrow">Package request</p>
-                <h2>Request a readiness package</h2>
-                <p>Tell us which package you are interested in and we’ll contact you with the next steps.</p>
-              </div>
-              <!-- Replace FORM_ID_HERE with the real Formspree endpoint before going live. -->
-              <form class="lead-form package-request-form" data-package-form method="POST" action="https://formspree.io/f/FORM_ID_HERE">
-                <label>
-                  First Name
-                  <input name="first_name" autocomplete="given-name" required />
-                </label>
-                <label>
-                  Business Email
-                  <input type="email" name="email" autocomplete="email" required />
-                </label>
-                <label>
-                  Package Interested In
-                  <select name="package_interest" id="package-interest" required>
-                    <option value="">Select a package</option>
-                    <option>Quick Fix Review</option>
-                    <option>Ransomware Readiness Fix Plan</option>
-                    <option>Monthly Cyber Readiness Support</option>
-                  </select>
-                </label>
-                <label>
-                  Optional Message
-                  <textarea name="message" rows="3" placeholder="Anything you want us to know?"></textarea>
-                </label>
-                <input type="hidden" name="language" />
-                <input type="hidden" name="risk_score" />
-                <input type="hidden" name="risk_level" />
-                <input type="hidden" name="service_interest" value="readiness_package_request" />
-                <button class="button button--primary" type="submit">Request Package</button>
-                <p class="form-note" role="status"></p>
-              </form>
-            </section>
           </div>
         </div>
       </section>

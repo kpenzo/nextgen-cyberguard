@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Request a readiness package | NextGen CyberGuard</title>
+    <meta name="description" content="Request a NextGen CyberGuard ransomware readiness package and tell us which option you are interested in." />
+    <link rel="stylesheet" href="../styles.css?v=package-request-20260717" />
+    <link rel="canonical" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+    <link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+    <link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/solicitar-paquete/" />
+    <link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+  </head>
+  <body class="homepage-reference package-request-page">
+    <main>
+      <section class="section package-request-hero">
+        <div class="shell package-request-shell">
+          <a class="result-page__back" href="../#paid-packages">← Back to packages</a>
+          <section class="package-request card" id="package-request">
+            <div class="section-heading section-heading--compact">
+              <p class="eyebrow">Package request</p>
+              <h1>Request a readiness package</h1>
+              <p>Tell us which package you are interested in and we’ll contact you with the next steps.</p>
+            </div>
+            <p class="package-request-reassurance">No payment is taken on this page. We’ll contact you first to confirm the right next step.</p>
+            <!-- Replace FORM_ID_HERE with the real Formspree endpoint before going live. -->
+            <form class="lead-form package-request-form" data-package-form method="POST" action="https://formspree.io/f/FORM_ID_HERE">
+              <label>
+                First Name
+                <input name="first_name" autocomplete="given-name" required />
+              </label>
+              <label>
+                Business Email
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <label>
+                Package Interested In
+                <select name="package_interest" id="package-interest" required>
+                  <option value="">Select a package</option>
+                  <option>Quick Fix Review</option>
+                  <option>Ransomware Readiness Fix Plan</option>
+                  <option>Monthly Cyber Readiness Support</option>
+                </select>
+              </label>
+              <label>
+                Optional Message
+                <textarea name="message" rows="3" placeholder="Anything you want us to know?"></textarea>
+              </label>
+              <input type="hidden" name="language" />
+              <input type="hidden" name="risk_score" />
+              <input type="hidden" name="risk_level" />
+              <input type="hidden" name="service_interest" value="readiness_package_request" />
+              <button class="button button--primary" type="submit">Request Package</button>
+              <p class="form-note" role="status"></p>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="../script.js?v=package-request-20260717"></script>
+  </body>
+</html>

@@ -97,6 +97,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/" />
   </url>
   <url>
+    <loc>https://nextgen-cyberguard.pages.dev/request-package/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/solicitar-paquete/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+  </url>
+  <url>
+    <loc>https://nextgen-cyberguard.pages.dev/ES/solicitar-paquete/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/solicitar-paquete/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nextgen-cyberguard.pages.dev/request-package/" />
+  </url>
+  <url>
     <loc>https://nextgen-cyberguard.pages.dev/result/</loc>
   </url>
   <url>

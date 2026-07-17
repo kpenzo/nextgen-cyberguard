@@ -1051,6 +1051,23 @@ function initChecklistAnchorLinks() {
   });
 }
 
+function getPackageLabelFromParam(packageParam) {
+  const packageLabels = {
+    en: {
+      "quick-fix-review": "Quick Fix Review",
+      "fix-plan": "Ransomware Readiness Fix Plan",
+      "monthly-support": "Monthly Cyber Readiness Support"
+    },
+    es: {
+      "quick-fix-review": "Revisión rápida",
+      "fix-plan": "Plan de mejora de preparación contra ransomware",
+      "monthly-support": "Soporte mensual de preparación digital"
+    }
+  };
+
+  return packageLabels[pageLanguage]?.[packageParam] || "";
+}
+
 function initPackageRequestLinks() {
   const packageRequest = document.querySelector("#package-request");
 
@@ -1058,11 +1075,18 @@ function initPackageRequestLinks() {
     return;
   }
 
+  const packageSelect = packageRequest.querySelector('[name="package_interest"]');
+  const packageParam = new URLSearchParams(window.location.search).get("package");
+  const packageFromUrl = getPackageLabelFromParam(packageParam);
+
+  if (packageSelect && packageFromUrl) {
+    packageSelect.value = packageFromUrl;
+  }
+
   document.querySelectorAll('a[href="#package-request"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       const selectedPackage = link.dataset.packageChoice || "";
-      const packageSelect = packageRequest.querySelector('[name="package_interest"]');
 
       if (packageSelect && selectedPackage) {
         packageSelect.value = selectedPackage;
