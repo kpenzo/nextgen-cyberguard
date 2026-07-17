@@ -222,7 +222,8 @@ const translations = {
       ]
     },
     leadThanks: "Your report will be available once the form integration is connected.",
-    reviewThanks: "Thanks. Your review request has been noted for this MVP test."
+    reviewThanks: "Thanks. Your review request has been noted for this MVP test.",
+    packageThanks: "Thanks. Your package request has been noted and we’ll contact you with next steps."
   },
   es: {
     progressText: "Pregunta {current} de {total}",
@@ -447,7 +448,8 @@ const translations = {
       ]
     },
     leadThanks: "Tu informe estará disponible cuando la integración del formulario esté conectada.",
-    reviewThanks: "Gracias. Tu solicitud de revisión ha quedado registrada para esta prueba MVP."
+    reviewThanks: "Gracias. Tu solicitud de revisión ha quedado registrada para esta prueba MVP.",
+    packageThanks: "Gracias. Tu solicitud de paquete ha quedado registrada y te contactaremos con los siguientes pasos."
   }
 };
 
@@ -483,6 +485,7 @@ const downloadResultReportButton = document.querySelector("#download-result-repo
 const leadSection = document.querySelector("#lead-section");
 const reportForms = document.querySelectorAll("[data-report-form]");
 const reviewForms = document.querySelectorAll("[data-review-form]");
+const packageForms = document.querySelectorAll("[data-package-form]");
 
 let currentQuestion = 0;
 const answers = Array(questions.length).fill(null);
@@ -1049,22 +1052,24 @@ function initChecklistAnchorLinks() {
 }
 
 function initPackageRequestLinks() {
-  const freeReview = document.querySelector("#free-review");
+  const packageRequest = document.querySelector("#package-request");
 
-  if (!freeReview) {
+  if (!packageRequest) {
     return;
   }
 
-  document.querySelectorAll('a[href="#free-review"]').forEach((link) => {
+  document.querySelectorAll('a[href="#package-request"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
+      const selectedPackage = link.dataset.packageChoice || "";
+      const packageSelect = packageRequest.querySelector('[name="package_interest"]');
 
-      if (leadSection) {
-        leadSection.hidden = false;
+      if (packageSelect && selectedPackage) {
+        packageSelect.value = selectedPackage;
       }
 
-      freeReview.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.pushState(null, "", "#free-review");
+      packageRequest.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", "#package-request");
     });
   });
 }
@@ -1079,6 +1084,25 @@ reportForms.forEach((form) => {
     // Replace FORM_ID_HERE in the HTML action attribute with the real Formspree form ID.
     // Once replaced, the browser will submit first name, email, industry or company size, language, risk_score, risk_level, and service_interest.
     handlePlaceholderSubmit(event, form, copy.leadThanks);
+  });
+});
+
+packageForms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    prepareFormMetadata(form);
+    storeSubmission("ransomwareReadinessPackageRequests", {
+      firstName: form.elements.first_name?.value.trim() || "",
+      email: form.elements.email?.value.trim() || "",
+      packageInterest: form.elements.package_interest?.value || "",
+      message: form.elements.message?.value.trim() || "",
+      language: pageLanguage,
+      riskLevel: form.elements.risk_level?.value || latestRiskLevel || "not_completed",
+      score: latestScore,
+      serviceInterest: form.elements.service_interest?.value || "readiness_package_request",
+      submittedAt: new Date().toISOString()
+    });
+
+    handlePlaceholderSubmit(event, form, copy.packageThanks);
   });
 });
 

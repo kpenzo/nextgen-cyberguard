@@ -11188,3 +11188,46 @@ textarea:focus {
     transform: none;
   }
 }
+
+.homepage-reference .package-request {
+  padding: 24px;
+  border-color: rgba(0, 137, 132, .18);
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 18px 42px rgba(30, 72, 84, .08);
+}
+
+.homepage-reference .package-request .section-heading {
+  margin-bottom: 18px;
+}
+
+.homepage-reference .package-request-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+  padding: 0;
+  box-shadow: none;
+  border: 0;
+  background: transparent;
+}
+
+.homepage-reference .package-request-form label:nth-of-type(3),
+.homepage-reference .package-request-form label:nth-of-type(4),
+.homepage-reference .package-request-form .button,
+.homepage-reference .package-request-form .form-note {
+  grid-column: 1 / -1;
+}
+
+.homepage-reference .package-request-form .button {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #008d85, #00a799);
+  box-shadow: 0 12px 24px rgba(0, 137, 132, .16);
+  font-size: .78rem;
+}
+
+@media (max-width: 720px) {
+  .homepage-reference .package-request-form {
+    grid-template-columns: 1fr;
+  }
+}
