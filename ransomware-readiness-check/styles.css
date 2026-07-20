@@ -13151,3 +13151,27 @@ textarea:focus {
     margin-bottom: 0;
   }
 }
+
+
+/* Package card final polish: value note and cleaner recommended badge */
+.homepage-reference .package-value-note,
+.homepage-reference .package-card p.package-value-note {
+  margin: 9px 0 0;
+  padding: 9px 10px;
+  border: 1px solid rgba(0, 137, 132, .18);
+  border-radius: 10px;
+  color: #123d47;
+  background: rgba(235, 249, 247, .72);
+  font-size: .8rem;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.homepage-reference .package-card--recommended .package-badge {
+  margin-bottom: 2px;
+}
+
+.homepage-reference .package-card--recommended .button--primary {
+  min-height: 46px;
+  font-size: .84rem;
+}
