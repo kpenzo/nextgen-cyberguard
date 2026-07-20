@@ -13079,3 +13079,75 @@ textarea:focus {
     min-height: 0;
   }
 }
+
+
+/* Package card polish: payment labels and recommended spacing */
+.homepage-reference .package-card > div {
+  grid-template-rows: auto auto auto auto 1fr;
+}
+
+.homepage-reference .package-payment-label,
+.homepage-reference .package-card p.package-payment-label {
+  width: fit-content;
+  margin: -3px 0 10px;
+  padding: 4px 8px;
+  border: 1px solid rgba(0, 137, 132, .18);
+  border-radius: 999px;
+  color: #00746f;
+  background: rgba(232, 249, 246, .7);
+  font-size: .68rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.homepage-reference .package-card-label {
+  width: fit-content;
+  margin: 0 0 8px;
+  color: #007f79;
+  font-size: .68rem;
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.homepage-reference .package-card--recommended {
+  padding-top: 23px;
+}
+
+.homepage-reference .package-card--recommended .package-badge {
+  position: static;
+  align-self: flex-start;
+  margin: 0 0 -6px;
+  padding: 6px 10px;
+  border-color: rgba(0, 137, 132, .3);
+  background: #dff8f4;
+  font-size: .64rem;
+}
+
+.homepage-reference .package-card--recommended h3 {
+  min-height: 0;
+  padding-right: 0;
+  margin-top: 0;
+  font-size: clamp(1.08rem, 1.45vw, 1.3rem);
+}
+
+.homepage-reference .package-card--recommended .button--primary {
+  min-height: 44px;
+  font-size: .82rem;
+  box-shadow: 0 16px 30px rgba(0, 125, 118, .2);
+}
+
+.homepage-reference .package-cards--paid .package-card--recommended {
+  border-color: rgba(0, 137, 132, .5);
+}
+
+.homepage-reference .package-price,
+.homepage-reference .package-cards--paid .package-card--recommended .package-price {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 820px) {
+  .homepage-reference .package-card--recommended .package-badge {
+    margin-bottom: 0;
+  }
+}
