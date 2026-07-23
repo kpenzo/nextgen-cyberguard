@@ -7963,6 +7963,7 @@ textarea:focus {
   top: 30px;
   right: max(28px, calc((100vw - 1180px) / 2));
   width: auto;
+  pointer-events: auto;
 }
 
 .homepage-reference .language-switch {
@@ -8252,7 +8253,14 @@ textarea:focus {
 
 .homepage-reference .hero-inner,
 .homepage-reference .language-row {
-  z-index: 3;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+.homepage-reference .language-switch {
+  position: relative;
+  z-index: 6;
+  pointer-events: auto;
 }
 
 .homepage-reference .hero h1 {
