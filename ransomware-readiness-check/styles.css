@@ -13781,7 +13781,7 @@ textarea:focus {
 }
 
 .homepage-reference .hero {
-  min-height: 690px;
+  min-height: 704px;
   overflow: hidden;
   color: var(--ref-text);
   background: var(--ref-navy);
@@ -13790,7 +13790,7 @@ textarea:focus {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
-  width: 50.5%;
+  width: 48.5%;
   background:
     radial-gradient(circle at 0% 25%, rgba(140,170,190,.11), transparent 32%),
     linear-gradient(120deg, #07111a 0%, #0a151e 75%, rgba(10,21,30,.95) 100%);
@@ -13804,13 +13804,13 @@ textarea:focus {
 }
 .homepage-reference .hero-media {
   position: absolute;
-  inset: 0 0 0 48.5%;
+  inset: 0 0 0 47.5%;
   background-image:
-    linear-gradient(90deg, rgba(7,17,26,.95) 0%, rgba(7,17,26,.42) 18%, rgba(7,17,26,.04) 46%),
-    linear-gradient(180deg, rgba(7,17,26,.14), rgba(7,17,26,.55)),
-    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=84");
+    linear-gradient(90deg, rgba(7,17,26,.96) 0%, rgba(7,17,26,.5) 16%, rgba(7,17,26,.08) 42%),
+    linear-gradient(180deg, rgba(7,17,26,.02), rgba(7,17,26,.48)),
+    url("./assets/twilight-mountainview-conference-room.png");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 .homepage-reference .hero-media img { display: none; }
 .homepage-reference .hero-media::after {
@@ -13844,24 +13844,24 @@ textarea:focus {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(340px, 48%) 1fr;
+  grid-template-columns: minmax(340px, 47%) 1fr;
   align-items: center;
-  min-height: 690px;
+  min-height: 704px;
   padding: 142px 0 62px;
 }
 .homepage-reference .hero-copy { max-width: 520px; }
 .homepage-reference .hero h1 {
-  max-width: 520px;
+  max-width: 505px;
   margin: 0;
   color: #f8fbfc;
-  font-size: clamp(3.45rem, 5.55vw, 5.65rem);
-  font-weight: 255;
-  line-height: .98;
+  font-size: clamp(3.35rem, 5.05vw, 5.28rem);
+  font-weight: 240;
+  line-height: .99;
   letter-spacing: -.072em;
   text-wrap: balance;
 }
 .homepage-reference .hero__subtitle {
-  max-width: 455px;
+  max-width: 430px;
   margin: 24px 0 0;
   color: rgba(242,246,248,.86);
   font-size: .99rem;
@@ -14000,7 +14000,7 @@ textarea:focus {
 .homepage-reference .services-view-link { flex: 0 0 auto; margin-top: 10px; color: var(--ref-blue); font-size: .84rem; font-weight: 600; text-decoration: none; }
 .homepage-reference .service-action-grid--premium { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
 .homepage-reference .service-action-card--premium {
-  min-height: 318px;
+  min-height: 306px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -14012,7 +14012,7 @@ textarea:focus {
   box-shadow: none;
 }
 .homepage-reference .service-action-card--premium::before { display: none; }
-.homepage-reference .service-card-image { height: 138px; border-bottom: 1px solid var(--ref-line); background-size: cover; background-position: center; filter: saturate(.84) contrast(.95); opacity: .92; }
+.homepage-reference .service-card-image { height: 136px; border-bottom: 1px solid var(--ref-line); background-size: cover; background-position: center; filter: saturate(.84) contrast(.95); opacity: .92; }
 .homepage-reference .service-card-image--assessment { background-image: linear-gradient(180deg, rgba(7,17,26,.02), rgba(7,17,26,.65)), url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"); }
 .homepage-reference .service-card-image--backup { background-image: linear-gradient(180deg, rgba(7,17,26,.02), rgba(7,17,26,.65)), url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80"); }
 .homepage-reference .service-card-image--accounts { background-image: linear-gradient(180deg, rgba(7,17,26,.02), rgba(7,17,26,.65)), url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"); }
@@ -14048,7 +14048,7 @@ textarea:focus {
 .homepage-reference .business-trust p:not(.eyebrow) { max-width: 555px; color: #25323a; line-height: 1.65; }
 .homepage-reference .business-trust__points { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 32px; color: #34434c; font-size: .82rem; }
 .homepage-reference .business-trust__points span::before { content: "✓"; display: inline-grid; width: 18px; height: 18px; margin-right: 8px; place-items: center; border: 1px solid #34434c; border-radius: 50%; font-size: .68rem; }
-.homepage-reference .business-trust__image { min-height: 392px; background-image: linear-gradient(90deg, rgba(7,17,26,.04), rgba(7,17,26,.22)), url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1500&q=84"); background-size: cover; background-position: center; }
+.homepage-reference .business-trust__image { min-height: 392px; background-image: linear-gradient(90deg, rgba(7,17,26,.04), rgba(7,17,26,.22)), url("./assets/twilight-mountainview-conference-room.png"); background-size: cover; background-position: center; }
 .homepage-reference .business-trust__image span { display: block; max-width: 210px; margin: 52px 0 0 58px; color: rgba(7,17,26,.82); font-size: .7rem; font-weight: 720; letter-spacing: .48em; line-height: 2.1; text-transform: uppercase; }
 
 .homepage-reference .section--checklist,
@@ -14094,6 +14094,29 @@ textarea:focus {
 .homepage-reference .site-footer__nav a { color: var(--ref-muted); font-size: .8rem; text-decoration: none; }
 .homepage-reference .site-footer__nav a:hover { color: var(--ref-text); }
 .homepage-reference .site-footer__bottom { margin-top: 22px; color: rgba(170,184,194,.72); font-size: .76rem; }
+
+
+
+/* Literal reference refinements */
+.homepage-reference .hero-copy {
+  max-width: 510px;
+}
+.homepage-reference .hero-eyebrow {
+  margin-bottom: 16px;
+}
+.homepage-reference .hero-actions .button {
+  min-width: 154px;
+}
+.homepage-reference .site-nav__cta {
+  min-width: 176px;
+}
+.homepage-reference .section--services .shell,
+.homepage-reference .editorial-why .shell {
+  width: min(100% - 92px, 1240px);
+}
+.homepage-reference .business-trust__image {
+  background-position: center;
+}
 
 @media (max-width: 1120px) {
   .homepage-reference .shell { width: min(100% - 56px, var(--ref-width)); }
