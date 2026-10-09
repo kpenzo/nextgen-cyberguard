@@ -14001,21 +14001,38 @@ textarea:focus {
   grid-column: span 3;
   min-width: 0;
   width: auto;
-  min-height: 306px;
+  min-height: 384px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   padding: 0;
-  border: 1px solid var(--ref-line);
+  border: 1px solid rgba(190,215,225,.20);
   border-radius: 7px;
-  color: var(--ref-text);
-  background: linear-gradient(180deg, rgba(36,55,68,.95), rgba(32,50,61,.96));
+  color: #F1F4F5;
+  background: linear-gradient(180deg, rgba(36,55,68,.98), #20323D 100%);
   box-shadow: none;
-  transform: none;
+  transform: translateY(0);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
 }
 .homepage-reference .services-guided .service-action-card--premium:nth-child(n+5) { grid-column: span 4; }
 .homepage-reference .service-action-card--premium::before { display: none; }
-.homepage-reference .service-card-image { height: 136px; border-bottom: 1px solid var(--ref-line); background-size: cover; background-position: center; filter: saturate(.84) contrast(.95); opacity: .92; }
+.homepage-reference .service-action-card--premium:focus-visible {
+  outline: 2px solid #B9D8E6;
+  outline-offset: 3px;
+}
+.homepage-reference .service-card-image {
+  height: 150px;
+  border-bottom: 1px solid rgba(190,215,225,.20);
+  background-size: cover;
+  background-position: center;
+  filter: saturate(.92) contrast(.98) brightness(1.03);
+  opacity: .96;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform .2s ease, filter .2s ease, opacity .2s ease;
+}
 .homepage-reference .service-card-image--assessment { background-image: linear-gradient(180deg, rgba(22,38,48,.02), rgba(32,50,61,.42)), url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"); }
 .homepage-reference .service-card-image--backup { background-image: linear-gradient(180deg, rgba(22,38,48,.02), rgba(32,50,61,.42)), url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80"); }
 .homepage-reference .service-card-image--accounts { background-image: linear-gradient(180deg, rgba(22,38,48,.02), rgba(32,50,61,.42)), url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"); }
@@ -14028,18 +14045,47 @@ textarea:focus {
   display: grid;
   width: 26px;
   height: 26px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   place-items: center;
-  border: 1px solid rgba(220,234,244,.34);
+  border: 1px solid rgba(185,216,230,.58);
   border-radius: 50%;
-  color: var(--ref-blue);
-  background: transparent;
+  color: #BDD7E2;
+  background: rgba(185,216,230,.04);
   font-size: .9rem;
 }
-.homepage-reference .service-action-card--premium h3 { margin: 0 0 10px; color: var(--ref-text); font-size: 1.05rem; font-weight: 620; line-height: 1.2; letter-spacing: -.02em; }
-.homepage-reference .service-action-card--premium p { margin: 0 0 18px; color: var(--ref-muted); font-size: .88rem; line-height: 1.55; }
-.homepage-reference .service-action-card--premium .service-action-card__cta { justify-content: flex-start; min-height: auto; margin-top: auto; padding: 0; border: 0; color: var(--ref-blue); background: transparent; font-size: .86rem; font-weight: 620; box-shadow: none; }
-.homepage-reference .service-action-card--premium:hover { border-color: rgba(220,234,244,.34); }
+.homepage-reference .service-action-card--premium h3 { margin: 0 0 12px; color: #F1F4F5; font-size: 1.12rem; font-weight: 650; line-height: 1.16; letter-spacing: -.022em; }
+.homepage-reference .service-action-card--premium p { margin: 0 0 18px; color: #B8C3C9; font-size: .91rem; line-height: 1.48; }
+.homepage-reference .service-action-card--premium .service-action-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  min-height: auto;
+  margin-top: auto;
+  padding: 0;
+  border: 0;
+  color: #DCE8ED;
+  background: transparent;
+  font-size: .88rem;
+  font-weight: 660;
+  line-height: 1.2;
+  box-shadow: none;
+}
+.homepage-reference .service-action-card--premium .service-action-card__cta span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.homepage-reference .service-action-card--premium:hover {
+  border-color: rgba(190,215,225,.40);
+  background: linear-gradient(180deg, rgba(39,60,74,.99), rgba(35,55,67,.99));
+  transform: translateY(-3px);
+}
+.homepage-reference .service-action-card--premium:hover .service-card-image {
+  filter: saturate(.98) contrast(1) brightness(1.06);
+  opacity: 1;
+  transform: scale(1.02);
+}
+.homepage-reference .service-action-card--premium:hover .service-action-card__cta span { transform: translateX(4px); }
 
 .homepage-reference .business-trust {
   display: grid;
