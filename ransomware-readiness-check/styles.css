@@ -14040,8 +14040,8 @@ textarea:focus {
 .homepage-reference .service-card-image--incident { background-image: linear-gradient(180deg, rgba(22,38,48,.02), rgba(32,50,61,.42)), url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80"); }
 .homepage-reference .service-card-image--technical { background-image: linear-gradient(180deg, rgba(22,38,48,.02), rgba(32,50,61,.42)), url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80"); }
 .homepage-reference .service-card-image--monthly { background-image: linear-gradient(180deg, rgba(22,38,48,.02), rgba(32,50,61,.42)), url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80"); }
-.homepage-reference .service-card-content { position: relative; flex: 1; display: flex; flex-direction: column; padding: 22px 22px 20px; }
-.homepage-reference .service-card-content .service-action-card__icon {
+.homepage-reference .services-guided .service-card-content { position: relative; flex: 1; display: flex; flex-direction: column; padding: 22px 22px 20px; }
+.homepage-reference .services-guided .service-card-content .service-action-card__icon {
   display: grid;
   width: 26px;
   height: 26px;
@@ -14053,9 +14053,9 @@ textarea:focus {
   background: rgba(185,216,230,.04);
   font-size: .9rem;
 }
-.homepage-reference .service-action-card--premium h3 { margin: 0 0 12px; color: #F1F4F5; font-size: 1.12rem; font-weight: 650; line-height: 1.16; letter-spacing: -.022em; }
-.homepage-reference .service-action-card--premium p { margin: 0 0 18px; color: #B8C3C9; font-size: .91rem; line-height: 1.48; }
-.homepage-reference .service-action-card--premium .service-action-card__cta {
+.homepage-reference .services-guided .service-action-card--premium h3 { margin: 0 0 12px; color: #F1F4F5; font-size: 1.12rem; font-weight: 650; line-height: 1.16; letter-spacing: -.022em; }
+.homepage-reference .services-guided .service-action-card--premium p { margin: 0 0 18px; color: #B8C3C9; font-size: .91rem; line-height: 1.48; }
+.homepage-reference .services-guided .service-action-card--premium .service-action-card__cta {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -14071,21 +14071,21 @@ textarea:focus {
   line-height: 1.2;
   box-shadow: none;
 }
-.homepage-reference .service-action-card--premium .service-action-card__cta span {
+.homepage-reference .services-guided .service-action-card--premium .service-action-card__cta span {
   display: inline-block;
   transition: transform .2s ease;
 }
-.homepage-reference .service-action-card--premium:hover {
+.homepage-reference .services-guided .service-action-card--premium:hover {
   border-color: rgba(190,215,225,.40);
   background: linear-gradient(180deg, rgba(39,60,74,.99), rgba(35,55,67,.99));
   transform: translateY(-3px);
 }
-.homepage-reference .service-action-card--premium:hover .service-card-image {
+.homepage-reference .services-guided .service-action-card--premium:hover .service-card-image {
   filter: saturate(.98) contrast(1) brightness(1.06);
   opacity: 1;
   transform: scale(1.02);
 }
-.homepage-reference .service-action-card--premium:hover .service-action-card__cta span { transform: translateX(4px); }
+.homepage-reference .services-guided .service-action-card--premium:hover .service-action-card__cta span { transform: translateX(4px); }
 
 .homepage-reference .business-trust {
   display: grid;
