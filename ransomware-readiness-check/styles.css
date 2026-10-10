@@ -15220,7 +15220,7 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
     .ts-service-page--editorial .ts-hero h1,
     .ms-service-page--editorial .ms-hero h1
   ) {
-    max-width: 100%;
+    max-width: min(100%, 10.5ch) !important;
     font-size: clamp(2.25rem, 9.4vw, 2.7rem) !important;
     overflow-wrap: normal;
   }
