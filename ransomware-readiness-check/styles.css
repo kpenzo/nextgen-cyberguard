@@ -14969,3 +14969,278 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
     min-height: auto;
   }
 }
+
+
+/* Service detail composition refinement */
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero, .br-hero, .as-hero, .ep-hero, .ir-hero, .ts-hero, .ms-hero
+) {
+  padding-bottom: 92px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-section, .br-stat-section, .as-stat-section, .ep-stat-section, .ir-stat-section, .ts-stat-section, .ms-stat-section
+) {
+  display: none !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-row, .br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row
+) {
+  max-width: 960px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-card, .br-stat-card, .as-stat-card, .ep-stat-card, .ir-stat-card, .ts-stat-card, .ms-stat-card
+) {
+  min-height: 58px;
+  padding-right: 28px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-band, .br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band
+) {
+  padding: 86px 0 118px;
+  background-color: #E8E2D9 !important;
+  background-image:
+    linear-gradient(180deg, rgba(27, 45, 56, .055), rgba(27, 45, 56, 0) 42px),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, .30), transparent 34%) !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout
+) {
+  grid-template-columns: minmax(0, 1.42fr) minmax(430px, .98fr);
+  gap: clamp(48px, 5.4vw, 74px);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-copy h2, .br-review-copy h2, .as-review-copy h2, .ep-review-copy h2, .ir-review-copy h2, .ts-review-copy h2, .ms-review-copy h2
+) {
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid
+) {
+  margin-top: 44px;
+  gap: 20px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-grid article, .br-value-grid article, .as-value-grid article, .ep-value-grid article, .ir-value-grid article, .ts-value-grid article, .ms-value-grid article
+) {
+  min-height: 198px;
+  padding: 30px 28px 26px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-copy::after, .br-review-copy::after, .as-review-copy::after, .ep-review-copy::after, .ir-review-copy::after, .ts-review-copy::after, .ms-review-copy::after
+) {
+  margin-top: 46px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-card, .br-report-card, .as-report-card, .ep-report-card, .ir-report-card, .ts-report-card, .ms-report-card
+) {
+  padding-left: clamp(34px, 4.5vw, 58px);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-card h2, .br-report-card h2, .as-report-card h2, .ep-report-card h2, .ir-report-card h2, .ts-report-card h2, .ms-report-card h2
+) {
+  max-width: 460px;
+  font-size: clamp(2.3rem, 3.45vw, 3.58rem);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-subtitle, .br-report-subtitle, .as-report-subtitle, .ep-report-subtitle, .ir-report-subtitle, .ts-report-subtitle, .ms-report-subtitle
+) {
+  max-width: 440px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-form, .br-report-form, .as-report-form, .ep-report-form, .ir-report-form, .ts-report-form, .ms-report-form
+) {
+  gap: 18px;
+  margin-top: 32px;
+  padding: 34px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-form input, .rr-report-form select,
+  .br-report-form input, .br-report-form select,
+  .as-report-form input, .as-report-form select,
+  .ep-report-form input, .ep-report-form select,
+  .ir-report-form input, .ir-report-form select,
+  .ts-report-form input, .ts-report-form select,
+  .ms-report-form input, .ms-report-form select
+) {
+  min-height: 52px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .service-detail-footer {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+/* Win over older page-specific service layout rules without changing content. */
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-service-page--reference .rr-hero,
+  .br-service-page--reference .br-hero,
+  .as-service-page--editorial .as-hero,
+  .ep-service-page--editorial .ep-hero,
+  .ir-service-page--editorial .ir-hero,
+  .ts-service-page--editorial .ts-hero,
+  .ms-service-page--editorial .ms-hero
+) {
+  padding-bottom: 92px !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-service-page--reference .rr-review-layout,
+  .br-service-page--reference .br-review-layout,
+  .as-service-page--editorial .as-review-layout,
+  .ep-service-page--editorial .ep-review-layout,
+  .ir-service-page--editorial .ir-review-layout,
+  .ts-service-page--editorial .ts-review-layout,
+  .ms-service-page--editorial .ms-review-layout
+) {
+  grid-template-columns: minmax(0, 58fr) minmax(450px, 42fr) !important;
+  gap: clamp(44px, 4.4vw, 58px) !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-service-page--reference .rr-report-card,
+  .br-service-page--reference .br-report-card,
+  .as-service-page--editorial .as-report-card,
+  .ep-service-page--editorial .ep-report-card,
+  .ir-service-page--editorial .ir-report-card,
+  .ts-service-page--editorial .ts-report-card,
+  .ms-service-page--editorial .ms-report-card
+) {
+  padding-left: clamp(30px, 3vw, 38px) !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-service-page--reference .rr-report-form,
+  .br-service-page--reference .br-report-form,
+  .as-service-page--editorial .as-report-form,
+  .ep-service-page--editorial .ep-report-form,
+  .ir-service-page--editorial .ir-report-form,
+  .ts-service-page--editorial .ts-report-form,
+  .ms-service-page--editorial .ms-report-form
+) {
+  gap: 18px !important;
+  margin-top: 32px !important;
+  padding: 36px !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-service-page--reference .rr-report-form input, .rr-service-page--reference .rr-report-form select,
+  .br-service-page--reference .br-report-form input, .br-service-page--reference .br-report-form select,
+  .as-service-page--editorial .as-report-form input, .as-service-page--editorial .as-report-form select,
+  .ep-service-page--editorial .ep-report-form input, .ep-service-page--editorial .ep-report-form select,
+  .ir-service-page--editorial .ir-report-form input, .ir-service-page--editorial .ir-report-form select,
+  .ts-service-page--editorial .ts-report-form input, .ts-service-page--editorial .ts-report-form select,
+  .ms-service-page--editorial .ms-report-form input, .ms-service-page--editorial .ms-report-form select
+) {
+  min-height: 52px !important;
+}
+
+@media (max-width: 980px) {
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-service-page--reference .rr-hero-grid,
+    .br-service-page--reference .br-hero-grid,
+    .as-service-page--editorial .as-hero-grid,
+    .ep-service-page--editorial .ep-hero-grid,
+    .ir-service-page--editorial .ir-hero-grid,
+    .ts-service-page--editorial .ts-hero-grid,
+    .ms-service-page--editorial .ms-hero-grid
+  ) {
+    grid-template-columns: 1fr !important;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-service-page--reference .rr-hero-copy,
+    .br-service-page--reference .br-hero-copy,
+    .as-service-page--editorial .as-hero-copy,
+    .ep-service-page--editorial .ep-hero-copy,
+    .ir-service-page--editorial .ir-hero-copy,
+    .ts-service-page--editorial .ts-hero-copy,
+    .ms-service-page--editorial .ms-hero-copy,
+    .rr-service-page--reference .rr-hero-art,
+    .br-service-page--reference .br-hero-art,
+    .as-service-page--editorial .as-hero-art,
+    .ep-service-page--editorial .ep-hero-art,
+    .ir-service-page--editorial .ir-hero-art,
+    .ts-service-page--editorial .ts-hero-art,
+    .ms-service-page--editorial .ms-hero-art
+  ) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-service-page--reference .rr-review-layout,
+    .br-service-page--reference .br-review-layout,
+    .as-service-page--editorial .as-review-layout,
+    .ep-service-page--editorial .ep-review-layout,
+    .ir-service-page--editorial .ir-review-layout,
+    .ts-service-page--editorial .ts-review-layout,
+    .ms-service-page--editorial .ms-review-layout
+  ) {
+    grid-template-columns: 1fr !important;
+    gap: 44px !important;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-service-page--reference .rr-report-card,
+    .br-service-page--reference .br-report-card,
+    .as-service-page--editorial .as-report-card,
+    .ep-service-page--editorial .ep-report-card,
+    .ir-service-page--editorial .ir-report-card,
+    .ts-service-page--editorial .ts-report-card,
+    .ms-service-page--editorial .ms-report-card
+  ) {
+    border-left: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-service-page--reference .rr-hero h1,
+    .br-service-page--reference .br-hero h1,
+    .as-service-page--editorial .as-hero h1,
+    .ep-service-page--editorial .ep-hero h1,
+    .ir-service-page--editorial .ir-hero h1,
+    .ts-service-page--editorial .ts-hero h1,
+    .ms-service-page--editorial .ms-hero h1
+  ) {
+    max-width: 100%;
+    font-size: clamp(2.25rem, 9.4vw, 2.7rem) !important;
+    overflow-wrap: normal;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-service-page--reference .rr-value-grid,
+    .br-service-page--reference .br-value-grid,
+    .as-service-page--editorial .as-value-grid,
+    .ep-service-page--editorial .ep-value-grid,
+    .ir-service-page--editorial .ir-value-grid,
+    .ts-service-page--editorial .ts-value-grid,
+    .ms-service-page--editorial .ms-value-grid,
+    .rr-service-page--reference .rr-report-form,
+    .br-service-page--reference .br-report-form,
+    .as-service-page--editorial .as-report-form,
+    .ep-service-page--editorial .ep-report-form,
+    .ir-service-page--editorial .ir-report-form,
+    .ts-service-page--editorial .ts-report-form,
+    .ms-service-page--editorial .ms-report-form
+  ) {
+    grid-template-columns: 1fr !important;
+  }
+}
