@@ -14332,3 +14332,463 @@ html[lang="es"] .homepage-reference .hero__subtitle {
   .homepage-reference .business-trust__copy { padding: 52px 24px; }
   .homepage-reference .business-trust__image span { margin: 34px 0 0 28px; }
 }
+
+
+/* Unified service detail visual system */
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) {
+  --svc-dark: #1B2D38;
+  --svc-dark-2: #223743;
+  --svc-elevated: #29414E;
+  --svc-border: rgba(190, 215, 225, 0.18);
+  --svc-light: #E8E2D9;
+  --svc-light-2: #DEE4E1;
+  --svc-text: #F2F5F7;
+  --svc-muted: #B8C3C9;
+  --svc-light-text: #22313A;
+  background: var(--svc-dark);
+  color: var(--svc-text);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) main {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--svc-dark) 0%, var(--svc-dark-2) 42%, var(--svc-light) 42%, var(--svc-light) 100%);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .shell {
+  width: min(100% - 92px, 1240px);
+  margin-inline: auto;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero, .br-hero, .as-hero, .ep-hero, .ir-hero, .ts-hero, .ms-hero
+) {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 0 82px;
+  color: var(--svc-text);
+  background:
+    radial-gradient(circle at 82% 12%, rgba(190, 215, 225, .18), transparent 34%),
+    linear-gradient(135deg, var(--svc-dark) 0%, var(--svc-dark-2) 100%);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-language-row, .br-language-row, .as-language-row, .ep-language-row, .ir-language-row, .ts-language-row, .ms-language-row
+) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 42px;
+  margin-bottom: 48px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .service-back-link,
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .service-language-switch {
+  color: rgba(242, 245, 247, .84);
+  font-size: .82rem;
+  font-weight: 620;
+  letter-spacing: .01em;
+  text-decoration: none;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .service-language-switch {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border: 1px solid var(--svc-border);
+  border-radius: 999px;
+  background: rgba(34, 55, 67, .28);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero-grid, .br-hero-grid, .as-hero-grid, .ep-hero-grid, .ir-hero-grid, .ts-hero-grid, .ms-hero-grid
+) {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(360px, .92fr);
+  gap: clamp(42px, 6vw, 86px);
+  align-items: center;
+  padding: 0;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero-copy, .br-hero-copy, .as-hero-copy, .ep-hero-copy, .ir-hero-copy, .ts-hero-copy, .ms-hero-copy
+) {
+  max-width: 620px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-eyebrow, .br-eyebrow, .as-eyebrow, .ep-eyebrow, .ir-eyebrow, .ts-eyebrow, .ms-eyebrow,
+  .rr-section-eyebrow, .br-section-eyebrow, .as-section-eyebrow, .ep-section-eyebrow, .ir-section-eyebrow, .ts-section-eyebrow, .ms-section-eyebrow,
+  .rr-report-eyebrow, .br-report-eyebrow, .as-report-eyebrow, .ep-report-eyebrow, .ir-report-eyebrow, .ts-report-eyebrow, .ms-report-eyebrow
+) {
+  color: #BDD7E2;
+  font-size: .73rem;
+  font-weight: 720;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero h1, .br-hero h1, .as-hero h1, .ep-hero h1, .ir-hero h1, .ts-hero h1, .ms-hero h1
+) {
+  max-width: 760px;
+  margin: 0;
+  color: var(--svc-text);
+  font-size: clamp(3.25rem, 5.8vw, 5.9rem);
+  font-weight: 280;
+  line-height: .98;
+  letter-spacing: -.065em;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero-subtitle, .br-hero-subtitle, .as-hero-subtitle, .ep-hero-subtitle, .ir-hero-subtitle, .ts-hero-subtitle, .ms-hero-subtitle,
+  .rr-hero-context, .br-hero-context, .as-hero-context, .ep-hero-context, .ts-hero-context, .ms-hero-context
+) {
+  max-width: 600px;
+  color: var(--svc-muted);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.62;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-actions, .br-actions, .as-actions, .ep-actions, .ir-actions, .ts-actions, .ms-actions
+) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .button--primary {
+  border: 1px solid rgba(190, 215, 225, .32);
+  color: #11232C;
+  background: #BDD7E2;
+  box-shadow: none;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .button--secondary {
+  border: 1px solid var(--svc-border);
+  color: var(--svc-text);
+  background: rgba(34, 55, 67, .34);
+  box-shadow: none;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero-art, .br-hero-art, .as-hero-art, .ep-hero-art, .ir-hero-art, .ts-hero-art, .ms-hero-art
+) {
+  justify-self: end;
+  width: min(100%, 520px);
+  padding: clamp(20px, 3vw, 34px);
+  border: 1px solid var(--svc-border);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(41, 65, 78, .92), rgba(34, 55, 67, .72));
+  box-shadow: 0 32px 80px rgba(8, 18, 24, .26);
+  filter: none;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero-art::before, .br-hero-art::before, .as-hero-art::before, .ep-hero-art::before, .ts-hero-art::before, .ms-hero-art::before
+) {
+  display: none;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-hero-art img, .br-hero-art img, .as-hero-art img, .ep-hero-art img, .ir-hero-art img, .ts-hero-art img, .ms-hero-art img
+) {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+  filter: saturate(.88) contrast(.96) brightness(.88);
+  opacity: .86;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-section, .br-stat-section, .as-stat-section, .ep-stat-section, .ir-stat-section, .ts-stat-section, .ms-stat-section
+) {
+  padding: 44px 0;
+  color: var(--svc-text);
+  background: var(--svc-dark-2);
+  border-top: 1px solid var(--svc-border);
+  border-bottom: 1px solid var(--svc-border);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-row, .br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row
+) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-card, .br-stat-card, .as-stat-card, .ep-stat-card, .ir-stat-card, .ts-stat-card, .ms-stat-card
+) {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 118px;
+  padding: 22px;
+  border: 1px solid var(--svc-border);
+  border-radius: 12px;
+  color: var(--svc-text);
+  background: rgba(41, 65, 78, .62);
+  box-shadow: none;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-icon, .br-stat-icon, .as-stat-icon, .ep-stat-icon, .ir-stat-icon, .ts-stat-icon, .ms-stat-icon
+) {
+  display: grid;
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 1px solid rgba(190, 215, 225, .24);
+  border-radius: 50%;
+  color: #BDD7E2;
+  background: rgba(190, 215, 225, .06);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-card strong, .br-stat-card strong, .as-stat-card strong, .ep-stat-card strong, .ir-stat-card strong, .ts-stat-card strong, .ms-stat-card strong
+) {
+  color: var(--svc-text);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-stat-card p, .br-stat-card p, .as-stat-card p, .ep-stat-card p, .ir-stat-card p, .ts-stat-card p, .ms-stat-card p
+) {
+  color: var(--svc-muted);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-band, .br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band
+) {
+  padding: 78px 0 86px;
+  color: var(--svc-light-text);
+  background: var(--svc-light);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout
+) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(330px, 420px);
+  gap: clamp(30px, 5vw, 68px);
+  align-items: start;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-copy h2, .br-review-copy h2, .as-review-copy h2, .ep-review-copy h2, .ir-review-copy h2, .ts-review-copy h2, .ms-review-copy h2,
+  .rr-report-card h2, .br-report-card h2, .as-report-card h2, .ep-report-card h2, .ir-report-card h2, .ts-report-card h2, .ms-report-card h2
+) {
+  color: var(--svc-light-text);
+  font-weight: 320;
+  letter-spacing: -.05em;
+  line-height: 1.04;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-context, .br-review-context, .as-review-context, .ep-review-context, .ts-review-context, .ms-review-context,
+  .rr-report-subtitle, .br-report-subtitle, .as-report-subtitle, .ep-report-subtitle, .ir-report-subtitle, .ts-report-subtitle, .ms-report-subtitle
+) {
+  color: #425159;
+  line-height: 1.62;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid
+) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-grid article, .br-value-grid article, .as-value-grid article, .ep-value-grid article, .ir-value-grid article, .ts-value-grid article, .ms-value-grid article,
+  .rr-report-card, .br-report-card, .as-report-card, .ep-report-card, .ir-report-card, .ts-report-card, .ms-report-card
+) {
+  border: 1px solid rgba(34, 49, 58, .12);
+  border-radius: 12px;
+  color: var(--svc-light-text);
+  background: rgba(255, 255, 255, .36);
+  box-shadow: 0 22px 52px rgba(21, 35, 43, .08);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-grid article, .br-value-grid article, .as-value-grid article, .ep-value-grid article, .ir-value-grid article, .ts-value-grid article, .ms-value-grid article
+) {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  padding: 22px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-icon, .br-value-icon, .as-value-icon, .ep-value-icon, .ir-value-icon, .ts-value-icon, .ms-value-icon
+) {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  color: #1B2D38;
+  background: rgba(190, 215, 225, .45);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-grid h3, .br-value-grid h3, .as-value-grid h3, .ep-value-grid h3, .ir-value-grid h3, .ts-value-grid h3, .ms-value-grid h3
+) {
+  color: var(--svc-light-text);
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-value-grid p, .br-value-grid p, .as-value-grid p, .ep-value-grid p, .ir-value-grid p, .ts-value-grid p, .ms-value-grid p
+) {
+  color: #425159;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-card, .br-report-card, .as-report-card, .ep-report-card, .ir-report-card, .ts-report-card, .ms-report-card
+) {
+  padding: 30px;
+  align-self: start;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-form, .br-report-form, .as-report-form, .ep-report-form, .ir-report-form, .ts-report-form, .ms-report-form
+) {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-form label, .br-report-form label, .as-report-form label, .ep-report-form label, .ir-report-form label, .ts-report-form label, .ms-report-form label
+) {
+  display: grid;
+  gap: 7px;
+  color: var(--svc-light-text);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-form input, .rr-report-form select,
+  .br-report-form input, .br-report-form select,
+  .as-report-form input, .as-report-form select,
+  .ep-report-form input, .ep-report-form select,
+  .ir-report-form input, .ir-report-form select,
+  .ts-report-form input, .ts-report-form select,
+  .ms-report-form input, .ms-report-form select
+) {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(34, 49, 58, .18);
+  border-radius: 8px;
+  color: var(--svc-light-text);
+  background: rgba(255, 255, 255, .54);
+  font: inherit;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(.privacy-note, .form-note) {
+  color: #53636B;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .site-footer {
+  padding: 34px 0;
+  border-top: 1px solid var(--svc-border);
+  color: var(--svc-muted);
+  background: var(--svc-dark);
+}
+
+@media (max-width: 980px) {
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .shell {
+    width: min(100% - 44px, 1240px);
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-hero-grid, .br-hero-grid, .as-hero-grid, .ep-hero-grid, .ir-hero-grid, .ts-hero-grid, .ms-hero-grid,
+    .rr-review-layout, .br-review-layout, .as-review-layout, .ep-review-layout, .ir-review-layout, .ts-review-layout, .ms-review-layout,
+    .rr-stat-row, .br-stat-row, .as-stat-row, .ep-stat-row, .ir-stat-row, .ts-stat-row, .ms-stat-row
+  ) {
+    grid-template-columns: 1fr;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-hero-art, .br-hero-art, .as-hero-art, .ep-hero-art, .ir-hero-art, .ts-hero-art, .ms-hero-art
+  ) {
+    justify-self: start;
+    width: min(100%, 460px);
+  }
+}
+
+@media (max-width: 680px) {
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .shell {
+    width: min(100% - 30px, 1240px);
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-language-row, .br-language-row, .as-language-row, .ep-language-row, .ir-language-row, .ts-language-row, .ms-language-row
+  ) {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 34px;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-hero, .br-hero, .as-hero, .ep-hero, .ir-hero, .ts-hero, .ms-hero
+  ) {
+    padding-bottom: 58px;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-hero h1, .br-hero h1, .as-hero h1, .ep-hero h1, .ir-hero h1, .ts-hero h1, .ms-hero h1
+  ) {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-value-grid, .br-value-grid, .as-value-grid, .ep-value-grid, .ir-value-grid, .ts-value-grid, .ms-value-grid
+  ) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Final service detail card polish: beat legacy bright-card rules */
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-review-band, .br-review-band, .as-review-band, .ep-review-band, .ir-review-band, .ts-review-band, .ms-review-band
+) {
+  background-color: #E8E2D9 !important;
+  background-image: none !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-card, .br-report-card, .as-report-card, .ep-report-card, .ir-report-card, .ts-report-card, .ms-report-card,
+  .rr-value-grid article, .br-value-grid article, .as-value-grid article, .ep-value-grid article, .ir-value-grid article, .ts-value-grid article, .ms-value-grid article
+) {
+  border-color: rgba(34, 49, 58, .12) !important;
+  color: #22313A !important;
+  background: rgba(255, 255, 255, .36) !important;
+  box-shadow: 0 22px 52px rgba(21, 35, 43, .08) !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-card h2, .br-report-card h2, .as-report-card h2, .ep-report-card h2, .ir-report-card h2, .ts-report-card h2, .ms-report-card h2,
+  .rr-value-grid h3, .br-value-grid h3, .as-value-grid h3, .ep-value-grid h3, .ir-value-grid h3, .ts-value-grid h3, .ms-value-grid h3
+) {
+  color: #22313A !important;
+}
+
+body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+  .rr-report-card p, .br-report-card p, .as-report-card p, .ep-report-card p, .ir-report-card p, .ts-report-card p, .ms-report-card p,
+  .rr-value-grid p, .br-value-grid p, .as-value-grid p, .ep-value-grid p, .ir-value-grid p, .ts-value-grid p, .ms-value-grid p
+) {
+  color: #425159 !important;
+}
