@@ -15211,6 +15211,23 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
 }
 
 @media (max-width: 680px) {
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) .shell {
+    width: min(calc(100% - 32px), 1320px) !important;
+  }
+
+  body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
+    .rr-service-page--reference .rr-actions .button,
+    .br-service-page--reference .br-actions .button,
+    .as-service-page--editorial .as-actions .button,
+    .ep-service-page--editorial .ep-actions .button,
+    .ir-service-page--editorial .ir-actions .button,
+    .ts-service-page--editorial .ts-actions .button,
+    .ms-service-page--editorial .ms-actions .button
+  ) {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
     .rr-service-page--reference .rr-hero h1,
     .br-service-page--reference .br-hero h1,
