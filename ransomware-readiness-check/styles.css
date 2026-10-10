@@ -15002,9 +15002,7 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
 ) {
   padding: 86px 0 118px;
   background-color: #E8E2D9 !important;
-  background-image:
-    linear-gradient(180deg, rgba(27, 45, 56, .055), rgba(27, 45, 56, 0) 42px),
-    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, .30), transparent 34%) !important;
+  background-image: none !important;
 }
 
 body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, .ir-service-body, .ts-service-body, .ms-service-body) :is(
