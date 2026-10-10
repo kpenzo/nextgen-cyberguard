@@ -14188,6 +14188,106 @@ html[lang="es"] .homepage-reference .hero__subtitle {
   background-position: center;
 }
 
+
+
+/* Service dark palette alignment */
+.homepage-reference {
+  --ref-ink: #1B2D38;
+  --ref-navy: #1B2D38;
+  --ref-navy-2: #223743;
+  --ref-panel: #223743;
+  --ref-surface: #29414E;
+  --ref-line: rgba(190, 215, 225, 0.18);
+}
+
+.homepage-reference .site-nav__cta,
+.homepage-reference .language-switch,
+.homepage-reference .button--secondary,
+.homepage-reference .service-action-card__cta {
+  background-color: rgba(34, 55, 67, .28);
+}
+
+.homepage-reference .hero,
+.homepage-reference .hero-media,
+.homepage-reference .package-section,
+.homepage-reference .site-footer {
+  background-color: #1B2D38;
+}
+
+.homepage-reference .section--services {
+  background: linear-gradient(180deg, #1B2D38 0%, #223743 100%);
+}
+
+.homepage-reference .services-guided .service-action-card--premium,
+.homepage-reference .package-card,
+.homepage-reference .package-problem,
+.homepage-reference .package-free-banner {
+  border-color: rgba(190, 215, 225, 0.18);
+  background: linear-gradient(180deg, rgba(41, 65, 78, .98), #223743 100%);
+}
+
+.homepage-reference .services-guided .service-action-card--premium:hover,
+.homepage-reference .package-card--recommended {
+  border-color: rgba(190, 215, 225, 0.34);
+  background: linear-gradient(180deg, #29414E 0%, #223743 100%);
+}
+
+.homepage-reference .service-card-image,
+.homepage-reference .site-footer,
+.homepage-reference .package-card,
+.homepage-reference .package-problem,
+.homepage-reference .package-free-banner {
+  border-color: rgba(190, 215, 225, 0.18);
+}
+
+.service-page-hero--dashboard,
+.service-page-hero--dashboard .service-hero-visual,
+.service-overview-panel .ransomware-mini-card {
+  border-color: rgba(190, 215, 225, 0.18);
+}
+
+
+
+/* Service detail dark palette alignment */
+.rr-service-body,
+.br-service-body,
+.as-service-body,
+.ep-service-body,
+.ir-service-body,
+.ts-service-body,
+.ms-service-body {
+  --service-dark-primary: #1B2D38;
+  --service-dark-secondary: #223743;
+  --service-dark-elevated: #29414E;
+  --service-dark-border: rgba(190, 215, 225, 0.18);
+}
+
+.rr-service-body--reference .rr-hero,
+.br-service-body--reference .br-hero,
+.homepage-reference .package-section,
+.homepage-reference .site-footer {
+  background-color: var(--service-dark-primary, #1B2D38);
+}
+
+.rr-service-body--reference .rr-card,
+.rr-service-body--reference .rr-panel,
+.br-service-body--reference .br-card,
+.br-service-body--reference .br-panel,
+.as-service-page--reference .as-insight-card,
+.as-service-page--reference .as-practical-card,
+.as-service-page--reference .as-process-panel,
+.as-service-page--reference .as-report-card,
+.ir-service-page--calm .ir-insight-card,
+.ir-service-page--calm .ir-practical-card,
+.ir-service-page--calm .ir-report-card {
+  border-color: var(--service-dark-border, rgba(190, 215, 225, 0.18));
+}
+
+.rr-service-body--reference .rr-card:hover,
+.br-service-body--reference .br-card:hover {
+  background-color: var(--service-dark-elevated, #29414E);
+}
+
 @media (max-width: 1120px) {
   .homepage-reference .shell { width: min(100% - 56px, var(--ref-width)); }
   .homepage-reference .services-guided .service-action-grid--premium { grid-template-columns: repeat(2, minmax(0, 1fr)); }
