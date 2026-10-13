@@ -16436,3 +16436,16 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
 .homepage-reference .package-layout--pricing .package-cards--paid .package-card--recommended {
   min-height: 600px;
 }
+
+/* Pricing strip removal: close the space after the package cards. */
+.homepage-reference .package-layout--pricing {
+  gap: 32px;
+}
+
+.homepage-reference .package-layout--pricing .package-cards--paid {
+  margin-bottom: 0;
+}
+
+.homepage-reference .package-section {
+  padding-bottom: clamp(54px, 6vw, 72px);
+}
