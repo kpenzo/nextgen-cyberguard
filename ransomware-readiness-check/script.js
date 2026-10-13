@@ -1017,6 +1017,32 @@ function initQuiz() {
   renderQuestion();
 }
 
+
+function scrollToCurrentHash() {
+  const hash = window.location.hash;
+
+  if (!hash || hash.length < 2) {
+    return;
+  }
+
+  const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+
+  if (target) {
+    target.scrollIntoView({ behavior: "auto", block: "start" });
+  }
+}
+
+function initStableHashScroll() {
+  window.addEventListener("load", () => {
+    scrollToCurrentHash();
+    window.setTimeout(scrollToCurrentHash, 250);
+  });
+
+  window.addEventListener("hashchange", () => {
+    window.setTimeout(scrollToCurrentHash, 0);
+  });
+}
+
 function initResultPage() {
   if (!isResultPage) {
     return;
@@ -1151,5 +1177,6 @@ reviewForms.forEach((form) => {
 
 initChecklistAnchorLinks();
 initPackageRequestLinks();
+initStableHashScroll();
 initQuiz();
 initResultPage();
