@@ -1018,6 +1018,16 @@ function initQuiz() {
 }
 
 
+function revealChecklistForTarget(target) {
+  if (!target || !checklistSection) {
+    return;
+  }
+
+  if (target.id === "checklist" || target.closest("#checklist")) {
+    checklistSection.classList.add("is-anchor-active");
+  }
+}
+
 function scrollToCurrentHash() {
   const hash = window.location.hash;
 
@@ -1028,6 +1038,7 @@ function scrollToCurrentHash() {
   const target = document.getElementById(decodeURIComponent(hash.slice(1)));
 
   if (target) {
+    revealChecklistForTarget(target);
     target.scrollIntoView({ behavior: "auto", block: "start" });
   }
 }
@@ -1068,11 +1079,15 @@ function initChecklistAnchorLinks() {
     return;
   }
 
-  document.querySelectorAll('a[href="#checklist"]').forEach((link) => {
+  document.querySelectorAll('a[href="#checklist"], a[href="#checklist-flow"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      checklistSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.pushState(null, "", "#checklist");
+      const target = checklistFlow || checklistSection;
+      revealChecklistForTarget(target);
+      history.pushState(null, "", "#checklist-flow");
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     });
   });
 }

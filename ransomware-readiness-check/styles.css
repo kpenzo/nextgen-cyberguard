@@ -14111,6 +14111,8 @@ textarea:focus {
   background: var(--ref-light-2);
 }
 .homepage-reference .section--checklist:target,
+.homepage-reference .section--checklist:has(#checklist-flow:target),
+.homepage-reference .section--checklist.is-anchor-active,
 .homepage-reference .package-section:target { display: block; }
 .homepage-reference .section--checklist > .shell { display: grid; grid-template-columns: minmax(280px, .78fr) minmax(360px, 1fr); gap: 44px; align-items: start; }
 .homepage-reference .package-section { color: var(--ref-text); background: #162630; }
@@ -15262,8 +15264,8 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
 
 /* Homepage resources and richer footer navigation */
 
-.homepage-reference :is(.resources-section, .section--checklist, .section--services, .package-section) {
-  scroll-margin-top: 24px;
+.homepage-reference :is(.resources-section, .section--checklist, .section--services, .package-section, .checklist-flow) {
+  scroll-margin-top: 88px;
 }
 
 .homepage-reference .resources-section {
