@@ -15269,15 +15269,20 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
 .homepage-reference .resources-section {
   background: #DEE4E1;
   color: #22313A;
-  padding: 72px 0;
+  padding: 56px 0;
   border-top: 1px solid rgba(7, 17, 26, .08);
 }
 
 .homepage-reference .resources-panel {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr);
-  gap: 58px;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 80px;
   align-items: start;
+}
+
+.homepage-reference .resources-intro,
+.homepage-reference .resources-list {
+  min-width: 0;
 }
 
 .homepage-reference .resources-intro h2 {
@@ -15307,11 +15312,17 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
 .homepage-reference .resource-link {
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr);
-  gap: 18px;
-  padding: 22px 0;
+  gap: 20px;
+  align-items: start;
+  padding: 28px 0;
   border-bottom: 1px solid rgba(34, 49, 58, .16);
   color: #22313A;
   text-decoration: none;
+}
+
+.homepage-reference .resource-link__body {
+  min-width: 0;
+  max-width: 520px;
 }
 
 .homepage-reference .resource-link span {
@@ -15331,10 +15342,19 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
 
 .homepage-reference .resource-link em {
   display: block;
+  max-width: 520px;
   color: rgba(34, 49, 58, .68);
   font-size: .92rem;
   font-style: normal;
   line-height: 1.55;
+}
+
+.homepage-reference .resource-link b {
+  display: inline-block;
+  margin-top: 8px;
+  color: #087F80;
+  font-size: .86rem;
+  font-weight: 800;
 }
 
 .homepage-reference .resource-link:hover strong,
