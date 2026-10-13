@@ -13820,18 +13820,8 @@ textarea:focus {
 }
 
 .homepage-reference .hero-media::before {
-  content: "STRONGER BUSINESSES\A SAFER COMMUNITIES";
-  white-space: pre;
-  position: absolute;
-  right: clamp(34px, 5vw, 78px);
-  bottom: 36px;
-  padding-left: 22px;
-  border-left: 1px solid rgba(220,234,244,.38);
-  color: rgba(242,246,248,.72);
-  font-size: .56rem;
-  font-weight: 700;
-  letter-spacing: .48em;
-  line-height: 1.9;
+  content: none;
+  display: none;
 }
 .homepage-reference .hero-inner {
   position: relative;
