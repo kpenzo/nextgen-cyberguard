@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chequeo de preparación contra ransomware | NextGen CyberGuard</title>
     <meta name="description" content="Chequeo gratuito de preparación contra ransomware para pequeños negocios. Revisa copias de seguridad, accesos, equipo y recuperación." />
-    <link rel="stylesheet" href="../styles.css?v=assessment-anchor-20261013" />
+    <link rel="stylesheet" href="../styles.css?v=checklist-ui-20261013" />
       <link rel="canonical" href="https://nextgen-cyberguard.pages.dev/ES/" />
     <link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/" />
     <link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/" />
@@ -224,13 +224,27 @@
         <div class="shell">
           <div class="checklist-flow" id="checklist-flow">
           <div class="quiz-view" id="quiz-view">
-          <div class="section-heading">
-            <p class="eyebrow">Chequeo gratuito</p>
+          <div class="section-heading checklist-intro">
+            <p class="eyebrow">Chequeo de riesgo ransomware</p>
             <h2>Completa el chequeo en menos de 2 minutos.</h2>
             <p>
               Una pregunta cada vez. Elige la respuesta más cercana y mira tu
               nivel de preparación al final.
             </p>
+            <div class="checklist-benefits" aria-label="Beneficios del chequeo">
+              <div class="checklist-benefit">
+                <span class="checklist-benefit__icon" aria-hidden="true">◷</span>
+                <span><strong>Rápido y sencillo</strong><em>Unas 10 preguntas simples.</em></span>
+              </div>
+              <div class="checklist-benefit">
+                <span class="checklist-benefit__icon" aria-hidden="true">▣</span>
+                <span><strong>Sin datos sensibles</strong><em>No requiere contraseñas ni acceso técnico.</em></span>
+              </div>
+              <div class="checklist-benefit">
+                <span class="checklist-benefit__icon" aria-hidden="true">▥</span>
+                <span><strong>Resultados personalizados</strong><em>Mira tu nivel de preparación y próximos pasos.</em></span>
+              </div>
+            </div>
           </div>
 
           <form class="card quiz-card" id="risk-form">
@@ -238,21 +252,29 @@
               <p class="quiz-count" id="quiz-count">Pregunta 1 de 10</p>
               <p class="quiz-category" id="quiz-category">Copias de seguridad</p>
             </div>
-            <div class="progress-track" aria-hidden="true">
-              <div class="progress-fill" id="progress-fill"></div>
+            <div class="quiz-progress-row">
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="progress-fill"></div>
+              </div>
+              <p class="quiz-progress-label" id="quiz-progress-label">10% completo</p>
             </div>
             <fieldset class="quiz-question">
               <legend id="question-text">¿Haces copias de seguridad de los archivos importantes de tu negocio?</legend>
+              <p class="question-description" id="question-description">Incluye documentos, información de clientes y otros datos difíciles de reemplazar.</p>
               <div class="quiz-options" id="quiz-options"></div>
             </fieldset>
-            <div class="quiz-actions">
-              <button class="button button--secondary" id="quiz-back" type="button">Anterior</button>
-              <button class="button button--primary" id="quiz-next" type="button" disabled>Siguiente</button>
+            <div class="quiz-footer">
+              <p class="quiz-privacy"><span aria-hidden="true">◆</span>Tus respuestas son privadas y solo se usan para generar tu resultado.</p>
+              <div class="quiz-actions">
+                <button class="button button--secondary" id="quiz-back" type="button">Anterior</button>
+                <button class="button button--primary" id="quiz-next" type="button" disabled>Siguiente</button>
+              </div>
             </div>
           </form>
           </div>
 
           </div>
+          <p class="checklist-tagline"><span></span>Un negocio más preparado empieza aquí<span></span></p>
 
           <div class="lead-wrap report-layout" id="lead-section" hidden>
             <section class="report-explainer">
@@ -480,6 +502,6 @@
       </footer>
     </main>
 
-    <script src="../script.js?v=assessment-anchor-20261013"></script>
+    <script src="../script.js?v=checklist-ui-20261013"></script>
   </body>
 </html>

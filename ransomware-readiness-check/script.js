@@ -465,10 +465,12 @@ const checklistFlow = document.querySelector("#checklist-flow");
 const quizView = document.querySelector("#quiz-view");
 const riskForm = document.querySelector("#risk-form");
 const questionText = document.querySelector("#question-text");
+const questionDescription = document.querySelector("#question-description");
 const quizCount = document.querySelector("#quiz-count");
 const quizCategory = document.querySelector("#quiz-category");
 const quizOptions = document.querySelector("#quiz-options");
 const progressFill = document.querySelector("#progress-fill");
+const progressLabel = document.querySelector("#quiz-progress-label");
 const backButton = document.querySelector("#quiz-back");
 const nextButton = document.querySelector("#quiz-next");
 const restartButton = document.querySelector("#quiz-restart");
@@ -491,6 +493,35 @@ let currentQuestion = 0;
 const answers = Array(questions.length).fill(null);
 let latestScore = null;
 let latestRiskLevel = null;
+
+const questionDescriptions = {
+  en: [
+    "This includes documents, client information, and other data that would be difficult to replace.",
+    "Separated copies are harder for ransomware to damage at the same time as your computers.",
+    "A restore test shows whether important files can actually be recovered when needed.",
+    "Unique passwords reduce the chance that one stolen login exposes several systems.",
+    "MFA adds a second check before someone can access email, finance, or cloud accounts.",
+    "Clear reporting habits help staff pause before opening risky links, invoices, or attachments.",
+    "Device protection can help detect common threats before they spread across the business.",
+    "A simple written plan makes the first hour calmer and easier to coordinate.",
+    "Knowing your downtime limit helps decide which files and systems must come back first.",
+    "A named owner keeps backup, access, and response tasks from falling through the cracks."
+  ],
+  es: [
+    "Incluye documentos, información de clientes y otros datos difíciles de reemplazar.",
+    "Las copias separadas son más difíciles de afectar al mismo tiempo que tus equipos.",
+    "Una prueba de restauración confirma si los archivos importantes se pueden recuperar a tiempo.",
+    "Las contraseñas únicas reducen el riesgo de que un acceso robado afecte varios sistemas.",
+    "MFA añade una segunda comprobación para correo, finanzas y cuentas cloud importantes.",
+    "Un hábito claro de reporte ayuda al equipo a pausar ante enlaces, facturas o adjuntos sospechosos.",
+    "La protección de dispositivos ayuda a detectar amenazas comunes antes de que se propaguen.",
+    "Un plan sencillo por escrito hace que la primera hora sea más clara y coordinada.",
+    "Saber tu límite de parada ayuda a decidir qué archivos y sistemas recuperar primero.",
+    "Una persona responsable evita que copias, accesos y respuesta queden sin seguimiento."
+  ]
+};
+
+const optionIcons = ["✓", "×", "?"];
 
 function getRiskLevel(score) {
   if (score <= 5) {
@@ -617,7 +648,14 @@ function renderQuestion() {
     .replace("{total}", String(questions.length));
   quizCategory.textContent = copy.categories[question.category];
   questionText.textContent = question.text;
+  if (questionDescription) {
+    questionDescription.textContent = questionDescriptions[pageLanguage]?.[currentQuestion] || "";
+  }
   progressFill.style.width = `${progress}%`;
+  if (progressLabel) {
+    const percent = Math.round(progress);
+    progressLabel.textContent = pageLanguage === "es" ? `${percent}% completo` : `${percent}% complete`;
+  }
   nextButton.disabled = !selectedAnswer;
   nextButton.textContent =
     currentQuestion === questions.length - 1 ? copy.buttons.result : copy.buttons.next;
@@ -630,12 +668,19 @@ function renderQuestion() {
 
   quizOptions.innerHTML = "";
 
-  options.forEach((option) => {
+  options.forEach((option, index) => {
     const button = document.createElement("button");
+    const icon = document.createElement("span");
+    const label = document.createElement("span");
     button.className = "quiz-option";
     button.type = "button";
-    button.textContent = option.label;
     button.dataset.score = String(option.score);
+    icon.className = "quiz-option__icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = optionIcons[index] || "•";
+    label.className = "quiz-option__label";
+    label.textContent = option.label;
+    button.append(icon, label);
 
     if (selectedAnswer?.label === option.label) {
       button.classList.add("is-selected");
@@ -1039,7 +1084,8 @@ function scrollToCurrentHash() {
 
   if (target) {
     revealChecklistForTarget(target);
-    target.scrollIntoView({ behavior: "auto", block: "start" });
+    const scrollTarget = target.closest("#checklist") || target;
+    scrollTarget.scrollIntoView({ behavior: "auto", block: "start" });
   }
 }
 

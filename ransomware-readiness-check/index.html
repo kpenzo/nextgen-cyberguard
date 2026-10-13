@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ransomware Readiness Check | NextGen CyberGuard</title>
     <meta name="description" content="Free ransomware readiness check for small businesses. Review backups, account access, staff awareness, and recovery planning before an incident." />
-    <link rel="stylesheet" href="./styles.css?v=assessment-anchor-20261013" />
+    <link rel="stylesheet" href="./styles.css?v=checklist-ui-20261013" />
       <link rel="canonical" href="https://nextgen-cyberguard.pages.dev/" />
     <link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/" />
     <link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/" />
@@ -224,13 +224,27 @@
         <div class="shell">
           <div class="checklist-flow" id="checklist-flow">
           <div class="quiz-view" id="quiz-view">
-          <div class="section-heading">
+          <div class="section-heading checklist-intro">
             <p class="eyebrow">Ransomware Risk Check</p>
             <h2>Complete the checklist in under 2 minutes.</h2>
             <p>
               One question at a time. Choose the closest answer and see your
               readiness level at the end.
             </p>
+            <div class="checklist-benefits" aria-label="Assessment benefits">
+              <div class="checklist-benefit">
+                <span class="checklist-benefit__icon" aria-hidden="true">◷</span>
+                <span><strong>Quick and easy</strong><em>About 10 simple questions.</em></span>
+              </div>
+              <div class="checklist-benefit">
+                <span class="checklist-benefit__icon" aria-hidden="true">▣</span>
+                <span><strong>No sensitive data</strong><em>No logins or technical access required.</em></span>
+              </div>
+              <div class="checklist-benefit">
+                <span class="checklist-benefit__icon" aria-hidden="true">▥</span>
+                <span><strong>Personalised results</strong><em>See your readiness level and next steps.</em></span>
+              </div>
+            </div>
           </div>
 
           <form class="card quiz-card" id="risk-form">
@@ -238,21 +252,29 @@
               <p class="quiz-count" id="quiz-count">Question 1 of 10</p>
               <p class="quiz-category" id="quiz-category">Backups</p>
             </div>
-            <div class="progress-track" aria-hidden="true">
-              <div class="progress-fill" id="progress-fill"></div>
+            <div class="quiz-progress-row">
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-fill" id="progress-fill"></div>
+              </div>
+              <p class="quiz-progress-label" id="quiz-progress-label">10% complete</p>
             </div>
             <fieldset class="quiz-question">
               <legend id="question-text">Do you currently back up your important business files?</legend>
+              <p class="question-description" id="question-description">This includes documents, client information, and other data that would be difficult to replace.</p>
               <div class="quiz-options" id="quiz-options"></div>
             </fieldset>
-            <div class="quiz-actions">
-              <button class="button button--secondary" id="quiz-back" type="button">Back</button>
-              <button class="button button--primary" id="quiz-next" type="button" disabled>Next</button>
+            <div class="quiz-footer">
+              <p class="quiz-privacy"><span aria-hidden="true">◆</span>Your answers are private and used only to generate your result.</p>
+              <div class="quiz-actions">
+                <button class="button button--secondary" id="quiz-back" type="button">Back</button>
+                <button class="button button--primary" id="quiz-next" type="button" disabled>Next</button>
+              </div>
             </div>
           </form>
           </div>
 
           </div>
+          <p class="checklist-tagline"><span></span>A more prepared business starts here<span></span></p>
 
           <div class="lead-wrap report-layout" id="lead-section" hidden>
             <section class="report-explainer">
@@ -479,6 +501,6 @@
       </footer>
     </main>
 
-    <script src="./script.js?v=assessment-anchor-20261013"></script>
+    <script src="./script.js?v=checklist-ui-20261013"></script>
   </body>
 </html>
