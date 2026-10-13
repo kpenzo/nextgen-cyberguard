@@ -15920,3 +15920,29 @@ body:is(.rr-service-body, .br-service-body, .as-service-body, .ep-service-body, 
     letter-spacing: .22em;
   }
 }
+
+/* Homepage flow cleanup: remove resources dependency and show packages/checklist in normal flow */
+.homepage-reference .package-section,
+.homepage-reference .section--checklist {
+  display: block;
+}
+
+.homepage-reference .package-layout {
+  display: block;
+  width: min(100% - 72px, var(--ref-width));
+}
+
+.homepage-reference .package-options {
+  max-width: none;
+}
+
+.homepage-reference .package-free-banner,
+.homepage-reference .package-cards--paid {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .homepage-reference .package-layout {
+    width: min(100% - 30px, var(--ref-width));
+  }
+}

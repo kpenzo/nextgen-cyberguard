@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ransomware Readiness Check | NextGen CyberGuard</title>
     <meta name="description" content="Free ransomware readiness check for small businesses. Review backups, account access, staff awareness, and recovery planning before an incident." />
-    <link rel="stylesheet" href="./styles.css?v=nav-cleanup-20261013" />
+    <link rel="stylesheet" href="./styles.css?v=homepage-flow-20261013" />
       <link rel="canonical" href="https://nextgen-cyberguard.pages.dev/" />
     <link rel="alternate" hreflang="en" href="https://nextgen-cyberguard.pages.dev/" />
     <link rel="alternate" hreflang="es" href="https://nextgen-cyberguard.pages.dev/ES/" />
@@ -20,7 +20,6 @@
             <a href="/">Home</a>
             <a href="#services">Services</a>
             <a href="#paid-packages">For Businesses</a>
-            <a href="#resources">Resources</a>
           </nav>
           <a class="site-nav__cta" href="#checklist-flow">Get a Free Assessment <span aria-hidden="true">→</span></a>
         </div>
@@ -173,49 +172,70 @@
       </section>
 
 
-      <section class="section resources-section" id="resources" aria-labelledby="resources-heading">
-        <div class="shell resources-panel">
-          <div class="resources-intro">
-            <p class="eyebrow">Resources</p>
-            <h2 id="resources-heading">Practical readiness resources before you start.</h2>
-            <p>
-              Use these quick resources to understand what the free assessment checks,
-              what your report includes, and which gaps usually matter most for a small business.
-            </p>
-          </div>
-          <div class="resources-list" aria-label="Readiness resources">
-            <a class="resource-link" href="#checklist-flow">
-              <span>01</span>
-              <div class="resource-link__body">
-                <strong>2-minute readiness checklist</strong>
-                <em>Start the free assessment and identify your priority gaps.</em>
-                <b>Start the check →</b>
+      <section class="section package-section" id="paid-packages">
+        <div class="shell package-layout">
+          <div class="package-options">
+            <article class="package-free-banner card">
+              <div>
+                <p class="package-kicker">Start here</p>
+                <h3>Free Ransomware Readiness Check</h3>
+                <p class="package-price package-price--free">Free</p>
+                <p>Complete a short readiness checklist and receive a basic report with your score, key gaps, and first recommended steps.</p>
               </div>
-            </a>
-            <a class="resource-link" href="#checklist-flow">
-              <span>02</span>
-              <div class="resource-link__body">
-                <strong>Ransomware readiness report</strong>
-                <em>Complete the checklist to generate and download your summary.</em>
-                <b>Learn about your report →</b>
-              </div>
-            </a>
-            <a class="resource-link" href="#paid-packages">
-              <span>03</span>
-              <div class="resource-link__body">
-                <strong>Free 15-minute review</strong>
-                <em>Use your result to decide whether a review or package makes sense.</em>
-                <b>Request a free review →</b>
-              </div>
-            </a>
-            <a class="resource-link" href="#services">
-              <span>04</span>
-              <div class="resource-link__body">
-                <strong>Common readiness gaps</strong>
-                <em>See how backups, accounts, email, and response planning fit together.</em>
-                <b>View common gaps →</b>
-              </div>
-            </a>
+              <a class="button button--secondary" href="#checklist-flow">Start Free Check</a>
+            </article>
+
+            <div class="package-cards package-cards--paid" aria-label="Paid readiness packages">
+              <article class="package-card card">
+                <div>
+                  <h3>Quick Fix Review</h3>
+                  <p class="package-price">249€</p>
+                  <p class="package-payment-label">One-time payment</p>
+                  <p>A focused review of your readiness check results with a short list of the most important gaps to fix first.</p>
+                  <ul class="package-includes">
+                    <li>Review of your checklist results</li>
+                    <li>Top 3 readiness gaps</li>
+                    <li>Short written summary</li>
+                  </ul>
+                </div>
+                <a class="button button--secondary" href="/request-package/?package=quick-fix-review">Request Quick Review</a>
+              </article>
+
+              <article class="package-card package-card--recommended card">
+                <span class="package-badge">Recommended</span>
+                <div>
+                  <h3>Ransomware Readiness Fix Plan</h3>
+                  <p class="package-price">349€</p>
+                  <p class="package-payment-label">One-time payment</p>
+                  <p>A practical action plan for businesses that want clear next steps to improve backups, account security, email readiness, and first-hour response.</p>
+                  <p class="package-value-note">Best if you want a clear 30-day action plan instead of a basic summary.</p>
+                  <ul class="package-includes">
+                    <li>Review of your checklist results</li>
+                    <li>Backup, MFA and email priorities</li>
+                    <li>First-hour incident response mini-plan</li>
+                    <li>30-day action plan</li>
+                  </ul>
+                </div>
+                <a class="button button--primary" href="/request-package/?package=fix-plan">Request Fix Plan</a>
+              </article>
+
+              <article class="package-card card">
+                <div>
+                  <p class="package-card-label">Ongoing follow-up</p>
+                  <h3>Monthly Cyber Readiness Support</h3>
+                  <p class="package-price">99€/month</p>
+                  <p class="package-payment-label">Monthly support</p>
+                  <p>Light ongoing support to keep backups, access, reminders, and recovery steps prepared.</p>
+                  <ul class="package-includes">
+                    <li>Monthly or quarterly check-ins</li>
+                    <li>Backup and MFA reminders</li>
+                    <li>Progress tracking</li>
+                    <li>Updated next steps</li>
+                  </ul>
+                </div>
+                <a class="button button--secondary" href="/request-package/?package=monthly-support">Request Monthly Support</a>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -381,96 +401,6 @@
 
 
 
-      <section class="section package-section" id="paid-packages">
-        <div class="shell package-layout">
-          <div class="package-problem card">
-            <p class="eyebrow">Next step</p>
-            <h2>Not sure what to fix first?</h2>
-            <p>
-              Start with the free check, then use the result to decide whether you need quick guidance, a clear fix plan, or light ongoing support.
-            </p>
-            <div class="package-steps" aria-label="How package selection works">
-              <div><span>1</span><strong>Take the free check</strong></div>
-              <div><span>2</span><strong>See your gaps</strong></div>
-              <div><span>3</span><strong>Choose the right plan</strong></div>
-            </div>
-            <div class="package-gap-list">
-              <h3>Common gaps we help small businesses fix</h3>
-              <ul>
-                <li>Backups exist but have never been tested</li>
-                <li>Important accounts do not use MFA</li>
-                <li>Staff are unsure how to report suspicious emails</li>
-                <li>There is no first-hour response plan</li>
-                <li>No one clearly owns cybersecurity readiness</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="package-options">
-            <article class="package-free-banner card">
-              <div>
-                <p class="package-kicker">Start here</p>
-                <h3>Free Ransomware Readiness Check</h3>
-                <p class="package-price package-price--free">Free</p>
-                <p>Complete a short readiness checklist and receive a basic report with your score, key gaps, and first recommended steps.</p>
-              </div>
-              <a class="button button--secondary" href="#checklist-flow">Start Free Check</a>
-            </article>
-
-            <div class="package-cards package-cards--paid" aria-label="Paid readiness packages">
-              <article class="package-card card">
-                <div>
-                  <h3>Quick Fix Review</h3>
-                  <p class="package-price">249€</p>
-                  <p class="package-payment-label">One-time payment</p>
-                  <p>A focused review of your readiness check results with a short list of the most important gaps to fix first.</p>
-                  <ul class="package-includes">
-                    <li>Review of your checklist results</li>
-                    <li>Top 3 readiness gaps</li>
-                    <li>Short written summary</li>
-                  </ul>
-                </div>
-                <a class="button button--secondary" href="/request-package/?package=quick-fix-review">Request Quick Review</a>
-              </article>
-
-              <article class="package-card package-card--recommended card">
-                <span class="package-badge">Recommended</span>
-                <div>
-                  <h3>Ransomware Readiness Fix Plan</h3>
-                  <p class="package-price">349€</p>
-                  <p class="package-payment-label">One-time payment</p>
-                  <p>A practical action plan for businesses that want clear next steps to improve backups, account security, email readiness, and first-hour response.</p>
-                  <p class="package-value-note">Best if you want a clear 30-day action plan instead of a basic summary.</p>
-                  <ul class="package-includes">
-                    <li>Review of your checklist results</li>
-                    <li>Backup, MFA and email priorities</li>
-                    <li>First-hour incident response mini-plan</li>
-                    <li>30-day action plan</li>
-                  </ul>
-                </div>
-                <a class="button button--primary" href="/request-package/?package=fix-plan">Request Fix Plan</a>
-              </article>
-
-              <article class="package-card card">
-                <div>
-                  <p class="package-card-label">Ongoing follow-up</p>
-                  <h3>Monthly Cyber Readiness Support</h3>
-                  <p class="package-price">99€/month</p>
-                  <p class="package-payment-label">Monthly support</p>
-                  <p>Light ongoing support to keep backups, access, reminders, and recovery steps prepared.</p>
-                  <ul class="package-includes">
-                    <li>Monthly or quarterly check-ins</li>
-                    <li>Backup and MFA reminders</li>
-                    <li>Progress tracking</li>
-                    <li>Updated next steps</li>
-                  </ul>
-                </div>
-                <a class="button button--secondary" href="/request-package/?package=monthly-support">Request Monthly Support</a>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
       <footer class="site-footer">
         <div class="shell site-footer__main">
           <div class="site-footer__brand">
@@ -483,7 +413,6 @@
             <a href="/">Home</a>
             <a href="#services">Services</a>
             <a href="#paid-packages">For Businesses</a>
-            <a href="#resources">Resources</a>
             <a href="#checklist-flow">Free Assessment</a>
           </nav>
           <div class="site-footer__column site-footer__contact">
